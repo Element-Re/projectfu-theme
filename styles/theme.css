@@ -1,0 +1,380 @@
+/* UI */
+#navigation {
+
+	#nav-toggle {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+	}
+
+	#nav-toggle:hover {
+		color: white;
+		border: solid;
+		border-width: 0.2em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+
+	/* Navigation List */
+
+	#scene-list .scene {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		background: linear-gradient(0deg, rgba(37, 131, 142, 1) 0%, rgba(34, 89, 96, 1) 100%);
+
+	}
+
+
+	#scene-list .scene.gm {
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+
+	}
+
+
+	#scene-list .scene.gm:hover {
+		color: white;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+
+	}
+
+
+	#scene-list .scene.view.active {
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		box-shadow: 0 0 5px #d8e08f;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+
+	#scene-list .scene.view.gm {
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		box-shadow: 0 0 5px #d8e08f;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+
+}
+
+#context-menu {
+	color: #f8f3cb;
+	border: solid;
+	border-width: 0.1em;
+	border-color: #d7e5b2;
+	border-radius: 10px;
+	width: max-content;
+	min-width: 100%;
+	background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+
+	li.context-item:hover {
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+}
+
+/* Controls */
+
+#controls {
+	ol.control-tools>li, ol.control-tools>li.toggle {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.01em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		box-shadow: 0px 0px 4px;
+		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+	}
+  /*
+	ol.control-tools>li.toggle {
+		text-shadow: none;
+		border: solid;
+		border-width: 0.01em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		box-shadow: 0 0 5px #d8e08f;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+		*/
+
+	ol.control-tools>li.active:not(:hover), ol.control-tools>li.toggle.active:not(:hover) {
+		text-shadow: none;
+		border: solid;
+		border-width: 0.01em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		box-shadow: 0 0 5px #d8e08f;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+
+	ol.control-tools>li:hover, ol.control-tools>li.toggle:hover {
+		color: white;
+		border: solid;
+		border-width: 0.01em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		box-shadow: 0 0 5px #d8e08f;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+}
+
+/* Logo */
+#logo {
+	content: url("../assets/images/logo.png");
+	z-index: 0;
+	border: none;
+	box-sizing: border-box;
+	pointer-events: all;
+	margin: 20px 0 12px 10px;
+	transform: scale(6, 10) translate(38px, 18px);
+	pointer-events: none;
+
+}
+
+/* Player List */
+
+#players {
+	color: #f8f3cb;
+	text-shadow: none;
+	border: solid;
+	border-width: 0.1em;
+	border-color: #d7e5b2;
+	border-radius: 10px;
+	box-shadow: 0px 0px 0px;
+	background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+}
+
+#player-list {
+	.player-name.self:hover {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 10px;
+		box-shadow: 0px 0px 6px;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+}
+
+/* Macro Bar */
+#hotbar {
+	.bar-controls {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 5px;
+		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+	}
+
+	.bar-controls:hover {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 5px;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+
+	.macro {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 5px;
+		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+	}
+
+	.macro:hover {
+		color: #f8f3cb;
+		text-shadow: none;
+		border: solid;
+		border-width: 0.1em;
+		border-color: #d7e5b2;
+		border-radius: 5px;
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+}
+
+
+/* Token HUD */
+
+#hud {
+	.placeable-hud .control-icon {
+		background: linear-gradient(180deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+
+		&.active {
+			background: linear-gradient(0deg, rgba(231, 128, 121, 0.8) 0%, rgba(241, 163, 114, 0.8) 100%);
+		}
+	}
+
+	.placeable-hud .control-icon:hover {
+		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	}
+
+}
+
+#token-hud {
+
+	.attribute {
+		&.bar1 {
+			clip-path: xywh(0 5px 100% 75% round 15% 0);
+		}
+
+		&.bar2 {
+			clip-path: xywh(0 5px 100% 75% round 15% 0);
+		}
+
+		&.bar3 {
+			clip-path: xywh(0 5px 100% 75% round 15% 0);
+		}
+	}
+
+}
+
+
+/* Sidebar and Windows */
+
+
+.app:not(.backgroundstyle, .dialog) {
+	border: none;
+	box-shadow: 0px 0px 10px #2b1c02;
+	color: #d7e5b2;
+
+	.window-header {
+		position: flex;
+		border: none;
+		color: #d7e5b2;
+		background: linear-gradient(270deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+		margin-left: 1%;
+
+	}
+
+	.window-header::after {
+		position: absolute;
+		content: url("../assets/images/logo.png");
+		transform: scale(1, 1) translate(-60px, -60px);
+		opacity: 80%;
+		pointer-events: none;
+	}
+
+	#sidebar-tabs {
+		color: #d7e5b2;
+		background: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+	}
+
+	.tabs .item.active {
+		color: #d7e5b2;
+		border: solid;
+		border-width: 0.1em;
+		text-shadow: none;
+		background: linear-gradient(270deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%)
+	}
+
+	.chat-sidebar {
+		color: #d7e5b2;
+		background: url("../assets/images/pattern%20hojita.png"), linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+		background-blend-mode: multiply;
+		background-position: right center;
+		background-repeat: repeat-y;
+		background-size: 150%;
+	}
+
+}
+
+/* Character Sheet */
+
+.app:not(:not(.backgroundstyle)) {
+	border: none;
+	box-shadow: 0px 0px 10px #2b1c02;
+	color: #d7e5b2;
+
+	.window-header {
+		position: inline-flex;
+		border: none;
+		color: #d7e5b2;
+
+	}
+
+	.window-header::after {
+		position: absolute;
+		content: url("../assets/images/logo.png");
+		transform: scale(1) translate(-10%, -12%);
+		opacity: 80%;
+		pointer-events: none;
+	}
+
+}
+
+/* Dialogs */
+.app:not(:not(.dialog)) {
+	border: none;
+	box-shadow: 0px 0px 10px #2b1c02;
+	color: #d7e5b2;
+
+	.window-header {
+		position: flex;
+		border: none;
+		color: #d7e5b2;
+
+	}
+
+	.window-header::before {
+		position: absolute;
+		content: url("../assets/images/logo.png");
+		transform: scale(0.5) translate(-62%, -62%);
+		opacity: 80%;
+		pointer-events: none;
+
+	}
+}
+
+
+/* Theater Fix */
+
+.theatre-bar-left {
+	background: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+	border: solid;
+	border-width: 0.2em;
+	border-color: #d7e5b2;
+	border-radius: 20px;
+}
+
+.theatre-text-box {
+	color: #d7e5b2;
+	background: url("../assets/images/pattern%20hojita.png"), linear-gradient(90deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+	background-blend-mode: color-dodge;
+	background-position: right center;
+	background-repeat: repeat-y;
+	background-size: 150%;
+	border-radius: 20px;
+	border: none;
+	top: -10px;
+	height: 156px;
+}

@@ -1,0 +1,12 @@
+{
+  "id": "projectfu-theme",
+  "title": "Project FU Theme",
+  "version": "#{VERSION}#",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "12"
+  },
+  "styles": [
+    "styles/theme.css"
+  ]
+}
