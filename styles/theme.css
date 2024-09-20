@@ -253,7 +253,7 @@
 		background: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
 	}
 
-	.tabs .item.active {
+	#sidebar-tabs .item.active {
 		color: #d7e5b2;
 		border: solid;
 		border-width: 0.1em;
@@ -263,7 +263,7 @@
 
 	.chat-sidebar {
 		color: #d7e5b2;
-		background: url("../assets/images/pattern%20hojita.png"), linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+		background: url("../assets/images/pattern_hojita.png"), linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
 		background-blend-mode: multiply;
 		background-position: right center;
 		background-repeat: repeat-y;
@@ -332,7 +332,7 @@
 
 .theatre-text-box {
 	color: #d7e5b2;
-	background: url("../assets/images/pattern%20hojita.png"), linear-gradient(90deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+	background: url("../assets/images/pattern_hojita.png"), linear-gradient(90deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
 	background-blend-mode: color-dodge;
 	background-position: right center;
 	background-repeat: repeat-y;

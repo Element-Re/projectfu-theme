@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - The border image on Application and Dialog windows can exceed the size of their window.
 
+## [1.0.3]
+- Fixes broken background image in chat box and Theater Inserts text box.
+- Other minor style tweaks.
+
 ## [1.0.2]
 - Resolved issue with token hud resource inputs.
 
