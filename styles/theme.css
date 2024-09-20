@@ -107,17 +107,6 @@
 		box-shadow: 0px 0px 4px;
 		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
 	}
-  /*
-	ol.control-tools>li.toggle {
-		text-shadow: none;
-		border: solid;
-		border-width: 0.01em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		box-shadow: 0 0 5px #d8e08f;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
-	}
-		*/
 
 	ol.control-tools>li.active:not(:hover), ol.control-tools>li.toggle.active:not(:hover) {
 		text-shadow: none;
@@ -223,29 +212,17 @@
 }
 
 
-/* Sidebar and Windows */
+/* Apps */
 
-
-.app:not(.backgroundstyle, .dialog) {
+.app {
 	border: none;
 	box-shadow: 0px 0px 10px #2b1c02;
 	color: #d7e5b2;
 
 	.window-header {
-		position: flex;
+		padding: 2px 8px;
 		border: none;
 		color: #d7e5b2;
-		background: linear-gradient(270deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-		margin-left: 1%;
-
-	}
-
-	.window-header::after {
-		position: absolute;
-		content: url("../assets/images/logo.png");
-		transform: scale(1, 1) translate(-60px, -60px);
-		opacity: 80%;
-		pointer-events: none;
 	}
 
 	#sidebar-tabs {
@@ -272,19 +249,11 @@
 
 }
 
-/* Character Sheet */
+/* Sheets */
 
-.app:not(:not(.backgroundstyle)) {
-	border: none;
-	box-shadow: 0px 0px 10px #2b1c02;
-	color: #d7e5b2;
 
-	.window-header {
-		position: inline-flex;
-		border: none;
-		color: #d7e5b2;
 
-	}
+.app.window-app.sheet:is(.actor, .item, .active-effect-sheet) {
 
 	.window-header::after {
 		position: absolute;
@@ -293,32 +262,11 @@
 		opacity: 80%;
 		pointer-events: none;
 	}
-
 }
 
-/* Dialogs */
-.app:not(:not(.dialog)) {
-	border: none;
-	box-shadow: 0px 0px 10px #2b1c02;
-	color: #d7e5b2;
-
-	.window-header {
-		position: flex;
-		border: none;
-		color: #d7e5b2;
-
-	}
-
-	.window-header::before {
-		position: absolute;
-		content: url("../assets/images/logo.png");
-		transform: scale(0.5) translate(-62%, -62%);
-		opacity: 80%;
-		pointer-events: none;
-
-	}
+.app.window-app:not(.actor, .item, .active-effect-sheet) {
+	overflow: hidden;
 }
-
 
 /* Theater Fix */
 
