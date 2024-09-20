@@ -44,7 +44,7 @@ env:
 
     # The URL to the module archive associated with the module release being
     # processed by this workflow.
-    release_module_url: 'https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/fu-roll-enhancements.zip'
+    release_module_url: 'https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/projectfu-theme.zip'
 
 on:
     # Only run this workflow when a release is published.
@@ -101,7 +101,7 @@ jobs:
                   MANIFEST: ${{ env.latest_manifest_url }}
                   DOWNLOAD: ${{ env.release_module_url }}
 
-            # Create a "fu-roll-enhancements.zip" archive containing all the module's required files.
+            # Create a "projectfu-theme.zip" archive containing all the module's required files.
             # If you have other directories or files that will need to be added to
             # your packaged module, add them here.
             - name: Create Module Archive
@@ -112,10 +112,10 @@ jobs:
                     `# Options`                          \
                     --recurse-paths                      \
                     `# The name of the output file`      \
-                    ./fu-roll-enhancements.zip           \
+                    ./projectfu-theme.zip           \
                     `# The files that will be included.` \
                     module.json                          \
-                    fu-roll-enhancements.mjs             \
+                    projectfu-theme.mjs             \
                     README.md                            \
                     LICENSE.md                           \
                     CHANGELOG.md                         \
