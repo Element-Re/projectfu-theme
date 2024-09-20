@@ -223,42 +223,6 @@
 }
 
 
-/* Token HUD */
-
-#hud {
-	.placeable-hud .control-icon {
-		background: linear-gradient(180deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
-
-		&.active {
-			background: linear-gradient(0deg, rgba(231, 128, 121, 0.8) 0%, rgba(241, 163, 114, 0.8) 100%);
-		}
-	}
-
-	.placeable-hud .control-icon:hover {
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
-	}
-
-}
-
-#token-hud {
-
-	.attribute {
-		&.bar1 {
-			clip-path: xywh(0 5px 100% 75% round 15% 0);
-		}
-
-		&.bar2 {
-			clip-path: xywh(0 5px 100% 75% round 15% 0);
-		}
-
-		&.bar3 {
-			clip-path: xywh(0 5px 100% 75% round 15% 0);
-		}
-	}
-
-}
-
-
 /* Sidebar and Windows */
 
 
