@@ -1,290 +1,205 @@
-/* UI */
-#navigation {
+:root {
+	/* Colors */
+	--color-primary: #f8f3cb;
+	--color-secondary: #d7e5b2;
+	--color-highlight-primary: white;
+	--color-highlight-secondary: #ff0000;
 
+	/* Borders and Shadows */
+	--shadow-highlight: #d8e08f;
+	--border-radius: 10px;
+	--border-width: 0.1em;
+
+	/* Gradients */
+	--gradient-dark: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+	--gradient-light: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	--gradient-scene: linear-gradient(0deg, rgba(37, 131, 142, 1) 0%, rgba(34, 89, 96, 1) 100%);
+	--gradient-sidebar: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+	--gradient-sidebar-active: linear-gradient(270deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	--gradient-chat-bg: linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+	--gradient-theatre: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+
+	/* Image Paths */
+	--image-accent: url("../assets/images/logo.png");
+	--image-bg: url("../assets/images/pattern_hojita.png");
+}
+
+#navigation {
 	#nav-toggle {
-		color: #f8f3cb;
+		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+		border-width: var(--border-width);
+		border-color: var(--color-secondary);
+		border-radius: var(--border-radius);
+		background: var(--gradient-dark);
 	}
 
 	#nav-toggle:hover {
-		color: white;
-		border: solid;
+		color: var(--color-highlight-primary);
+		border-color: var(--color-highlight-secondary);
 		border-width: 0.2em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+		background: var(--gradient-light);
 	}
-
-	/* Navigation List */
 
 	#scene-list .scene {
-		color: #f8f3cb;
+		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		background: linear-gradient(0deg, rgba(37, 131, 142, 1) 0%, rgba(34, 89, 96, 1) 100%);
-
+		border-width: var(--border-width);
+		border-color: var(--color-secondary);
+		border-radius: var(--border-radius);
+		background: var(--gradient-scene);
 	}
-
 
 	#scene-list .scene.gm {
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
-
+		color: var(--color-primary);
+		border-color: var(--color-secondary);
+		background: var(--gradient-dark);
 	}
 
-
-	#scene-list .scene.gm:hover {
-		color: white;
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
-
-	}
-
-
-	#scene-list .scene.view.active {
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		box-shadow: 0 0 5px #d8e08f;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
-	}
-
+	#scene-list .scene.gm:hover,
+	#scene-list .scene.view.active,
 	#scene-list .scene.view.gm {
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		box-shadow: 0 0 5px #d8e08f;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+		color: var(--color-highlight-primary);
+		border-color: var(--color-highlight-secondary);
+		background: var(--gradient-light);
+		box-shadow: 0 0 5px var(--shadow-highlight);
 	}
-
 }
 
 #context-menu {
-	color: #f8f3cb;
+	color: var(--color-primary);
 	border: solid;
-	border-width: 0.1em;
-	border-color: #d7e5b2;
-	border-radius: 10px;
-	width: max-content;
-	min-width: 100%;
-	background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+	border-width: var(--border-width);
+	border-color: var(--color-secondary);
+	border-radius: var(--border-radius);
+	background: var(--gradient-dark);
 
 	li.context-item:hover {
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+		background: var(--gradient-light);
 	}
 }
-
-/* Controls */
 
 #controls {
-	ol.control-tools>li, ol.control-tools>li.toggle {
-		color: #f8f3cb;
+
+	ol.control-tools>li,
+	ol.control-tools>li.toggle {
+		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
 		border-width: 0.01em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		box-shadow: 0px 0px 4px;
-		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+		border-color: var(--color-secondary);
+		border-radius: var(--border-radius);
+		box-shadow: 0 0 4px;
+		background: var(--gradient-dark);
 	}
 
-	ol.control-tools>li.active:not(:hover), ol.control-tools>li.toggle.active:not(:hover) {
-		text-shadow: none;
-		border: solid;
-		border-width: 0.01em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		box-shadow: 0 0 5px #d8e08f;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	ol.control-tools>li.active:not(:hover),
+	ol.control-tools>li.toggle.active:not(:hover) {
+		color: var(--color-highlight-primary);
+		border-color: var(--color-highlight-secondary);
+		box-shadow: 0 0 5px var(--shadow-highlight);
+		background: var(--gradient-light);
 	}
 
-	ol.control-tools>li:hover, ol.control-tools>li.toggle:hover {
-		color: white;
-		border: solid;
-		border-width: 0.01em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		box-shadow: 0 0 5px #d8e08f;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+	ol.control-tools>li:hover,
+	ol.control-tools>li.toggle:hover {
+		color: var(--color-highlight-primary);
+		border-color: var(--color-highlight-secondary);
+		box-shadow: 0 0 5px var(--shadow-highlight);
+		background: var(--gradient-light);
 	}
 }
 
-/* Logo */
 #logo {
-	content: url("../assets/images/logo.png");
-	z-index: 0;
-	border: none;
-	box-sizing: border-box;
-	pointer-events: all;
+	z-index: -10;
+	content: var(--image-accent);
 	margin: 20px 0 12px 10px;
 	transform: scale(6, 10) translate(38px, 18px);
 	pointer-events: none;
-
 }
-
-/* Player List */
 
 #players {
-	color: #f8f3cb;
+	color: var(--color-primary);
 	text-shadow: none;
 	border: solid;
-	border-width: 0.1em;
-	border-color: #d7e5b2;
-	border-radius: 10px;
-	box-shadow: 0px 0px 0px;
-	background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+	border-width: var(--border-width);
+	border-color: var(--color-secondary);
+	border-radius: var(--border-radius);
+	background: var(--gradient-dark);
+	box-shadow: 0 0 6px;
 }
 
-#player-list {
-	.player-name.self:hover {
-		color: #f8f3cb;
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 10px;
-		box-shadow: 0px 0px 6px;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
-	}
-}
-
-/* Macro Bar */
 #hotbar {
-	.bar-controls {
-		color: #f8f3cb;
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 5px;
-		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
-	}
 
-	.bar-controls:hover {
-		color: #f8f3cb;
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 5px;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
-	}
-
+	.bar-controls,
 	.macro {
-		color: #f8f3cb;
+		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
+		border-width: var(--border-width);
+		border-color: var(--color-secondary);
 		border-radius: 5px;
-		background: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
+		background: var(--gradient-dark);
 	}
 
+	.bar-controls:hover,
 	.macro:hover {
-		color: #f8f3cb;
-		text-shadow: none;
-		border: solid;
-		border-width: 0.1em;
-		border-color: #d7e5b2;
-		border-radius: 5px;
-		background: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
+		color: var(--color-highlight-primary);
+		border-color: var(--color-highlight-secondary);
+		background: var(--gradient-light);
 	}
 }
-
-
-/* Apps */
 
 .app {
-	border: none;
-	box-shadow: 0px 0px 10px #2b1c02;
-	color: #d7e5b2;
+	color: var(--color-secondary);
+	box-shadow: 0 0 10px #2b1c02;
+
+	&.window-app {
+		overflow: hidden;
+
+		&.sheet:is(.actor, .item) {
+			overflow: visible;
+
+			.window-header::after {
+				position: absolute;
+				content: var(--image-accent);
+				transform: scale(1) translate(-10%, -12%);
+				opacity: 80%;
+				pointer-events: none;
+			}
+		}
+	}
 
 	.window-header {
 		padding: 2px 8px;
-		border: none;
-		color: #d7e5b2;
 	}
 
 	#sidebar-tabs {
-		color: #d7e5b2;
-		background: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-	}
+		background: var(--gradient-sidebar);
 
-	#sidebar-tabs .item.active {
-		color: #d7e5b2;
-		border: solid;
-		border-width: 0.1em;
-		text-shadow: none;
-		background: linear-gradient(270deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%)
+		.item.active {
+			background: var(--gradient-sidebar-active);
+		}
 	}
 
 	.chat-sidebar {
-		color: #d7e5b2;
-		background: url("../assets/images/pattern_hojita.png"), linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
-		background-blend-mode: multiply;
-		background-position: right center;
-		background-repeat: repeat-y;
-		background-size: 150%;
-	}
-
-}
-
-/* Sheets */
-
-
-
-.app.window-app.sheet:is(.actor, .item, .active-effect-sheet) {
-
-	.window-header::after {
-		position: absolute;
-		content: url("../assets/images/logo.png");
-		transform: scale(1) translate(-10%, -12%);
-		opacity: 80%;
-		pointer-events: none;
+		background: var(--image-bg), var(--gradient-chat-bg);
 	}
 }
-
-.app.window-app:not(.actor, .item, .active-effect-sheet) {
-	overflow: hidden;
-}
-
-/* Theater Fix */
 
 .theatre-bar-left {
-	background: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+	background: var(--gradient-theatre);
 	border: solid;
 	border-width: 0.2em;
-	border-color: #d7e5b2;
+	border-color: var(--color-secondary);
 	border-radius: 20px;
 }
 
 .theatre-text-box {
-	color: #d7e5b2;
-	background: url("../assets/images/pattern_hojita.png"), linear-gradient(90deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
-	background-blend-mode: color-dodge;
-	background-position: right center;
-	background-repeat: repeat-y;
-	background-size: 150%;
+	color: var(--color-secondary);
+	background: var(--image-bg), var(--gradient-chat-bg);
 	border-radius: 20px;
 	border: none;
 	top: -10px;
