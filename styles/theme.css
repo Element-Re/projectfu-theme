@@ -25,7 +25,7 @@
 }
 
 #navigation {
-	#nav-toggle {
+	& #nav-toggle {
 		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
@@ -35,14 +35,14 @@
 		background: var(--gradient-dark);
 	}
 
-	#nav-toggle:hover {
+	& #nav-toggle:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		border-width: 0.2em;
 		background: var(--gradient-light);
 	}
 
-	#scene-list .scene {
+	& #scene-list .scene {
 		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
@@ -52,15 +52,15 @@
 		background: var(--gradient-scene);
 	}
 
-	#scene-list .scene.gm {
+	& #scene-list .scene.gm {
 		color: var(--color-primary);
 		border-color: var(--color-secondary);
 		background: var(--gradient-dark);
 	}
 
-	#scene-list .scene.gm:hover,
-	#scene-list .scene.view.active,
-	#scene-list .scene.view.gm {
+	& #scene-list .scene.gm:hover,
+	& #scene-list .scene.view.active,
+	& #scene-list .scene.view.gm {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		background: var(--gradient-light);
@@ -68,7 +68,7 @@
 	}
 }
 
-#context-menu {
+& #context-menu {
 	color: var(--color-primary);
 	border: solid;
 	border-width: var(--border-width);
@@ -76,15 +76,15 @@
 	border-radius: var(--border-radius);
 	background: var(--gradient-dark);
 
-	li.context-item:hover {
+	& li.context-item:hover {
 		background: var(--gradient-light);
 	}
 }
 
 #controls {
 
-	ol.control-tools>li,
-	ol.control-tools>li.toggle {
+	& ol.control-tools>li,
+	& ol.control-tools>li.toggle {
 		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
@@ -95,16 +95,16 @@
 		background: var(--gradient-dark);
 	}
 
-	ol.control-tools>li.active:not(:hover),
-	ol.control-tools>li.toggle.active:not(:hover) {
+	& ol.control-tools>li.active:not(:hover),
+	& ol.control-tools>li.toggle.active:not(:hover) {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		box-shadow: 0 0 5px var(--shadow-highlight);
 		background: var(--gradient-light);
 	}
 
-	ol.control-tools>li:hover,
-	ol.control-tools>li.toggle:hover {
+	& ol.control-tools>li:hover,
+	& ol.control-tools>li.toggle:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		box-shadow: 0 0 5px var(--shadow-highlight);
@@ -133,8 +133,8 @@
 
 #hotbar {
 
-	.bar-controls,
-	.macro {
+	& .bar-controls,
+	& .macro {
 		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
@@ -144,8 +144,8 @@
 		background: var(--gradient-dark);
 	}
 
-	.bar-controls:hover,
-	.macro:hover {
+	& .bar-controls:hover,
+	& .macro:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		background: var(--gradient-light);
@@ -162,7 +162,7 @@
 		&.sheet:is(.actor, .item) {
 			overflow: visible;
 
-			.window-header::after {
+			& .window-header::after {
 				position: absolute;
 				content: var(--image-accent);
 				transform: scale(1) translate(-10%, -12%);
@@ -172,19 +172,19 @@
 		}
 	}
 
-	.window-header {
+	& .window-header {
 		padding: 2px 8px;
 	}
 
-	#sidebar-tabs {
+	& #sidebar-tabs {
 		background: var(--gradient-sidebar);
 
-		.item.active {
+	& .item.active {
 			background: var(--gradient-sidebar-active);
 		}
 	}
 
-	.chat-sidebar {
+	& .chat-sidebar {
 		background: var(--image-bg), var(--gradient-chat-bg);
 	}
 }
