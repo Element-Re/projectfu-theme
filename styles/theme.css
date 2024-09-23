@@ -4,14 +4,15 @@
 	--color-primary-inactive: #ebf7af80;
 	--color-secondary: #148782;
 	--color-selected: #ffffff;
-	--color-highlight-primary: #049b96;
-	--color-highlight-secondary: #049b96;
+	--color-highlight-primary: #047470;
+	--color-highlight-secondary: #047470;
 	--color-active-primary: #fff79a;
 	--color-active-secondary: #fff79a;
 
 	/* Borders and Shadows */
 	--shadow-highlight: #d8e08f;
 	--shadow-selected: #77ebd7;
+	--color-shadow-primary: #77ebd7;
 
 	--border-radius: 10px;
 	--border-width: 0.1em;
@@ -21,7 +22,7 @@
 	--gradient-highlight: linear-gradient(0deg, rgba(220, 211, 116, 1) 0%, rgba(255, 247, 154, 1) 100%);
 	--gradient-active: linear-gradient(0deg, rgba(226, 128, 121, .8) 0%, rgba(241, 163, 114, .8) 100%);
 	--gradient-sidebar: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-	--gradient-chat-bg: linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+	--gradient-sidebar-bg: linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
 	--gradient-theatre: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
 
 	/* Image Paths */
@@ -29,19 +30,32 @@
 	--image-bg: url("../assets/images/pattern_hojita.png");
 }
 
-
+/*
 a:is(.control, .button, [role="button"], [data-action]):hover {
 	color: var(--color-selected);
 	text-shadow: 0 0 8px var(--shadow-selected) !important;
 }
+*/
 
-#navigation {
+li.folder > .folder-header .create-button {
+	&:hover {
+		color: var(--color-selected);
+		text-shadow: 0 0 8px var(--shadow-selected) !important;
+		& .fa-plus {
+			color: var(--shadow-selected);
+		}
+	}
+}
+
+#navigation.app {
 
 	& a:hover {
-		text-shadow: none;;
+		text-shadow: inherit !important;
+		color: inherit;
 	}
 	 
-	& #nav-toggle {
+	& #nav-toggle,
+	& #scene-list .scene.gm {
 		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
@@ -51,10 +65,13 @@ a:is(.control, .button, [role="button"], [data-action]):hover {
 		background: var(--gradient-standard);
 	}
 
-	& #nav-toggle:hover {
+	& #nav-toggle:hover,
+	& #scene-list .scene:hover,
+	& #scene-list .scene.context {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		background: var(--gradient-highlight);
+		box-shadow: 0 0 5px var(--shadow-highlight);
 	}
 
 	& #scene-list .scene {
@@ -65,22 +82,6 @@ a:is(.control, .button, [role="button"], [data-action]):hover {
 		border-color: var(--color-secondary);
 		border-radius: var(--border-radius);
 		background: var(--gradient-standard);
-		
-		&.context {
-			box-shadow: 0 0 5px var(--shadow-highlight);
-		}
-	}
-
-	& #scene-list .scene.gm {
-		color: var(--color-primary);
-		border-color: var(--color-secondary);
-		background: var(--gradient-standard);
-	}
-
-	& #scene-list .scene:hover {
-		color: var(--color-highlight-primary);
-		border-color: var(--color-highlight-secondary);
-		background: var(--gradient-highlight);
 	}
 
 	& #scene-list .scene.view.active,
@@ -104,17 +105,28 @@ a:is(.control, .button, [role="button"], [data-action]):hover {
 	border-color: var(--color-secondary);
 	border-radius: var(--border-radius);
 	background: var(--gradient-standard);
+	backdrop-filter: blur(5px);
 
-	& li.context-item:hover {
-		background: var(--gradient-active);
-		text-shadow: none;
+	& li.context-item {
 
-		&:first-child {
-			border-radius: var(--border-radius) var(--border-radius) 0 0;
-		}
+    border: solid;
+		border-width: var(--border-width);
+		border-color: transparent;
+
+		&:hover {
+			color: var(--color-selected);
+			border-color: var(--color-active-secondary);
+			background: var(--gradient-active);
+			box-shadow: 0 0 5px var(--shadow-highlight);
+			text-shadow: none;
 	
-		&:last-child {
-			border-radius: 0 0 var(--border-radius) var(--border-radius);
+			&:first-child {
+				border-radius: var(--border-radius) var(--border-radius) 0 0;
+			}
+		
+			&:last-child {
+				border-radius: 0 0 var(--border-radius) var(--border-radius);
+			}
 		}
 	}
 }
@@ -234,6 +246,11 @@ a:is(.control, .button, [role="button"], [data-action]):hover {
 	color: var(--color-primary);
 	box-shadow: 0 0 10px #2b1c02;
 
+	&:not(.sheet, .dialog) a:hover {
+		color: var(--color-selected);
+		text-shadow: 0 0 8px var(--shadow-selected) !important;
+	}
+
 	&.window-app {
 		overflow: hidden;
 
@@ -256,6 +273,8 @@ a:is(.control, .button, [role="button"], [data-action]):hover {
 
 	& #sidebar-tabs {
 		background: var(--gradient-sidebar);
+		border-bottom: 1px solid var(--color-active-secondary);
+		box-shadow: 0 0 10px var(--shadow-highlight);
 
 
 
@@ -275,8 +294,18 @@ a:is(.control, .button, [role="button"], [data-action]):hover {
 
 	}
 
-	& .chat-sidebar {
-		background: var(--image-bg), var(--gradient-chat-bg);
+	& .sidebar-tab,
+	&.sidebar-tab {
+
+		background: var(--gradient-sidebar-bg);
+
+		&.sidebar-popout .window-content {
+			color: var(--color-primary);
+		}
+		
+		&.chat-sidebar {
+			background: var(--image-bg), var(--gradient-sidebar-bg);
+		}
 	}
 }
 
@@ -290,7 +319,7 @@ a:is(.control, .button, [role="button"], [data-action]):hover {
 
 .theatre-text-box {
 	color: var(--color-secondary);
-	background: var(--image-bg), var(--gradient-chat-bg);
+	background: var(--image-bg), var(--gradient-sidebar-bg);
 	border-radius: 20px;
 	border: none;
 	top: -10px;
