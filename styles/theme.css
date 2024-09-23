@@ -1,21 +1,26 @@
 :root {
 	/* Colors */
-	--color-primary: #f8f3cb;
-	--color-secondary: #d7e5b2;
-	--color-highlight-primary: white;
-	--color-highlight-secondary: #ff0000;
+	--color-primary: #ebf7af;
+	--color-primary-inactive: #ebf7af80;
+	--color-secondary: #148782;
+	--color-selected: #ffffff;
+	--color-highlight-primary: #049b96;
+	--color-highlight-secondary: #049b96;
+	--color-active-primary: #fff79a;
+	--color-active-secondary: #fff79a;
 
 	/* Borders and Shadows */
 	--shadow-highlight: #d8e08f;
+	--shadow-selected: #77ebd7;
+
 	--border-radius: 10px;
 	--border-width: 0.1em;
 
 	/* Gradients */
-	--gradient-dark: linear-gradient(180deg, rgba(17, 41, 41, 1) 0%, rgba(73, 164, 153, 1) 100%);
-	--gradient-light: linear-gradient(0deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
-	--gradient-scene: linear-gradient(0deg, rgba(37, 131, 142, 1) 0%, rgba(34, 89, 96, 1) 100%);
+	--gradient-standard: linear-gradient(180deg, rgba(17, 41, 41, .6) 0%, rgba(73, 164, 153, .6) 100%);
+	--gradient-highlight: linear-gradient(0deg, rgba(220, 211, 116, 1) 0%, rgba(255, 247, 154, 1) 100%);
+	--gradient-active: linear-gradient(0deg, rgba(226, 128, 121, .8) 0%, rgba(241, 163, 114, .8) 100%);
 	--gradient-sidebar: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-	--gradient-sidebar-active: linear-gradient(270deg, rgba(231, 128, 121, 1) 0%, rgba(241, 163, 114, 1) 100%);
 	--gradient-chat-bg: linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
 	--gradient-theatre: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
 
@@ -24,7 +29,18 @@
 	--image-bg: url("../assets/images/pattern_hojita.png");
 }
 
+
+a:is(.control, .button, [role="button"], [data-action]):hover {
+	color: var(--color-selected);
+	text-shadow: 0 0 8px var(--shadow-selected) !important;
+}
+
 #navigation {
+
+	& a:hover {
+		text-shadow: none;;
+	}
+	 
 	& #nav-toggle {
 		color: var(--color-primary);
 		text-shadow: none;
@@ -32,14 +48,13 @@
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
 		border-radius: var(--border-radius);
-		background: var(--gradient-dark);
+		background: var(--gradient-standard);
 	}
 
 	& #nav-toggle:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
-		border-width: 0.2em;
-		background: var(--gradient-light);
+		background: var(--gradient-highlight);
 	}
 
 	& #scene-list .scene {
@@ -49,22 +64,36 @@
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
 		border-radius: var(--border-radius);
-		background: var(--gradient-scene);
+		background: var(--gradient-standard);
+		
+		&.context {
+			box-shadow: 0 0 5px var(--shadow-highlight);
+		}
 	}
 
 	& #scene-list .scene.gm {
 		color: var(--color-primary);
 		border-color: var(--color-secondary);
-		background: var(--gradient-dark);
+		background: var(--gradient-standard);
 	}
 
-	& #scene-list .scene.gm:hover,
-	& #scene-list .scene.view.active,
-	& #scene-list .scene.view.gm {
+	& #scene-list .scene:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
-		background: var(--gradient-light);
+		background: var(--gradient-highlight);
+	}
+
+	& #scene-list .scene.view.active,
+	& #scene-list .scene.view.gm {
+		
+		border-color: var(--color-active-secondary);
+		background: var(--gradient-active);
 		box-shadow: 0 0 5px var(--shadow-highlight);
+	  
+		& a {
+			color: var(--color-selected);
+			text-shadow: none;
+		}
 	}
 }
 
@@ -74,64 +103,101 @@
 	border-width: var(--border-width);
 	border-color: var(--color-secondary);
 	border-radius: var(--border-radius);
-	background: var(--gradient-dark);
+	background: var(--gradient-standard);
 
 	& li.context-item:hover {
-		background: var(--gradient-light);
+		background: var(--gradient-active);
+		text-shadow: none;
+
+		&:first-child {
+			border-radius: var(--border-radius) var(--border-radius) 0 0;
+		}
+	
+		&:last-child {
+			border-radius: 0 0 var(--border-radius) var(--border-radius);
+		}
 	}
 }
 
 #controls {
 
-	& ol.control-tools>li,
-	& ol.control-tools>li.toggle {
+	& ol.control-tools>li {
 		color: var(--color-primary);
 		text-shadow: none;
 		border: solid;
 		border-width: 0.01em;
 		border-color: var(--color-secondary);
 		border-radius: var(--border-radius);
-		box-shadow: 0 0 4px;
-		background: var(--gradient-dark);
+		background: var(--gradient-standard);
+		box-shadow: none;
+
+		&.toggle {
+			color: var(--color-primary-inactive);
+			text-shadow: none;
+			border: solid;
+			border-width: 0.01em;
+			border-color: var(--color-secondary);
+			border-radius: var(--border-radius);
+			background: var(--gradient-standard);
+			box-shadow: none;
+		}
 	}
 
-	& ol.control-tools>li.active:not(:hover),
-	& ol.control-tools>li.toggle.active:not(:hover) {
+	& ol.control-tools>li.active {
+		color: var(--color-active-primary);
+		border-color: var(--color-active-secondary);
+		box-shadow: 0 0 5px var(--shadow-highlight);
+		background: var(--gradient-active);
+
+		&.toggle {
+			color: var(--color-active-primary);
+			border-color: var(--color-active-secondary);
+			box-shadow: 0 0 5px var(--shadow-highlight);
+			background: var(--gradient-active);
+			
+			:hover {
+				color: var(--color-selected);
+				text-shadow: 0 0 8px var(--shadow-selected);
+			}
+		}
+		
+	}
+
+	& ol.control-tools>li:not(.active):hover,
+	& ol.control-tools>li:not(.active).toggle:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		box-shadow: 0 0 5px var(--shadow-highlight);
-		background: var(--gradient-light);
-	}
+		background: var(--gradient-highlight);
 
-	& ol.control-tools>li:hover,
-	& ol.control-tools>li.toggle:hover {
-		color: var(--color-highlight-primary);
-		border-color: var(--color-highlight-secondary);
-		box-shadow: 0 0 5px var(--shadow-highlight);
-		background: var(--gradient-light);
+		
 	}
 }
 
 #logo {
+	clip-path: inset(0 74px 39.3px 0);
 	z-index: -10;
 	content: var(--image-accent);
 	margin: 20px 0 12px 10px;
-	transform: scale(6, 10) translate(38px, 18px);
+	transform: scale(5, 10) translate(38px, 18px);
 	pointer-events: none;
 }
 
 #players {
+
 	color: var(--color-primary);
 	text-shadow: none;
 	border: solid;
 	border-width: var(--border-width);
 	border-color: var(--color-secondary);
 	border-radius: var(--border-radius);
-	background: var(--gradient-dark);
-	box-shadow: 0 0 6px;
+	background: var(--gradient-standard);
+	box-shadow: none;
 }
 
 #hotbar {
+
+	box-shadow: none;
 
 	& .bar-controls,
 	& .macro {
@@ -141,25 +207,37 @@
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
 		border-radius: 5px;
-		background: var(--gradient-dark);
+		background: var(--gradient-standard);
+		
 	}
 
-	& .bar-controls:hover,
 	& .macro:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
-		background: var(--gradient-light);
+		box-shadow: 0 0 5px inset var(--shadow-highlight);
+	}
+
+	& .bar-controls:hover,
+	& .macro.active:hover {
+		color: var(--color-active-primary);
+		border-color: var(--color-active-secondary);
+		background: var(--gradient-active);
+		box-shadow: 0 0 5px var(--shadow-highlight);
+	}
+
+	&.locked #macro-list {
+		border-color: var(--color-active-secondary);
 	}
 }
 
 .app {
-	color: var(--color-secondary);
+	color: var(--color-primary);
 	box-shadow: 0 0 10px #2b1c02;
 
 	&.window-app {
 		overflow: hidden;
 
-		&.sheet:is(.actor, .item) {
+		&.sheet:is(.actor, .item):not(.minimized) {
 			overflow: visible;
 
 			& .window-header::after {
@@ -179,9 +257,22 @@
 	& #sidebar-tabs {
 		background: var(--gradient-sidebar);
 
-	& .item.active {
-			background: var(--gradient-sidebar-active);
+
+
+		&.tabs .item:not(.active):hover {
+			color: var(--color-selected);
+			text-shadow: 0 0 8px var(--shadow-selected) !important;
 		}
+
+
+		&.tabs .item.active {
+			color: var(--color-active-primary);
+			border-color: var(--color-active-secondary);
+			background: var(--gradient-active);
+			box-shadow: none;
+			text-shadow: none !important;
+		}
+
 	}
 
 	& .chat-sidebar {
