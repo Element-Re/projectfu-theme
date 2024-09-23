@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.7]
+- Resolved issue with popped out sidebar styling.
+
 ## [1.0.6]
 - Resolved issue with minimized sheets not hiding accent decoration.
 - Another major round of style tweaks.

@@ -290,9 +290,7 @@ li.folder>.folder-header .create-button {
 
 	}
 
-	& .sidebar-tab,
-	&.sidebar-tab {
-
+	& .sidebar-tab {
 		background: var(--gradient-sidebar-bg);
 
 		&.sidebar-popout .window-content {
