@@ -1,4 +1,9 @@
 :root {
+
+  /* Foundry Overrides */
+	--color-shadow-primary: #77ebd7;
+	--color-shadow-highlight: #d8e08f;
+
 	/* Colors */
 	--color-primary: #ebf7af;
 	--color-primary-inactive: #ebf7af80;
@@ -9,16 +14,11 @@
 	--color-active-primary: #fff79a;
 	--color-active-secondary: #fff79a;
 
-	/* Borders and Shadows */
-	--shadow-highlight: #d8e08f;
-	--shadow-selected: #77ebd7;
-	--color-shadow-primary: #77ebd7;
-
 	--border-radius: 10px;
 	--border-width: 0.1em;
 
 	/* Gradients */
-	--gradient-standard: linear-gradient(180deg, rgba(17, 41, 41, .6) 0%, rgba(73, 164, 153, .6) 100%);
+	--gradient-initial: linear-gradient(180deg, rgba(17, 41, 41, .6) 0%, rgba(73, 164, 153, .6) 100%);
 	--gradient-highlight: linear-gradient(0deg, rgba(220, 211, 116, 1) 0%, rgba(255, 247, 154, 1) 100%);
 	--gradient-active: linear-gradient(0deg, rgba(226, 128, 121, .8) 0%, rgba(241, 163, 114, .8) 100%);
 	--gradient-sidebar: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
@@ -30,19 +30,13 @@
 	--image-bg: url("../assets/images/pattern_hojita.png");
 }
 
-/*
-a:is(.control, .button, [role="button"], [data-action]):hover {
-	color: var(--color-selected);
-	text-shadow: 0 0 8px var(--shadow-selected) !important;
-}
-*/
-
-li.folder > .folder-header .create-button {
+li.folder>.folder-header .create-button {
 	&:hover {
 		color: var(--color-selected);
-		text-shadow: 0 0 8px var(--shadow-selected) !important;
+		text-shadow: 0 0 8px var(--color-shadow-primary) !important;
+
 		& .fa-plus {
-			color: var(--shadow-selected);
+			color: var(--color-shadow-primary);
 		}
 	}
 }
@@ -53,7 +47,7 @@ li.folder > .folder-header .create-button {
 		text-shadow: inherit !important;
 		color: inherit;
 	}
-	 
+
 	& #nav-toggle,
 	& #scene-list .scene.gm {
 		color: var(--color-primary);
@@ -62,7 +56,7 @@ li.folder > .folder-header .create-button {
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
 		border-radius: var(--border-radius);
-		background: var(--gradient-standard);
+		background: var(--gradient-initial);
 	}
 
 	& #nav-toggle:hover,
@@ -71,7 +65,7 @@ li.folder > .folder-header .create-button {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
 		background: var(--gradient-highlight);
-		box-shadow: 0 0 5px var(--shadow-highlight);
+		box-shadow: 0 0 5px var(--color-shadow-highlight);
 	}
 
 	& #scene-list .scene {
@@ -81,16 +75,16 @@ li.folder > .folder-header .create-button {
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
 		border-radius: var(--border-radius);
-		background: var(--gradient-standard);
+		background: var(--gradient-initial);
 	}
 
 	& #scene-list .scene.view.active,
 	& #scene-list .scene.view.gm {
-		
+
 		border-color: var(--color-active-secondary);
 		background: var(--gradient-active);
-		box-shadow: 0 0 5px var(--shadow-highlight);
-	  
+		box-shadow: 0 0 5px var(--color-shadow-highlight);
+
 		& a {
 			color: var(--color-selected);
 			text-shadow: none;
@@ -104,12 +98,12 @@ li.folder > .folder-header .create-button {
 	border-width: var(--border-width);
 	border-color: var(--color-secondary);
 	border-radius: var(--border-radius);
-	background: var(--gradient-standard);
+	background: var(--gradient-initial);
 	backdrop-filter: blur(5px);
 
 	& li.context-item {
 
-    border: solid;
+		border: solid;
 		border-width: var(--border-width);
 		border-color: transparent;
 
@@ -117,13 +111,13 @@ li.folder > .folder-header .create-button {
 			color: var(--color-selected);
 			border-color: var(--color-active-secondary);
 			background: var(--gradient-active);
-			box-shadow: 0 0 5px var(--shadow-highlight);
+			box-shadow: 0 0 5px var(--color-shadow-highlight);
 			text-shadow: none;
-	
+
 			&:first-child {
 				border-radius: var(--border-radius) var(--border-radius) 0 0;
 			}
-		
+
 			&:last-child {
 				border-radius: 0 0 var(--border-radius) var(--border-radius);
 			}
@@ -140,7 +134,7 @@ li.folder > .folder-header .create-button {
 		border-width: 0.01em;
 		border-color: var(--color-secondary);
 		border-radius: var(--border-radius);
-		background: var(--gradient-standard);
+		background: var(--gradient-initial);
 		box-shadow: none;
 
 		&.toggle {
@@ -150,7 +144,7 @@ li.folder > .folder-header .create-button {
 			border-width: 0.01em;
 			border-color: var(--color-secondary);
 			border-radius: var(--border-radius);
-			background: var(--gradient-standard);
+			background: var(--gradient-initial);
 			box-shadow: none;
 		}
 	}
@@ -158,13 +152,13 @@ li.folder > .folder-header .create-button {
 	& ol.control-tools>li.active {
 		color: var(--color-active-primary);
 		border-color: var(--color-active-secondary);
-		box-shadow: 0 0 5px var(--shadow-highlight);
+		box-shadow: 0 0 5px var(--color-shadow-highlight);
 		background: var(--gradient-active);
 
 		&.toggle {
 			color: var(--color-active-primary);
 			border-color: var(--color-active-secondary);
-			box-shadow: 0 0 5px var(--shadow-highlight);
+			box-shadow: 0 0 5px var(--color-shadow-highlight);
 			background: var(--gradient-active);
 			
 			:hover {
@@ -172,17 +166,15 @@ li.folder > .folder-header .create-button {
 				text-shadow: 0 0 8px var(--shadow-selected);
 			}
 		}
-		
 	}
 
 	& ol.control-tools>li:not(.active):hover,
 	& ol.control-tools>li:not(.active).toggle:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
-		box-shadow: 0 0 5px var(--shadow-highlight);
+		box-shadow: 0 0 5px var(--color-shadow-highlight);
 		background: var(--gradient-highlight);
 
-		
 	}
 }
 
@@ -196,19 +188,17 @@ li.folder > .folder-header .create-button {
 }
 
 #players {
-
 	color: var(--color-primary);
 	text-shadow: none;
 	border: solid;
 	border-width: var(--border-width);
 	border-color: var(--color-secondary);
 	border-radius: var(--border-radius);
-	background: var(--gradient-standard);
+	background: var(--gradient-initial);
 	box-shadow: none;
 }
 
 #hotbar {
-
 	box-shadow: none;
 
 	& .bar-controls,
@@ -219,14 +209,13 @@ li.folder > .folder-header .create-button {
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
 		border-radius: 5px;
-		background: var(--gradient-standard);
-		
+		background: var(--gradient-initial);
 	}
 
 	& .macro:hover {
 		color: var(--color-highlight-primary);
 		border-color: var(--color-highlight-secondary);
-		box-shadow: 0 0 5px inset var(--shadow-highlight);
+		box-shadow: 0 0 5px inset var(--color-shadow-highlight);
 	}
 
 	& .bar-controls:hover,
@@ -234,7 +223,7 @@ li.folder > .folder-header .create-button {
 		color: var(--color-active-primary);
 		border-color: var(--color-active-secondary);
 		background: var(--gradient-active);
-		box-shadow: 0 0 5px var(--shadow-highlight);
+		box-shadow: 0 0 5px var(--color-shadow-highlight);
 	}
 
 	&.locked #macro-list {
@@ -246,9 +235,12 @@ li.folder > .folder-header .create-button {
 	color: var(--color-primary);
 	box-shadow: 0 0 10px #2b1c02;
 
-	&:not(.sheet, .dialog) a:hover {
+  &#sidebar.collapsed #sidebar-tabs > .item.active {
+		border-bottom: 1px solid var(--color-active-secondary);
+	}
+	
+	&:not(.sheet, .dialog, .window-app) a:hover {
 		color: var(--color-selected);
-		text-shadow: 0 0 8px var(--shadow-selected) !important;
 	}
 
 	&.window-app {
@@ -274,13 +266,17 @@ li.folder > .folder-header .create-button {
 	& #sidebar-tabs {
 		background: var(--gradient-sidebar);
 		border-bottom: 1px solid var(--color-active-secondary);
-		box-shadow: 0 0 10px var(--shadow-highlight);
+		box-shadow: 0 0 10px var(--color-shadow-highlight);
 
-
+		& > .collapse {
+			color: var(--color-primary);
+			&:hover {
+				color: var(--color-selected);
+			}
+		}
 
 		&.tabs .item:not(.active):hover {
 			color: var(--color-selected);
-			text-shadow: 0 0 8px var(--shadow-selected) !important;
 		}
 
 
@@ -302,7 +298,7 @@ li.folder > .folder-header .create-button {
 		&.sidebar-popout .window-content {
 			color: var(--color-primary);
 		}
-		
+
 		&.chat-sidebar {
 			background: var(--image-bg), var(--gradient-sidebar-bg);
 		}
