@@ -3,6 +3,7 @@
   /* Foundry Overrides */
 	--color-shadow-primary: #77ebd7;
 	--color-shadow-highlight: #d8e08f;
+	--color-border-highlight: #f78946cc;
 
 	/* Colors */
 	--color-primary: #ebf7af;
@@ -14,20 +15,24 @@
 	--color-active-primary: #fff79a;
 	--color-active-secondary: #fff79a;
 
-	--border-radius: 10px;
+	--border-radius-large: 20px;
+	--border-radius-medium: 10px;
+	--border-radius-small: 5px;
 	--border-width: 0.1em;
 
 	/* Gradients */
 	--gradient-initial: linear-gradient(180deg, rgba(17, 41, 41, .6) 0%, rgba(73, 164, 153, .6) 100%);
 	--gradient-highlight: linear-gradient(0deg, rgba(220, 211, 116, 1) 0%, rgba(255, 247, 154, 1) 100%);
-	--gradient-active: linear-gradient(0deg, rgba(226, 128, 121, .8) 0%, rgba(241, 163, 114, .8) 100%);
-	--gradient-sidebar: linear-gradient(90deg, rgba(81, 199, 164, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-	--gradient-sidebar-bg: linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
-	--gradient-theatre: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-
+	--gradient-active: linear-gradient(0deg, rgba(226, 128, 121, .8) 0%, rgba(241, 163, 114, 0.8) 100%);
+	--gradient-header-transparent: linear-gradient(90deg, rgba(81, 199, 173, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+	
+	--gradient-bg-transparent: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
+	--gradient-bg-translucent: linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
+	
 	/* Image Paths */
 	--image-accent: url("../assets/images/logo.png");
 	--image-bg: url("../assets/images/pattern_hojita.png");
+	--img: linear-gradient(90deg, rgba(47, 107, 101, 0.5) 0%, rgba(17, 41, 41, 0.5) 100%);
 }
 
 li.folder>.folder-header .create-button {
@@ -55,7 +60,7 @@ li.folder>.folder-header .create-button {
 		border: solid;
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
-		border-radius: var(--border-radius);
+		border-radius: var(--border-radius-medium);
 		background: var(--gradient-initial);
 	}
 
@@ -74,7 +79,7 @@ li.folder>.folder-header .create-button {
 		border: solid;
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
-		border-radius: var(--border-radius);
+		border-radius: var(--border-radius-medium);
 		background: var(--gradient-initial);
 	}
 
@@ -97,7 +102,7 @@ li.folder>.folder-header .create-button {
 	border: solid;
 	border-width: var(--border-width);
 	border-color: var(--color-secondary);
-	border-radius: var(--border-radius);
+	border-radius: var(--border-radius-medium);
 	background: var(--gradient-initial);
 	backdrop-filter: blur(5px);
 
@@ -115,11 +120,11 @@ li.folder>.folder-header .create-button {
 			text-shadow: none;
 
 			&:first-child {
-				border-radius: var(--border-radius) var(--border-radius) 0 0;
+				border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
 			}
 
 			&:last-child {
-				border-radius: 0 0 var(--border-radius) var(--border-radius);
+				border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
 			}
 		}
 	}
@@ -133,7 +138,7 @@ li.folder>.folder-header .create-button {
 		border: solid;
 		border-width: 0.01em;
 		border-color: var(--color-secondary);
-		border-radius: var(--border-radius);
+		border-radius: var(--border-radius-medium);
 		background: var(--gradient-initial);
 		box-shadow: none;
 
@@ -143,7 +148,7 @@ li.folder>.folder-header .create-button {
 			border: solid;
 			border-width: 0.01em;
 			border-color: var(--color-secondary);
-			border-radius: var(--border-radius);
+			border-radius: var(--border-radius-medium);
 			background: var(--gradient-initial);
 			box-shadow: none;
 		}
@@ -193,7 +198,7 @@ li.folder>.folder-header .create-button {
 	border: solid;
 	border-width: var(--border-width);
 	border-color: var(--color-secondary);
-	border-radius: var(--border-radius);
+	border-radius: var(--border-radius-medium);
 	background: var(--gradient-initial);
 	box-shadow: none;
 }
@@ -208,7 +213,7 @@ li.folder>.folder-header .create-button {
 		border: solid;
 		border-width: var(--border-width);
 		border-color: var(--color-secondary);
-		border-radius: 5px;
+		border-radius: var(--border-radius-small);
 		background: var(--gradient-initial);
 	}
 
@@ -244,27 +249,34 @@ li.folder>.folder-header .create-button {
 	}
 
 	&.window-app {
-		overflow: hidden;
 
-		&.sheet:is(.actor, .item):not(.minimized) {
-			overflow: visible;
+		&:not(.minimized) {
 
-			& .window-header::after {
-				position: absolute;
-				content: var(--image-accent);
-				transform: scale(1) translate(-10%, -12%);
-				opacity: 80%;
-				pointer-events: none;
+			&.sheet.backgroundstyle .window-header::after {
+					position: absolute;
+					content: var(--image-accent);
+					transform: scale(1) translate(-10%, -12%);
+					opacity: 80%;
+					pointer-events: none;
 			}
+			& .window-header {
+				padding: 2px 8px;
+				border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+			}
+	
+			& .window-content {
+				border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+			}
+		}
+
+		&.minimized .window-header {
+			padding: 2px 8px;
+			border-radius: var(--border-radius-small);
 		}
 	}
 
-	& .window-header {
-		padding: 2px 8px;
-	}
-
 	& #sidebar-tabs {
-		background: var(--gradient-sidebar);
+		background: var(--gradient-header-transparent);
 		border-bottom: 1px solid var(--color-active-secondary);
 		box-shadow: 0 0 10px var(--color-shadow-highlight);
 
@@ -291,30 +303,30 @@ li.folder>.folder-header .create-button {
 	}
 
 	& .sidebar-tab {
-		background: var(--gradient-sidebar-bg);
+		background: var(--gradient-bg-translucent);
 
 		&.sidebar-popout .window-content {
 			color: var(--color-primary);
 		}
 
 		&.chat-sidebar {
-			background: var(--image-bg), var(--gradient-sidebar-bg);
+			background: var(--image-bg), var(--gradient-bg-translucent);
 		}
 	}
 }
 
 .theatre-bar-left {
-	background: var(--gradient-theatre);
+	background: var(--gradient-bg-transparent);
 	border: solid;
 	border-width: 0.2em;
 	border-color: var(--color-secondary);
-	border-radius: 20px;
+	border-radius: var(--border-radius-large);
 }
 
 .theatre-text-box {
 	color: var(--color-secondary);
-	background: var(--image-bg), var(--gradient-sidebar-bg);
-	border-radius: 20px;
+	background: var(--image-bg), var(--gradient-bg-translucent);
+	border-radius: var(--border-radius-large);
 	border: none;
 	top: -10px;
 	height: 156px;
