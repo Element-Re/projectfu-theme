@@ -244,12 +244,12 @@ li.folder>.folder-header .create-button {
 		border-bottom: 1px solid var(--color-active-secondary);
 	}
 	
-	&:not(.window-content) a:hover {
+	& a:hover {
 		color: var(--color-selected);
 	}
-
+	
 	&.window-app {
-
+		
 		&:not(.minimized) {
 
 			&.sheet.backgroundstyle .window-header::after {
@@ -272,6 +272,12 @@ li.folder>.folder-header .create-button {
 		&.minimized .window-header {
 			padding: 2px 8px;
 			border-radius: var(--border-radius-small);
+		}
+
+		& .window-content {
+			& a:hover {
+				color: inherit;
+			}
 		}
 	}
 

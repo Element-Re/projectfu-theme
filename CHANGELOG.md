@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.9]
+- Fix for mouse over on links and buttons changing the text colors where it shouldn't, like in the content of window apps.
+
 ## [1.0.8]
 - Resolved issue with hiding overflow content in window apps like Forien's Quest Log.
 - Style Tweak: Fixed inconsistent rounded corners in window apps in the base Project FU Theme. Now all window apps should properly have rounded corners.
