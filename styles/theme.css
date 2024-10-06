@@ -179,7 +179,6 @@ li.folder>.folder-header .create-button {
 		border-color: var(--color-highlight-secondary);
 		box-shadow: 0 0 5px var(--color-shadow-highlight);
 		background: var(--gradient-highlight);
-
 	}
 }
 
@@ -205,6 +204,10 @@ li.folder>.folder-header .create-button {
 
 #hotbar {
 	box-shadow: none;
+
+	& a:hover {
+		color: var(--color-selected);
+	}
 
 	& .bar-controls,
 	& .macro {

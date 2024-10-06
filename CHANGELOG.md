@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.10]
+- Style Tweak: Added missing hover highlight color on non-macro buttons in the Hotbar UI (Lock Hotbar, Browse Macro Directory).
+
 ## [1.0.9]
 - Fix for mouse over on links and buttons changing the text colors where it shouldn't, like in the content of window apps.
 
