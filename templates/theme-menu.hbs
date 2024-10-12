@@ -4,34 +4,34 @@
     <label for="theme">{{localize "projectfu-theme.settings.theme.label"}}</label>
     <div class="form-fields">
       <select type="text" name="theme">
-        <option value=""></option>
+        <option value="">{{localize "projectfu-theme.themes.custom.label"}}</option>
         {{#each themes}}
           <option value="{{@key}}">{{localize (concat "projectfu-theme.themes." @key ".label")}}</option>
         {{/each}}
       </select>
     </div>
-    <p class="notes">{{localize "projectfu-theme.settings.theme.hint"}}</p>
   </div>
   <hr>
   
-  {{#each settings.colors}}
-
+  {{#each settings}}
+  
   <div class="form-group">
-    <label for="colors.{{this}}">{{localize (concat "projectfu-theme.color-" this ".name")}}</label>
+    <label for="{{@key}}">{{localize label}}</label>
     <div class="form-fields">
-      <input type="text" name="colors.{{this}}" data-color-picker="{alphaChannel: true}" value="{{lookup ../current.colors this}}">
+      <input type="text" name="{{@key}}" {{#if (eq this.type "color")}}data-color-picker="{alphaChannel: true, format: 'hexa'}"{{/if}} value="{{lookup ../current @key}}">
+      {{#if (eq this.type "image")}}{{filePicker target=@key type="image"}}{{/if}}
     </div>
-    <p class="notes">{{localize (concat "projectfu-theme.color-" this ".hint")}}</p>
+    <p class="notes">{{localize hint}}</p>
   </div>
-
+  
   {{/each}}
 
   <div class="form-group buttons">
-    <button type="submit" name="submit" data-tooltip="{{localize "projectfu-theme.settings.save.hint"}}">
-      <i class="fas fa-floppy-disk"></i>{{localize "projectfu-theme.settings.save.label"}}
+    <button type="submit" name="submit">
+      <i class="fas fa-floppy-disk"></i>{{localize "projectfu-theme.settings.themeMenu.save.label"}}
     </button>
-    <button type="reset" name="reset" data-tooltip="{{localize "projectfu-theme.settings.reset.hint"}}">
-      <i class="fas fa-undo"></i>{{localize "projectfu-theme.settings.reset.label"}}
+    <button type="reset" name="reset">
+      <i class="fas fa-undo"></i>{{localize "projectfu-theme.settings.themeMenu.reset.label"}}
     </button>
   </div>
 </form>

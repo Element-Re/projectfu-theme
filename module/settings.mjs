@@ -1,3 +1,4 @@
+import { deepFreeze } from './helpers.mjs';
 import { TEMPLATES } from './templates.mjs';
 import { setTheme } from './theme.mjs';
 
@@ -22,35 +23,273 @@ export function registerSettings() {
     });
     
 }
-const THEMES = Object.freeze({
-  default: Object.freeze({
-    colors: Object.freeze({
-      /* Foundry Overrides */
-      'shadow-primary': '#77ebd7ff',
-      'shadow-highlight': '#d8e08fff',
-      'border-highlight': '#f78946cc',
+const THEMES = deepFreeze({
+  default: {
+    /* Controls - Default */
+    'color-control-content': '#ebf7afff',
+    'color-control-border': '#148782ff',
+    'color-control-focus-content': '#ffffffff',
+    'color-control-inactive-content': '#ebf7af80',
+    'color-control-fill-1': '#11292999',
+    'color-control-fill-2': '#49a49999',
 
-      /* Colors */
-      'primary': '#ebf7afff',
-      'primary-inactive': '#ebf7af80',
-      'secondary': '#148782ff',
-      'selected': '#ffffffff',
-      'highlight-primary': '#047470ff',
-      'highlight-secondary': '#047470ff',
-      'active-primary': '#fff79aff',
-      'active-secondary': '#fff79aff',
-    })
-  })
+    /* Controls - Highlight */
+    'color-control-highlight-content': '#047470ff',
+    'color-control-highlight-border': '#047470ff',
+    'color-control-highlight-fill-1': '#dcd374ff',
+    'color-control-highlight-fill-2': '#fff79aff',
+
+    /* Controls - Active */
+    'color-control-active-content': '#fff79aff',
+    'color-control-active-border': '#fff79aff',
+    'color-control-active-fill-1': '#e28079cc',
+    'color-control-active-fill-2': '#f1a372cc',
+    
+    /* Apps - Default */
+    'color-app-border': '#148782ff',
+    
+    /* Apps - Header */
+    'color-app-header-content': '#ebf7afff',
+    'color-app-header-focus-content': '#ffffffff',
+    'color-app-header-fill-1': '#51c7ad4d',
+    'color-app-header-fill-2': '#044a2c4d',
+    
+    /* Apps - Body */
+    'color-app-body-content': '#ebf7afff',
+    'color-app-body-focus-content': '#ffffffff',
+    'color-app-body-primary-fill-1': '#11292980',
+    'color-app-body-primary-fill-2': '#49a49980',
+    'color-app-body-secondary-fill-1': '#044a2c4d',
+    'color-app-body-secondary-fill-2': '#044a2c4d',
+    // TODO: When background-style is updated for theme.
+    // 'color-app-scrollbar': '#ebf7afff',
+    // 'color-app-scrollbar-track': '#00000080',
+    // 'color-app-scrollbar-border': '#00000000',
+    'app-accent-image': `/modules/${MODULE}/assets/images/logo.png`,
+	  'app-bg-image': `/modules/${MODULE}/assets/images/pattern_hojita.png`,
+    
+    /* Misc */
+    'color-misc-shadow-primary': '#77ebd7ff',
+    'color-misc-shadow-highlight': '#d8e08fff',
+    'color-misc-border-highlight': '#f78946cc',
+    'color-misc-scrollbar': '#5d142bff',
+    'color-misc-scrollbar-track': '#00000000',
+    // TODO: This doesn't seem to do anything, but it's in the base foundry styles.
+    // 'color-misc-scrollbar-border': '#8d151bff',
+    'border-radius-large': '20px',
+    'border-radius-medium': '10px',
+    'border-radius-small': '5px',
+    'border-width': '0.1em',
+    'ui-accent-image': `/modules/${MODULE}/assets/images/logo.png`,
+    'ui-accent-width': '500px',
+    'ui-accent-height': '500px',
+    'ui-accent-position-top': '-24px',
+    'ui-accent-position-left': '1px',
+    'ui-accent-clip-path': 'inset(0 370px 402px 0)',
+  }
 });
 
-const SETTINGS = Object.freeze({
-  // Base settings off what's in the default theme.
-  // TODO: Is there a better way to do this?
-  // This approach does at least make sure we don't repeat ourselves.
-  colors: Object.freeze(Object.keys(THEMES.default.colors))
+export const SETTINGS = deepFreeze({
+    /* Controls - Default */
+    'color-control-content': {
+      label: 'projectfu-theme.color-control-content.label',
+      type: 'color'
+    },
+    'color-control-focus-content': {
+      label: 'projectfu-theme.color-control-focus-content.label',
+      type: 'color'
+    },
+    'color-control-inactive-content': {
+      label: 'projectfu-theme.color-control-inactive-content.label',
+      type: 'color'
+    },
+    'color-control-border': {
+      label: 'projectfu-theme.color-control-border.label',
+      type: 'color'
+    },
+    'color-control-fill-1': {
+      label: 'projectfu-theme.color-control-fill-1.label',
+      type: 'color'
+    },
+    'color-control-fill-2': {
+      label: 'projectfu-theme.color-control-fill-2.label',
+      type: 'color'
+    },
+
+    /* Controls - Highlight */
+    'color-control-highlight-content': {
+      label: 'projectfu-theme.color-control-highlight-content.label',
+      type: 'color'
+    },
+    'color-control-highlight-border': {
+      label: 'projectfu-theme.color-control-highlight-border.label',
+      type: 'color'
+    },
+    'color-control-highlight-fill-1': {
+      label: 'projectfu-theme.color-control-highlight-fill-1.label',
+      type: 'color'
+    },
+    'color-control-highlight-fill-2': {
+      label: 'projectfu-theme.color-control-highlight-fill-2.label',
+      type: 'color'
+    },
+
+    /* Controls - Active */
+    'color-control-active-content': {
+      label: 'projectfu-theme.color-control-active-content.label',
+      type: 'color'
+    },
+    'color-control-active-border': {
+      label: 'projectfu-theme.color-control-active-border.label',
+      type: 'color'
+    },
+    'color-control-active-fill-1': {
+      label: 'projectfu-theme.color-control-active-fill-1.label',
+      type: 'color'
+    },
+    'color-control-active-fill-2': {
+      label: 'projectfu-theme.color-control-active-fill-2.label',
+      type: 'color'
+    },
+    
+    /* Apps - Default */
+    'color-app-border': {
+      label: 'projectfu-theme.color-app-border.label',
+      type: 'color'
+    },
+    
+    /* Apps - Header */
+    'color-app-header-content': {
+      label: 'projectfu-theme.color-app-header-content.label',
+      type: 'color'
+    },
+    'color-app-header-focus-content': {
+      label: 'projectfu-theme.color-app-header-focus-content.label',
+      type: 'color'
+    },
+    'color-app-header-fill-1': {
+      label: 'projectfu-theme.color-app-header-fill-1.label',
+      type: 'color'
+    },
+    'color-app-header-fill-2': {
+      label: 'projectfu-theme.color-app-header-fill-2.label',
+      type: 'color'
+    },
+    
+    /* Apps - Body */
+    'color-app-body-content': {
+      label: 'projectfu-theme.color-app-body-content.label',
+      type: 'color'
+    },
+    'color-app-body-focus-content': {
+      label: 'projectfu-theme.color-app-body-focus-content.label',
+      type: 'color'
+    },
+    'color-app-body-primary-fill-1': {
+      label: 'projectfu-theme.color-app-body-primary-fill-1.label',
+      type: 'color'
+    },
+    'color-app-body-primary-fill-2': {
+      label: 'projectfu-theme.color-app-body-primary-fill-2.label',
+      type: 'color'
+    },
+    'color-app-body-secondary-fill-1': {
+      label: 'projectfu-theme.color-app-body-secondary-fill-1.label',
+      type: 'color'
+    },
+    'color-app-body-secondary-fill-2': {
+      label: 'projectfu-theme.color-app-body-secondary-fill-2.label',
+      type: 'color'
+    },
+    // TODO: When backgroundstyle is updated for theme.
+    // 'color-app-scrollbar': {
+      //   label: 'projectfu-theme.color-app-scrollbar.label',
+      //   type: 'color'
+      // },
+      // 'color-app-scrollbar-track': {
+    //   label: 'projectfu-theme.color-app-scrollbar-track.label',
+    //   type: 'color'
+    // },
+    // 'color-app-scrollbar-border': {
+    //   label: 'projectfu-theme.color-app-scrollbar-border.label',
+    //   type: 'color'
+    // },
+    'app-accent-image': {
+      label: 'projectfu-theme.app-accent-image.label',
+      type: 'image'
+    },
+    'app-bg-image': {
+      label: 'projectfu-theme.app-bg-image.label',
+      type: 'image'
+    },
+
+    /* Misc */
+    'color-misc-shadow-primary': {
+      label: 'projectfu-theme.color-misc-shadow-primary.label',
+      type: 'color'
+    },
+    'color-misc-shadow-highlight': {
+      label: 'projectfu-theme.color-misc-shadow-highlight.label',
+      type: 'color'
+    },
+    'color-misc-border-highlight': {
+      label: 'projectfu-theme.color-misc-border-highlight.label',
+      type: 'color'
+    },
+    'color-misc-scrollbar': {
+      label: 'projectfu-theme.color-misc-scrollbar.label',
+      type: 'color'
+    },
+    'color-misc-scrollbar-track': {
+      label: 'projectfu-theme.color-misc-scrollbar-track.label',
+      type: 'color'
+    },
+    // TODO: This doesn't seem to do anything, but it's in the base foundry styles.
+    // 'color-misc-scrollbar-border': {
+    //   label: 'projectfu-theme.color-misc-scrollbar-border.label',
+    //   type: 'color'
+    // },
+    'border-radius-large': {
+      label: 'projectfu-theme.border-radius-large.label',
+      type: 'string'
+    },
+    'border-radius-medium': {
+      label: 'projectfu-theme.border-radius-medium.label',
+      type: 'string'
+    },
+    'border-radius-small': {
+      label: 'projectfu-theme.border-radius-small.label',
+      type: 'string'
+    },
+    'border-width': {
+      label: 'projectfu-theme.border-width.label',
+      type: 'string'
+    },
+    'ui-accent-image': {
+      label: 'projectfu-theme.ui-accent-image.label',
+      type: 'image'
+    },
+    'ui-accent-width': {
+      label: 'projectfu-theme.ui-accent-width.label',
+      type: 'string'
+    },
+    'ui-accent-height': {
+      label: 'projectfu-theme.ui-accent-height.label',
+      type: 'string'
+    },
+    'ui-accent-position-top': {
+      label: 'projectfu-theme.ui-accent-position-top.label',
+      type: 'string'
+    },
+    'ui-accent-position-left': {
+      label: 'projectfu-theme.ui-accent-position-left.label',
+      type: 'string'
+    },
+    'ui-accent-clip-path': {
+      label: 'projectfu-theme.ui-accent-clip-path.label',
+      type: 'string'
+    },
 });
-
-
 
 class ThemeMenu extends FormApplication {
 
@@ -79,7 +318,7 @@ class ThemeMenu extends FormApplication {
   }
 
   activateListeners(form) {
-    
+    super.activateListeners(form);
     // Enable color pickers.
     form.each((i, element) => ColorPicker.install(element));
     // Reset color pickers on form reset.
@@ -97,12 +336,13 @@ class ThemeMenu extends FormApplication {
       if (value) {
         const theme = THEMES[value];
         if (theme) {
-          Object.keys(theme.colors).forEach(colorKey => {
-            const colorEntry = theme.colors[colorKey];
-            const input = form.find(`input[name="colors.${colorKey}"]`);
-            input.val(colorEntry).each((i, colorElement) => {
-              // Update color picker for this input.
-              colorElement.jscolor.processValueInput(colorEntry);
+          console.log(theme);
+          Object.keys(theme).forEach(themeKey => {
+            const themeEntry = theme[themeKey];
+            const input = form.find(`input[name="${themeKey}"]`);
+            input.val(themeEntry).each((i, inputElement) => {
+              // Update color picker for this input, if enabled.
+              inputElement.jscolor?.processValueInput(themeEntry);
             })
           })
         }

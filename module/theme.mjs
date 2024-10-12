@@ -1,4 +1,5 @@
-import { MODULE } from './settings.mjs';
+import { ruleMatcher } from './helpers.mjs';
+import { MODULE, SETTINGS } from './settings.mjs';
 
 export async function setTheme(theme) {
   const $head = $('head');
@@ -8,12 +9,22 @@ export async function setTheme(theme) {
     $head.append($style);
   }
 
-  const styleContent = Object.keys(theme.colors).map(colorKey => {
-      const colorValue = theme.colors[colorKey];
-      return `--color-${colorKey}: ${colorValue};`
-  }).join('\n');
+  const styleContent = Object.keys(theme).map(themeKey => {
+    let themeValue = theme[themeKey];
+    if (!themeValue) return;
+    const themeType = SETTINGS[themeKey]?.type;
+    if (themeType === 'image') themeValue = `url("${themeValue}")`
+    const rule = `--pfu-${themeKey}: ${themeValue};`;
+    if (!rule.match(ruleMatcher)) {
+      console.error(`${MODULE} | Invalid rule: '${rule}'`);
+      return;
+    }
+    return rule;
+  }).filter(style => style).join('\n\t');
 
   $style.html(`:root {
     ${styleContent}
   }`);
+  
+  $('#ui-left:not(:has(#ui-accent))').prepend('<div id="ui-accent"></div>')
 }

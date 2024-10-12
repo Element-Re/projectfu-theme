@@ -1,33 +1,90 @@
 :root {
+		
+	/* Controls */
+	--pfu-color-control-content: #ebf7afff;
+	--pfu-color-control-border: #148782ff;
+	--pfu-color-control-focus-content: #ffffffff;
+	--pfu-color-control-inactive-content: #ebf7af80;
+	--pfu-color-control-fill-1: #11292999;
+	--pfu-color-control-fill-2: #49a49999;
+	--pfu-color-control-fill: linear-gradient(180deg, var(--pfu-color-control-fill-1) 0%, var(--pfu-color-control-fill-2) 100%);
 	
-	--border-radius-large: 20px;
-	--border-radius-medium: 10px;
-	--border-radius-small: 5px;
-	--border-width: 0.1em;
+	--pfu-color-control-highlight-content: #047470ff;
+	--pfu-color-control-highlight-border: #047470ff;
+	--pfu-color-control-highlight-fill-1: #dcd374ff;
+	--pfu-color-control-highlight-fill-2: #fff79aff;
+	--pfu-color-control-highlight-fill: linear-gradient(0deg, var(--pfu-color-control-highlight-fill-1) 0%, var(--pfu-color-control-highlight-fill-2) 100%);
+	
+	--pfu-color-control-active-content: #fff79aff;
+	--pfu-color-control-active-border: #fff79aff;
+	--pfu-color-control-active-fill-1: #e28079cc;
+	--pfu-color-control-active-fill-2: #f1a372cc;
+	--pfu-color-control-active-fill: linear-gradient(0deg, var(--pfu-color-control-active-fill-1) 0%, var(--pfu-color-control-active-fill-2) 100%);
+	
+	/* Applications */
+	--pfu-color-app-header-content: #ebf7afff;
+	--pfu-color-app-header-focus-content: #ffffffff;
+	--pfu-color-app-header-fill-1: #51c7ad4d;
+	--pfu-color-app-header-fill-2: #044a2c4d;
+	--pfu-color-app-header-fill: linear-gradient(90deg, var(--pfu-color-app-header-fill-1) 0%, var(--pfu-color-app-header-fill-2) 100%);
+	
+	--pfu-color-app-body-content: #ebf7afff;
+	--pfu-color-app-body-focus-content: #ffffffff;
+	--pfu-color-app-border: #148782ff;
+	--pfu-color-app-body-primary-fill-1: #11292980;
+	--pfu-color-app-body-primary-fill-2: #49a49980;
+	--pfu-color-app-body-primary-fill: linear-gradient(270deg, var(--pfu-color-app-body-primary-fill-1) 0%, var(--pfu-color-app-body-primary-fill-2) 100%);
+	--pfu-color-app-body-secondary-fill-1: #044a2c4d;
+	--pfu-color-app-body-secondary-fill-2: #044a2c4d;
+	--pfu-color-app-body-secondary-fill: linear-gradient(0deg, var(--pfu-color-app-body-secondary-fill-1) 0%, var(--pfu-color-app-body-secondary-fill-2) 100%);
+	--pfu-color-app-scrollbar: #ebf7afff;
+	--pfu-color-app-scrollbar-track: #00000080;
+	
+	/* Misc */
+	--pfu-color-misc-shadow-primary: #77ebd7ff;
+	--pfu-color-misc-shadow-highlight: #d8e08fff;
+	--pfu-color-misc-border-highlight: #f78946cc;
+	--pfu-color-misc-scrollbar: #5d142bff;
+	--pfu-color-misc-scrollbar-track: #00000000;
+	--pfu-color-misc-scrollbar-border: #8d151bff;
+	
+	/* Foundry Overrides */
+	--color-shadow-primary: var(--pfu-color-misc-shadow-primary);
+	--color-shadow-highlight: var(--pfu-color-misc-shadow-highlight);
+	--color-border-highlight: var(--pfu-color-misc-border-highlight);
 	
 
-	/* Gradients */
-	--gradient-initial: linear-gradient(180deg, rgba(17, 41, 41, .6) 0%, rgba(73, 164, 153, .6) 100%);
-	--gradient-highlight: linear-gradient(0deg, rgba(220, 211, 116, 1) 0%, rgba(255, 247, 154, 1) 100%);
-	--gradient-active: linear-gradient(0deg, rgba(226, 128, 121, .8) 0%, rgba(241, 163, 114, 0.8) 100%);
-	--gradient-header-transparent: linear-gradient(90deg, rgba(81, 199, 173, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-	
-	--gradient-bg-transparent: linear-gradient(0deg, rgba(4, 74, 44, 0.3) 0%, rgba(4, 74, 44, 0.3) 100%);
-	--gradient-bg-translucent: linear-gradient(270deg, rgba(17, 41, 41, 0.5) 0%, rgba(73, 164, 153, 0.5) 100%);
-	
-	/* Image Paths */
-	--image-accent: url("../assets/images/logo.png");
-	--image-bg: url("../assets/images/pattern_hojita.png");
-	--img: linear-gradient(90deg, rgba(47, 107, 101, 0.5) 0%, rgba(17, 41, 41, 0.5) 100%);
+	/* Spacing and Sizing */
+	--pfu-border-radius-large: 20px;
+	--pfu-border-radius-medium: 10px;
+	--pfu-border-radius-small: 5px;
+	--pfu-border-width: 0.1em;
+	--pfu-ui-accent-width: 500px;
+	--pfu-ui-accent-height: 500px;
+	--pfu-ui-accent-position-top: -24px;
+	--pfu-ui-accent-position-left: 1px;
+	--pfu-ui-accent-clip-path: inset(0 370px 402px 0);
+		
+	/* Assets */
+	--pfu-ui-accent-image: url("../assets/images/logo.png");
+	--pfu-app-accent-image: url("../assets/images/logo.png");
+	--pfu-app-bg-image: url("../assets/images/pattern_hojita.png");
+}
+
+body {
+	/* Foundry Overrides */
+	--color-scrollbar: var(--pfu-color-misc-scrollbar);
+	--color-scrollbar-track: var(--pfu-color-misc-scrollbar-track);
+	--color-scrollbar-border: var(--pfu-color-misc-scrollbar-border);
 }
 
 li.folder>.folder-header .create-button {
 	&:hover {
-		color: var(--color-selected);
-		text-shadow: 0 0 8px var(--color-shadow-primary) !important;
+		color: var(--pfu-color-control-focus-content);
+		text-shadow: 0 0 8px var(--pfu-color-misc-shadow-primary) !important;
 
 		& .fa-plus {
-			color: var(--color-shadow-primary);
+			color: var(--pfu-color-misc-shadow-primary);
 		}
 	}
 }
@@ -41,76 +98,76 @@ li.folder>.folder-header .create-button {
 
 	& #nav-toggle,
 	& #scene-list .scene.gm {
-		color: var(--color-primary);
+		color: var(--pfu-color-control-content);
 		text-shadow: none;
 		border: solid;
-		border-width: var(--border-width);
-		border-color: var(--color-secondary);
-		border-radius: var(--border-radius-medium);
-		background: var(--gradient-initial);
+		border-width: var(--pfu-border-width);
+		border-color: var(--pfu-color-control-border);
+		border-radius: var(--pfu-border-radius-medium);
+		background: var(--pfu-color-control-fill);
 	}
 
 	& #nav-toggle:hover,
 	& #scene-list .scene:hover,
 	& #scene-list .scene.context {
-		color: var(--color-highlight-primary);
-		border-color: var(--color-highlight-secondary);
-		background: var(--gradient-highlight);
-		box-shadow: 0 0 5px var(--color-shadow-highlight);
+		color: var(--pfu-color-control-highlight-content);
+		border-color: var(--pfu-color-control-highlight-border);
+		background: var(--pfu-color-control-highlight-fill);
+		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
 	}
 
 	& #scene-list .scene {
-		color: var(--color-primary);
+		color: var(--pfu-color-control-content);
 		text-shadow: none;
 		border: solid;
-		border-width: var(--border-width);
-		border-color: var(--color-secondary);
-		border-radius: var(--border-radius-medium);
-		background: var(--gradient-initial);
+		border-width: var(--pfu-border-width);
+		border-color: var(--pfu-color-control-border);
+		border-radius: var(--pfu-border-radius-medium);
+		background: var(--pfu-color-control-fill);
 	}
 
 	& #scene-list .scene.view.active,
 	& #scene-list .scene.view.gm {
 
-		border-color: var(--color-active-secondary);
-		background: var(--gradient-active);
-		box-shadow: 0 0 5px var(--color-shadow-highlight);
+		border-color: var(--pfu-color-control-active-border);
+		background: var(--pfu-color-control-active-fill);
+		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
 
 		& a {
-			color: var(--color-selected);
+			color: var(--pfu-color-control-focus-content);
 			text-shadow: none;
 		}
 	}
 }
 
 & #context-menu {
-	color: var(--color-primary);
+	color: var(--pfu-color-control-content);
 	border: solid;
-	border-width: var(--border-width);
-	border-color: var(--color-secondary);
-	border-radius: var(--border-radius-medium);
-	background: var(--gradient-initial);
+	border-width: var(--pfu-border-width);
+	border-color: var(--pfu-color-control-border);
+	border-radius: var(--pfu-border-radius-medium);
+	background: var(--pfu-color-control-fill);
 	backdrop-filter: blur(5px);
 
 	& li.context-item {
 
 		border: solid;
-		border-width: var(--border-width);
+		border-width: var(--pfu-border-width);
 		border-color: transparent;
 
 		&:hover {
-			color: var(--color-selected);
-			border-color: var(--color-active-secondary);
-			background: var(--gradient-active);
-			box-shadow: 0 0 5px var(--color-shadow-highlight);
+			color: var(--pfu-color-control-focus-content);
+			border-color: var(--pfu-color-control-active-border);
+			background: var(--pfu-color-control-active-fill);
+			box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
 			text-shadow: none;
 
 			&:first-child {
-				border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
+				border-radius: var(--pfu-border-radius-medium) var(--pfu-border-radius-medium) 0 0;
 			}
 
 			&:last-child {
-				border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
+				border-radius: 0 0 var(--pfu-border-radius-medium) var(--pfu-border-radius-medium);
 			}
 		}
 	}
@@ -119,41 +176,41 @@ li.folder>.folder-header .create-button {
 #controls {
 
 	& ol.control-tools>li {
-		color: var(--color-primary);
+		color: var(--pfu-color-control-content);
 		text-shadow: none;
 		border: solid;
 		border-width: 0.01em;
-		border-color: var(--color-secondary);
-		border-radius: var(--border-radius-medium);
-		background: var(--gradient-initial);
+		border-color: var(--pfu-color-control-border);
+		border-radius: var(--pfu-border-radius-medium);
+		background: var(--pfu-color-control-fill);
 		box-shadow: none;
 
 		&.toggle {
-			color: var(--color-primary-inactive);
+			color: var(--pfu-color-control-inactive-content);
 			text-shadow: none;
 			border: solid;
 			border-width: 0.01em;
-			border-color: var(--color-secondary);
-			border-radius: var(--border-radius-medium);
-			background: var(--gradient-initial);
+			border-color: var(--pfu-color-control-border);
+			border-radius: var(--pfu-border-radius-medium);
+			background: var(--pfu-color-control-fill);
 			box-shadow: none;
 		}
 	}
 
 	& ol.control-tools>li.active {
-		color: var(--color-active-primary);
-		border-color: var(--color-active-secondary);
-		box-shadow: 0 0 5px var(--color-shadow-highlight);
-		background: var(--gradient-active);
+		color: var(--pfu-color-control-active-content);
+		border-color: var(--pfu-color-control-active-border);
+		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+		background: var(--pfu-color-control-active-fill);
 
 		&.toggle {
-			color: var(--color-active-primary);
-			border-color: var(--color-active-secondary);
-			box-shadow: 0 0 5px var(--color-shadow-highlight);
-			background: var(--gradient-active);
+			color: var(--pfu-color-control-active-content);
+			border-color: var(--pfu-color-control-active-border);
+			box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+			background: var(--pfu-color-control-active-fill);
 			
 			:hover {
-				color: var(--color-selected);
+				color: var(--pfu-color-control-focus-content);
 				text-shadow: 0 0 8px var(--shadow-selected);
 			}
 		}
@@ -161,30 +218,44 @@ li.folder>.folder-header .create-button {
 
 	& ol.control-tools>li:not(.active):hover,
 	& ol.control-tools>li:not(.active).toggle:hover {
-		color: var(--color-highlight-primary);
-		border-color: var(--color-highlight-secondary);
-		box-shadow: 0 0 5px var(--color-shadow-highlight);
-		background: var(--gradient-highlight);
+		color: var(--pfu-color-control-highlight-content);
+		border-color: var(--pfu-color-control-highlight-border);
+		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+		background: var(--pfu-color-control-highlight-fill);
 	}
 }
 
 #logo {
+	visibility: hidden;
+	/*
 	clip-path: inset(0 74px 39.3px 0);
 	z-index: -10;
-	content: var(--image-accent);
+	content: var(--pfu-image-accent);
 	margin: 20px 0 12px 10px;
 	transform: scale(5, 10) translate(38px, 18px);
+	pointer-events: none;
+	*/
+}
+#ui-accent {
+	position: absolute;
+	clip-path: var(--pfu-ui-accent-clip-path);
+	top: var(--pfu-ui-accent-position-top);
+	left: var(--pfu-ui-accent-position-left);
+	width: var(--pfu-ui-accent-width);
+	height: var(--pfu-ui-accent-height);
+	content: var(--pfu-ui-accent-image);
+	z-index: -10;
 	pointer-events: none;
 }
 
 #players {
-	color: var(--color-primary);
+	color: var(--pfu-color-control-content);
 	text-shadow: none;
 	border: solid;
-	border-width: var(--border-width);
-	border-color: var(--color-secondary);
-	border-radius: var(--border-radius-medium);
-	background: var(--gradient-initial);
+	border-width: var(--pfu-border-width);
+	border-color: var(--pfu-color-control-border);
+	border-radius: var(--pfu-border-radius-medium);
+	background: var(--pfu-color-control-fill);
 	box-shadow: none;
 }
 
@@ -192,136 +263,168 @@ li.folder>.folder-header .create-button {
 	box-shadow: none;
 
 	& a:hover {
-		color: var(--color-selected);
+		color: var(--pfu-color-control-focus-content);
 	}
 
 	& .bar-controls,
 	& .macro {
-		color: var(--color-primary);
+		color: var(--pfu-color-control-content);
 		text-shadow: none;
 		border: solid;
-		border-width: var(--border-width);
-		border-color: var(--color-secondary);
-		border-radius: var(--border-radius-small);
-		background: var(--gradient-initial);
+		border-width: var(--pfu-border-width);
+		border-color: var(--pfu-color-control-border);
+		border-radius: var(--pfu-border-radius-small);
+		background: var(--pfu-color-control-fill);
 	}
 
 	& .macro:hover {
-		color: var(--color-highlight-primary);
-		border-color: var(--color-highlight-secondary);
-		box-shadow: 0 0 5px inset var(--color-shadow-highlight);
+		color: var(--pfu-color-control-highlight-content);
+		border-color: var(--pfu-color-control-highlight-border);
+		box-shadow: 0 0 5px inset var(--pfu-color-misc-shadow-highlight);
 	}
 
 	& .bar-controls:hover,
 	& .macro.active:hover {
-		color: var(--color-active-primary);
-		border-color: var(--color-active-secondary);
-		background: var(--gradient-active);
-		box-shadow: 0 0 5px var(--color-shadow-highlight);
+		color: var(--pfu-color-control-active-content);
+		border-color: var(--pfu-color-control-active-border);
+		background: var(--pfu-color-control-active-fill);
+		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
 	}
 
 	&.locked #macro-list {
-		border-color: var(--color-active-secondary);
+		border-color: var(--pfu-color-control-active-border);
 	}
 }
 
 .app {
-	color: var(--color-primary);
+	color: var(--pfu-color-app-body-content);
 	box-shadow: 0 0 10px #2b1c02;
 
-  &#sidebar.collapsed #sidebar-tabs > .item.active {
-		border-bottom: 1px solid var(--color-active-secondary);
+	&.backgroundstyle {
+		/* Reset to foundry defaults to fix wonky styling on headers due to the background covering it too. */
+		background: url("/ui/denim075.png") repeat;
+		background-blend-mode: unset;
+		background-repeat: unset;
+		background-position: unset;
+		background-color: unset !important;
+		border: 1px solid var(--pfu-color-app-border);
+
 	}
 	
+	
 	& a:not(.tab-style):hover {
-		color: var(--color-selected);
+		color: var(--pfu-color-app-body-focus-content);
 	}
 	
 	&.window-app {
 		
-		&:not(.minimized) {
+		backdrop-filter: blur(5px);
+		
+		& .window-header {
+			color: var(--pfu-color-app-header-content);
+			background: var(--pfu-color-app-header-fill);
+		}
 
+		&:not(.minimized) {
 			&.sheet.backgroundstyle .window-header::after {
 					position: absolute;
-					content: var(--image-accent);
+					content: var(--pfu-app-accent-image);
 					transform: scale(1) translate(-10%, -12%);
 					opacity: 80%;
 					pointer-events: none;
-			}
-			& .window-header {
+				}
+				& .window-header {
 				padding: 2px 8px;
-				border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
+				border-radius: var(--pfu-border-radius-small) var(--pfu-border-radius-small) 0 0;
 			}
 	
 			& .window-content {
-				border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+				border-radius: 0 0 var(--pfu-border-radius-small) var(--pfu-border-radius-small);
 			}
 		}
-
+		
 		&.minimized .window-header {
 			padding: 2px 8px;
-			border-radius: var(--border-radius-small);
+			border-radius: var(--pfu-border-radius-small);
 		}
-
+		
 		& .window-content {
 			& a:not(.tab-style):hover {
 				color: unset;
 			}
 		}
 	}
+	
+	
+	&#sidebar {
+		border: 1px solid var(--pfu-color-app-border);
 
-	& #sidebar-tabs {
-		background: var(--gradient-header-transparent);
-		border-bottom: 1px solid var(--color-active-secondary);
-		box-shadow: 0 0 10px var(--color-shadow-highlight);
+		&:not(.collapsed) #sidebar-tabs {
+			border-bottom: 1px solid var(--pfu-color-app-header-content);
+		}
 
-		& > .collapse {
-			color: var(--color-primary);
-			&:hover {
-				color: var(--color-selected);
+		&.collapsed #sidebar-tabs {
+		
+			&>.item.active {
+				border-bottom: 1px solid var(--pfu-color-control-active-border);
 			}
 		}
 
-		&.tabs .item:not(.active):hover {
-			color: var(--color-selected);
+		& #sidebar-tabs {
+			margin: 0;
+			color: var(--pfu-color-app-header-content);
+			background: var(--pfu-color-app-header-fill);
+			box-shadow: 0 0 10px var(--pfu-color-misc-shadow-highlight);
+	
+			& > .collapse {
+				color: var(--pfu-color-app-header-content);
+				&:hover {
+						color: var(--pfu-color-app-header-focus-content);
+				}
+			}
+	
+			&.tabs .item:not(.active):hover {
+				color: var(--pfu-color-app-header-focus-content);
+			}
+	
+	
+			&.tabs .item.active {
+				color: var(--pfu-color-control-active-content);
+				border-color: var(--pfu-color-control-active-border);
+				background: var(--pfu-color-control-active-fill);
+				box-shadow: none;
+				text-shadow: none !important;
+			}
+	
 		}
-
-
-		&.tabs .item.active {
-			color: var(--color-active-primary);
-			border-color: var(--color-active-secondary);
-			background: var(--gradient-active);
-			box-shadow: none;
-			text-shadow: none !important;
+	
+		& .sidebar-tab {
+			background: var(--pfu-color-app-body-primary-fill);
+			padding-top: 5px;
+	
+			&.sidebar-popout .window-content {
+				color: var(--pfu-color-app-body-content);
+			}
+	
+			&.chat-sidebar {
+				background: var(--pfu-app-bg-image), var(--pfu-color-app-body-primary-fill);
+			}
 		}
-
-	}
-
-	& .sidebar-tab {
-		background: var(--gradient-bg-translucent);
-
-		&.sidebar-popout .window-content {
-			color: var(--color-primary);
-		}
-
-		&.chat-sidebar {
-			background: var(--image-bg), var(--gradient-bg-translucent);
-		}
-	}
+	} 
 }
 
 .theatre-bar-left {
-	background: var(--gradient-bg-transparent);
+	background: var(--pfu-color-app-body-secondary-fill);
 	border: solid;
 	border-width: 0.2em;
-	border-color: var(--color-secondary);
-	border-radius: var(--border-radius-large);
+	border-color: var(--pfu-color-control-border);
+	border-radius: var(--pfu-border-radius-large);
 }
 
 .theatre-text-box {
-	color: var(--color-secondary);
-	background: var(--image-bg), var(--gradient-bg-translucent);
-	border-radius: var(--border-radius-large);
+	color: var(--pfu-color-control-border);
+	background: var(--pfu-app-bg-image), var(--pfu-color-app-body-primary-fill);
+	border-radius: var(--pfu-border-radius-large);
 	border: none;
 	top: -10px;
 	height: 156px;
