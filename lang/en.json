@@ -1,0 +1,9 @@
+{
+
+  "projectfu-theme.settings.themeMenu.name": "Theme Menu",
+  "projectfu-theme.settings.themeMenu.hint": "Configure the Theme in the Theme Menu.",
+  "projectfu-theme.settings.themeMenu.label": "Open Theme Menu",
+  "projectfu-theme.settings.themeMenu.reset.hint": "Reset Theme",
+  "projectfu-theme.settings.themeMenu.reset.description": "Reset theme to default.",
+  "projectfu-theme.settings.themeMenu.reset.prompt": "Really reset the theme to the default? This cannot be undone."
+}

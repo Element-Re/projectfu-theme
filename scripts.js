@@ -7,8 +7,11 @@ const yargs = require('yargs');
 const { hideBin } = require('yargs/helpers');
 
 const distPath = path.join(__dirname, 'dist');
+const langPath = path.join(__dirname, 'lang');
+const modulePath = path.join(__dirname, 'module');
 const assetsPath = path.join(__dirname, 'assets');
 const stylesPath = path.join(__dirname, 'styles');
+const templatesPath = path.join(__dirname, 'templates');
 const filesToCopy = ['module.json', 'CHANGELOG.MD', 'README.MD', 'projectfu-theme.mjs', 'projectfu-theme.lock'];
 
 const copyFolder = (source, destination) => {
@@ -40,8 +43,11 @@ const build = async () => {
     fs.mkdirSync(distPath);
 
     // Folders
+    await copyFolder(langPath, path.join(distPath, 'lang'));
+    await copyFolder(modulePath, path.join(distPath, 'module'));
     await copyFolder(assetsPath, path.join(distPath, 'assets'));
     await copyFolder(stylesPath, path.join(distPath, 'styles'));
+    await copyFolder(templatesPath, path.join(distPath, 'templates'));
 
     // Standalone files
     for (const file of filesToCopy) {
@@ -104,7 +110,7 @@ const link = async (clean) => {
   }
 };
 
-const watchPaths = [assetsPath, stylesPath, ...filesToCopy.map(file => path.join(__dirname, file))];
+const watchPaths = [langPath, modulePath, assetsPath, stylesPath, templatesPath, ...filesToCopy.map(file => path.join(__dirname, file))];
 
 const startWatching = () => {
   chokidar.watch(watchPaths).on('change', (changed) => {

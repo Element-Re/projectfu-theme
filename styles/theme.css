@@ -1,24 +1,10 @@
 :root {
-
-  /* Foundry Overrides */
-	--color-shadow-primary: #77ebd7;
-	--color-shadow-highlight: #d8e08f;
-	--color-border-highlight: #f78946cc;
-
-	/* Colors */
-	--color-primary: #ebf7af;
-	--color-primary-inactive: #ebf7af80;
-	--color-secondary: #148782;
-	--color-selected: #ffffff;
-	--color-highlight-primary: #047470;
-	--color-highlight-secondary: #047470;
-	--color-active-primary: #fff79a;
-	--color-active-secondary: #fff79a;
-
+	
 	--border-radius-large: 20px;
 	--border-radius-medium: 10px;
 	--border-radius-small: 5px;
 	--border-width: 0.1em;
+	
 
 	/* Gradients */
 	--gradient-initial: linear-gradient(180deg, rgba(17, 41, 41, .6) 0%, rgba(73, 164, 153, .6) 100%);

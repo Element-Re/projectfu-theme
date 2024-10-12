@@ -6,6 +6,26 @@
     "minimum": "11",
     "verified": "12"
   },
+  "relationships": {
+		"requires": [
+			{
+				"id": "colorsettings",
+				"type": "module",
+				"compatibility": {}
+			}
+		]
+	},
+  "languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json",
+			"flags": {}
+		}
+	],
+  "esmodules": [
+    "projectfu-theme.mjs"
+  ],
   "styles": [
     "styles/theme.css"
   ],
