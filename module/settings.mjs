@@ -104,7 +104,7 @@ class ThemeMenu extends FormApplication {
       })
     })
     const advancedTextArea = form.find('textarea[name="advanced"]');
-    advancedTextArea.html(themeData.advanced);
+    advancedTextArea.val(themeData.advanced);
   }
 
   /**
@@ -152,5 +152,6 @@ class ThemeMenu extends FormApplication {
       }
       
     })
+
   }
 }
