@@ -76,6 +76,19 @@ class ThemeMenu extends FormApplication {
   }
 
   /**
+   * Overrides default onSubmit behavior.
+   * 
+   * @param {Event} event The submit event.
+   * @param {object} [updateData] The submitted data.
+   * @param {boolean} [preventClose] Whether or prevent the normal closure of the form.
+   * @param {boolean} [preventRender] Whether or prevent the normal re-rendering of the form.
+   */
+  async _onSubmit(event, {updateData=null, preventClose=false, preventRender=false} = {}) {
+    const customPreventClose = event.submitter.name === 'apply' ? true : Boolean(preventClose);
+    return super._onSubmit(event, {updateData: updateData, preventClose: customPreventClose, preventRender: preventRender});
+  }
+
+  /**
    * Populates the form fields with the data for the theme.
    * 
    * @param {jQuery} form A jQuery object containing the form element.

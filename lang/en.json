@@ -4,6 +4,7 @@
   "projectfu-theme.settings.themeMenu.label": "Open Theme Menu",
   "projectfu-theme.settings.themeMenu.jsonImport.label": "Import from JSON",
   "projectfu-theme.settings.themeMenu.jsonExport.label": "Export to JSON",
+  "projectfu-theme.settings.themeMenu.apply.label": "Apply Changes",
   "projectfu-theme.settings.themeMenu.save.label": "Save Changes",
   "projectfu-theme.settings.themeMenu.reset.label": "Reset Changes",
   "projectfu-theme.settings.themeMenu.showAdvanced.label": "Show Advanced Settings",

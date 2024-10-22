@@ -9,7 +9,7 @@
   "relationships": {
 		"requires": [
 			{
-				"id": "colorsettings",
+				"id": "color-picker",
 				"type": "module",
 				"compatibility": {}
 			}
