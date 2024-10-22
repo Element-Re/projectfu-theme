@@ -20,6 +20,8 @@
 	--pfu-color-control-active-fill-1: #e28079cc;
 	--pfu-color-control-active-fill-2: #f1a372cc;
 	--pfu-color-control-active-fill: linear-gradient(0deg, var(--pfu-color-control-active-fill-1) 0%, var(--pfu-color-control-active-fill-2) 100%);
+
+	--pfu-shadow-control: none;
 	
 	/* Applications */
 	--pfu-color-app-header-content: #ebf7afff;
@@ -64,6 +66,7 @@
 	--pfu-ui-accent-position-top: -24px;
 	--pfu-ui-accent-position-left: 1px;
 	--pfu-ui-accent-clip-path: inset(0 370px 402px 0);
+	
 		
 	/* Assets */
 	--pfu-ui-accent-image: url("../assets/images/logo.png");
@@ -183,7 +186,7 @@ li.folder>.folder-header .create-button {
 		border-color: var(--pfu-color-control-border);
 		border-radius: var(--pfu-border-radius-medium);
 		background: var(--pfu-color-control-fill);
-		box-shadow: none;
+		box-shadow: var(--pfu-shadow-control);
 
 		&.toggle {
 			color: var(--pfu-color-control-inactive-content);
@@ -193,7 +196,7 @@ li.folder>.folder-header .create-button {
 			border-color: var(--pfu-color-control-border);
 			border-radius: var(--pfu-border-radius-medium);
 			background: var(--pfu-color-control-fill);
-			box-shadow: none;
+			box-shadow: var(--pfu-shadow-control);
 		}
 	}
 
@@ -256,7 +259,7 @@ li.folder>.folder-header .create-button {
 	border-color: var(--pfu-color-control-border);
 	border-radius: var(--pfu-border-radius-medium);
 	background: var(--pfu-color-control-fill);
-	box-shadow: none;
+	box-shadow: var(--pfu-shadow-control);
 }
 
 #hotbar {
@@ -264,6 +267,11 @@ li.folder>.folder-header .create-button {
 
 	& a:hover {
 		color: var(--pfu-color-control-focus-content);
+	}
+
+
+	& .bar-controls, #macro-list {
+		box-shadow: var(--pfu-shadow-control);
 	}
 
 	& .bar-controls,
@@ -428,4 +436,15 @@ li.folder>.folder-header .create-button {
 	border: none;
 	top: -10px;
 	height: 156px;
+}
+
+/* Theme Menu */
+#projectfu-theme-menu {
+		& summary {
+			cursor: pointer;
+
+			& h4 {
+				display: inline-block;
+			}
+		}
 }

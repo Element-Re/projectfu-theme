@@ -9,4 +9,17 @@ export function deepFreeze(obj) {
     });
     return Object.freeze(obj);
 };
-export const ruleMatcher = /^--[\w-]+:\s*[^;\n]+?;$/;
+
+export function readTextFromFile(file) {
+  const reader = new FileReader();
+  return new Promise((resolve, reject) => {
+    reader.onload = ev => {
+      resolve(reader.result);
+    };
+    reader.onerror = ev => {
+      reader.abort();
+      reject();
+    };
+    reader.readAsText(file);
+  });
+}

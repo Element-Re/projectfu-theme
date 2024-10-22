@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [unreleased]
+- New: Added the Theme Menu accessible through the game world settings which allows customizing various aspects of the theme, exporting and importing themes as well as selecting from one or more preset themes (only the default theme preset for now).
+
 ## [1.0.10]
 - Style Tweak: Added missing hover highlight color on non-macro buttons in the Hotbar UI (Lock Hotbar, Browse Macro Directory).
 
