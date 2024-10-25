@@ -48,7 +48,7 @@ export class Theme {
       let themeValue = this[themeKey];
       if (!themeValue || typeof themeValue !== 'string') return;
       const themeType = THEME_OPTIONS[themeKey]?.type;
-      if (themeType === 'image') themeValue = `url("${themeValue}")`
+      if (themeType === 'image') themeValue = `url("/${themeValue}")`
       const rule = `--pfu-${themeKey}: ${themeValue};`;
       return rule;
     }).filter(style => style).join('\n\t');
@@ -158,8 +158,6 @@ export class Theme {
   'color-app-body-focus-content' = '#ffffffff';
   'color-app-body-primary-fill-1' = '#11292980';
   'color-app-body-primary-fill-2' = '#49a49980';
-  'color-app-body-secondary-fill-1' = '#044a2c4d';
-  'color-app-body-secondary-fill-2' = '#044a2c4d';
   // TODO: When background-style is updated for theme.
   // 'color-app-scrollbar' = '#ebf7afff';
   // 'color-app-scrollbar-track' = '#00000080';
@@ -293,14 +291,6 @@ export const THEME_OPTIONS = deepFreeze({
   },
   'color-app-body-primary-fill-2': {
     label: 'projectfu-theme.color-app-body-primary-fill-2.label',
-    type: 'color'
-  },
-  'color-app-body-secondary-fill-1': {
-    label: 'projectfu-theme.color-app-body-secondary-fill-1.label',
-    type: 'color'
-  },
-  'color-app-body-secondary-fill-2': {
-    label: 'projectfu-theme.color-app-body-secondary-fill-2.label',
     type: 'color'
   },
   // TODO: When backgroundstyle is updated for theme.

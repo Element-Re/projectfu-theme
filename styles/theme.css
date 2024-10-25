@@ -36,9 +36,6 @@
 	--pfu-color-app-body-primary-fill-1: #11292980;
 	--pfu-color-app-body-primary-fill-2: #49a49980;
 	--pfu-color-app-body-primary-fill: linear-gradient(270deg, var(--pfu-color-app-body-primary-fill-1) 0%, var(--pfu-color-app-body-primary-fill-2) 100%);
-	--pfu-color-app-body-secondary-fill-1: #044a2c4d;
-	--pfu-color-app-body-secondary-fill-2: #044a2c4d;
-	--pfu-color-app-body-secondary-fill: linear-gradient(0deg, var(--pfu-color-app-body-secondary-fill-1) 0%, var(--pfu-color-app-body-secondary-fill-2) 100%);
 	--pfu-color-app-scrollbar: #ebf7afff;
 	--pfu-color-app-scrollbar-track: #00000080;
 	
@@ -419,23 +416,6 @@ li.folder>.folder-header .create-button {
 			}
 		}
 	} 
-}
-
-.theatre-bar-left {
-	background: var(--pfu-color-app-body-secondary-fill);
-	border: solid;
-	border-width: 0.2em;
-	border-color: var(--pfu-color-control-border);
-	border-radius: var(--pfu-border-radius-large);
-}
-
-.theatre-text-box {
-	color: var(--pfu-color-control-border);
-	background: var(--pfu-app-bg-image), var(--pfu-color-app-body-primary-fill);
-	border-radius: var(--pfu-border-radius-large);
-	border: none;
-	top: -10px;
-	height: 156px;
 }
 
 /* Theme Menu */

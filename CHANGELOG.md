@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [unreleased]
 - New: Added the Theme Menu accessible through the game world settings which allows customizing various aspects of the theme, exporting and importing themes as well as selecting from one or more preset themes (only the default theme preset for now).
+- Breaking Change: If you installed a pre-release version of `2.0.0`, the paths to your images might need to be changed. Make sure to remove any leading slashes: `\modules\...` should now be `modules\...` and so on.
 
 ## [1.0.10]
 - Style Tweak: Added missing hover highlight color on non-macro buttons in the Hotbar UI (Lock Hotbar, Browse Macro Directory).
