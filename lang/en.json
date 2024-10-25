@@ -48,7 +48,7 @@
   "projectfu-theme.ui-accent-image.hint": "Image to use as an accent for the UI as a whole.",
   "projectfu-theme.app-accent-image.label": "App Accent Image",
   "projectfu-theme.app-accent-image.hint": "Image to use as an accent for certain window apps like the character sheet.",
-  "projectfu-theme.app-bg-image.label": "App Accent Image",
+  "projectfu-theme.app-bg-image.label": "App Background Image",
   "projectfu-theme.app-bg-image.hint": "Image to use for the background of certain apps like the chat log.",
   "projectfu-theme.advanced.label": "Advanced",
   "projectfu-theme.advanced.hint": "Additional customization for advanced users.",
