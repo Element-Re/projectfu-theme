@@ -162,9 +162,9 @@ export class Theme {
   // 'color-app-scrollbar' = '#ebf7afff';
   // 'color-app-scrollbar-track' = '#00000080';
   // 'color-app-scrollbar-border' = '#00000000';
-  'app-accent-image' = `/modules/${MODULE}/assets/images/logo.png`;
-  'app-bg-image' = `/modules/${MODULE}/assets/images/pattern_hojita.png`;
-  'ui-accent-image' = `/modules/${MODULE}/assets/images/logo.png`;
+  'app-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
+  'app-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita.png`;
+  'ui-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
   
   /* Misc */
   'color-misc-shadow-primary' = '#77ebd7ff';
