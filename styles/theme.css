@@ -36,16 +36,60 @@
 	--pfu-color-app-body-primary-fill-1: #11292980;
 	--pfu-color-app-body-primary-fill-2: #49a49980;
 	--pfu-color-app-body-primary-fill: linear-gradient(270deg, var(--pfu-color-app-body-primary-fill-1) 0%, var(--pfu-color-app-body-primary-fill-2) 100%);
-	--pfu-color-app-scrollbar: #ebf7afff;
-	--pfu-color-app-scrollbar-track: #00000080;
 	
+	
+	/* Sheets */
+	--pfu-color-sheet-body-primary-fill-1: #112929e0;
+	--pfu-color-sheet-body-primary-fill-2: #25544fe0;
+	--pfu-color-sheet-body-primary-fill: linear-gradient(270deg, var(--pfu-color-sheet-body-primary-fill-1) 0%, var(--pfu-color-sheet-body-primary-fill-2) 100%);
+	--pfu-color-sheet-border: #148782ff;
+	--pfu-color-sheet-control-content: #ebf7afff;
+	--pfu-color-sheet-control-border: #148782ff;
+	--pfu-color-sheet-control-shadow: #2b4a42ff;
+	--pfu-color-sheet-control-fill-1: #2b4a42ff;
+	--pfu-color-sheet-control-fill-2: #2b4a42ff;
+	--pfu-color-sheet-control-fill: linear-gradient(0deg, var(--pfu-color-sheet-control-fill-1) 0%, var(--pfu-color-sheet-control-fill-2) 100%);
+	--pfu-color-sheet-control-highlight-content: #047470ff;
+	--pfu-color-sheet-control-highlight-border: #148782ff;
+	--pfu-color-sheet-control-highlight-shadow: #148782ff;
+	--pfu-color-sheet-control-highlight-fill-1: #dcd374ff;
+	--pfu-color-sheet-control-highlight-fill-2: #fff79aff;
+	--pfu-color-sheet-control-highlight-fill: linear-gradient(0deg, var(--pfu-color-sheet-control-highlight-fill-1) 0%, var(--pfu-color-sheet-control-highlight-fill-2) 100%);
+	--pfu-color-sheet-control-active-content: #fff79aff;
+	--pfu-color-sheet-control-active-border: #753002ff;
+	--pfu-color-sheet-control-active-shadow: #753002ff;
+	--pfu-color-sheet-control-active-fill-1: #e28079cc;
+	--pfu-color-sheet-control-active-fill-2: #f1a372cc;
+	--pfu-color-sheet-control-active-fill: linear-gradient(0deg, var(--pfu-color-sheet-control-active-fill-1) 0%, var(--pfu-color-sheet-control-active-fill-2) 100%);
+	--pfu-color-sheet-item-content: #2b4a42ff;
+	--pfu-color-sheet-item-header-content: #ebf7afff;
+	--pfu-color-sheet-item-header-fill-1: #2c584dff;
+	--pfu-color-sheet-item-header-fill-2: #a0cdbcff;
+	--pfu-color-sheet-item-header-fill: linear-gradient(to bottom, var(--pfu-color-sheet-item-header-fill-1), var(--pfu-color-sheet-item-header-fill-2));
+	--pfu-color-sheet-item-header-shadow: #2b4a42ff;
+	--pfu-color-sheet-item-highlight-border: #2b4a42ff;
+	--pfu-color-sheet-item-highlight-fill-1: #e1efe3ff;
+	--pfu-color-sheet-item-highlight-fill-2: #e1efe300;
+	--pfu-color-sheet-item-highlight-fill: linear-gradient(90deg, var(--pfu-color-sheet-item-highlight-fill-1), var(--pfu-color-sheet-item-highlight-fill-2));
+	--pfu-color-sheet-image-fill-1: #2b4a42ff;
+	--pfu-color-sheet-image-fill-2: #3d665aff;
+	--pfu-color-sheet-image-fill: linear-gradient(90deg, var(--pfu-color-sheet-image-fill-1), var(--pfu-color-sheet-image-fill-2));
+	--pfu-color-sheet-section-content: #2b4a42ff;
+	--pfu-color-sheet-section-border: #2c4a4254;
+	--pfu-color-sheet-section-primary-fill-1: #f5f5dcff;
+	--pfu-color-sheet-section-primary-fill-2: #c9c7b8ff;
+	--pfu-color-sheet-section-primary-fill: linear-gradient(270deg, var(--pfu-color-sheet-section-primary-fill-1) 0%, var(--pfu-color-sheet-section-primary-fill-2) 100%);
+
+	--pfu-color-sheet-scrollbar: #5d142bff;
+	--pfu-color-sheet-scrollbar-track: #00000000;
+
 	/* Misc */
 	--pfu-color-misc-shadow-primary: #77ebd7ff;
 	--pfu-color-misc-shadow-highlight: #d8e08fff;
 	--pfu-color-misc-border-highlight: #f78946cc;
-	--pfu-color-misc-scrollbar: #5d142bff;
+	--pfu-color-misc-scrollbar: rgb(175, 157, 163);
 	--pfu-color-misc-scrollbar-track: #00000000;
-	--pfu-color-misc-scrollbar-border: #8d151bff;
+	--pfu-color-misc-scrollbar-border: #5d142bff;
 	
 	/* Foundry Overrides */
 	--color-shadow-primary: var(--pfu-color-misc-shadow-primary);
@@ -57,7 +101,8 @@
 	--pfu-border-radius-large: 20px;
 	--pfu-border-radius-medium: 10px;
 	--pfu-border-radius-small: 5px;
-	--pfu-border-width: 0.1em;
+	--pfu-border-width: 1px;
+	--pfu-backdrop-filter: blur(5px);
 	--pfu-ui-accent-width: 500px;
 	--pfu-ui-accent-height: 500px;
 	--pfu-ui-accent-position-top: -24px;
@@ -68,7 +113,9 @@
 	/* Assets */
 	--pfu-ui-accent-image: url("../assets/images/logo.png");
 	--pfu-app-accent-image: url("../assets/images/logo.png");
-	--pfu-app-bg-image: url("../assets/images/pattern_hojita.png");
+	--pfu-app-bg-image: url("../assets/images/pattern_hojita_half.png");
+	--pfu-sheet-bg-image: url("../assets/images/pattern_hojita.png");
+	--pfu-sheet-section-image: url("/systems/projectfu/styles/static/ui/bg.webp");
 }
 
 body {
@@ -178,9 +225,7 @@ li.folder>.folder-header .create-button {
 	& ol.control-tools>li {
 		color: var(--pfu-color-control-content);
 		text-shadow: none;
-		border: solid;
-		border-width: 0.01em;
-		border-color: var(--pfu-color-control-border);
+		border: 1px solid var(--pfu-color-control-border);
 		border-radius: var(--pfu-border-radius-medium);
 		background: var(--pfu-color-control-fill);
 		box-shadow: var(--pfu-shadow-control);
@@ -199,7 +244,7 @@ li.folder>.folder-header .create-button {
 
 	& ol.control-tools>li.active {
 		color: var(--pfu-color-control-active-content);
-		border-color: var(--pfu-color-control-active-border);
+		border: 1px solid var(--pfu-color-control-active-border);
 		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
 		background: var(--pfu-color-control-active-fill);
 
@@ -219,14 +264,14 @@ li.folder>.folder-header .create-button {
 	& ol.control-tools>li:not(.active):hover,
 	& ol.control-tools>li:not(.active).toggle:hover {
 		color: var(--pfu-color-control-highlight-content);
-		border-color: var(--pfu-color-control-highlight-border);
+		border: 1px solid var(--pfu-color-control-highlight-border);
 		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
 		background: var(--pfu-color-control-highlight-fill);
 	}
 }
 
 #logo {
-	visibility: hidden;
+	visibility: hidden !important;
 	/*
 	clip-path: inset(0 74px 39.3px 0);
 	z-index: -10;
@@ -251,9 +296,7 @@ li.folder>.folder-header .create-button {
 #players {
 	color: var(--pfu-color-control-content);
 	text-shadow: none;
-	border: solid;
-	border-width: var(--pfu-border-width);
-	border-color: var(--pfu-color-control-border);
+	border: 1px solid var(--pfu-color-control-border);
 	border-radius: var(--pfu-border-radius-medium);
 	background: var(--pfu-color-control-fill);
 	box-shadow: var(--pfu-shadow-control);
@@ -305,6 +348,144 @@ li.folder>.folder-header .create-button {
 	color: var(--pfu-color-app-body-content);
 	box-shadow: 0 0 10px #2b1c02;
 
+
+	
+	&.projectfu {
+		
+		& .breakline-border {
+			background: linear-gradient(to left, transparent, var(--pfu-color-sheet-section-primary-fill-1), transparent);
+		}
+
+		& .desc .inline-desc {
+			background: linear-gradient(to left, var(--pfu-color-sheet-item-highlight-fill-1), var(--pfu-color-sheet-item-highlight-fill-2));
+			border: 1px solid var(--pfu-color-sheet-item-highlight-border);
+		}
+
+
+		&.window-app:not([id$=-popout]) .resource-content.affinity label {
+			color: var(--pfu-color-sheet-section-content);
+		}
+
+		& .sheet-header .profile-img {
+			background: var(--pfu-color-sheet-image-fill);
+		}
+
+		& .items-main {
+			color: var(--pfu-color-sheet-item-header-content);
+			background: var(--pfu-color-sheet-item-header-fill);
+			text-shadow: 1px 1px var(--pfu-color-sheet-item-header-shadow);
+			box-shadow: 2px 4px var(--pfu-color-sheet-item-header-shadow);
+		}
+
+		& .items-list :is(.item, .effect) {
+
+			&:not(.items-header) {
+				color: var(--pfu-color-sheet-section-content);
+				
+				& .item-name {
+					color: var(--pfu-color-sheet-section-content);
+			
+					& .item-image img {
+						background: var(--pfu-color-sheet-image-fill);
+					}
+				}
+
+				&:hover {
+					border-color: var(--pfu-color-sheet-item-highlight-border);
+					background: var(--pfu-color-sheet-item-highlight-fill);
+				}
+
+			}
+
+			&.items-header > * {
+					color: var(--pfu-color-sheet-item-header-content);
+					background: var(--pfu-color-sheet-item-header-fill);
+					text-shadow: 1px 1px var(--pfu-color-sheet-item-header-shadow);
+					box-shadow: 1px 2px var(--pfu-color-sheet-item-header-shadow);
+			}
+
+			
+
+			
+				
+		}
+
+		& 
+		.resource-content .resource-inputs, 
+		.resource-content.levelup-container.creature .resource-inputs {
+			color: var(--pfu-color-sheet-control-content);
+			background: var(--pfu-color-sheet-control-fill);
+			&::placeholder {
+				color: var(--pfu-color-sheet-control-content);
+				opacity: 0.5;
+			}
+		}
+
+		& .resource-content .traitdesc {
+			color: var(--pfu-color-sheet-control-content);
+			background: var(--pfu-color-sheet-control-fill);
+			border: none;
+			&::placeholder {
+				color: var(--pfu-color-sheet-control-content);
+				opacity: 0.5;
+			}
+		}
+
+		& .resource-max-input, .resource-current-input {
+			color: var(--pfu-color-sheet-control-content);
+			background: var(--pfu-color-sheet-control-fill);
+			border: 1px solid var(--pfu-color-sheet-control-border);
+			&::placeholder {
+				color: var(--pfu-color-sheet-control-content);
+				opacity: 0.5;
+			}
+
+			& :disabled, :hover:disabled {
+				color: var(--pfu-color-sheet-control-content);
+				background: var(--pfu-color-sheet-control-fill);
+				border: 1px solid var(--pfu-color-sheet-control-border);
+				opacity: 0.8;
+			}
+		}
+
+		& .button-style {
+			border: thin solid var(--pfu-color-sheet-control-border);
+			color: var(--pfu-color-sheet-control-content);
+			background: var(--pfu-color-sheet-control-fill);
+			box-shadow: 1px 2px var(--pfu-color-sheet-control-shadow);
+
+			&.active, &.active:hover {
+				margin: 1px -1px -1px 1px;
+				color: var(--pfu-color-sheet-control-active-content) !important;
+				border: thin solid var(--pfu-color-sheet-control-active-border);
+				background: var(--pfu-color-sheet-control-active-fill) !important;
+				box-shadow: 0 1px var(--pfu-color-sheet-control-active-shadow);
+				text-shadow: none;
+			}
+
+			&:not(.active):hover {
+				color: var(--pfu-color-sheet-control-highlight-content) !important;
+				border: thin solid var(--pfu-color-sheet-control-highlight-border);
+				background: var(--pfu-color-sheet-control-highlight-fill) !important;
+				box-shadow: 1px 2px var(--pfu-color-sheet-control-highlight-shadow);
+			}
+		}
+
+		& .title-fieldset legend {
+			border: 1px solid var(--pfu-color-sheet-control-border);
+			color: var(--pfu-color-sheet-control-content);
+			background: var(--pfu-color-sheet-control-fill);
+
+
+
+			& .resource-inputs {
+				color: var(--pfu-color-sheet-control-content);
+				border: none;
+				background: none;
+			}
+		}
+	}
+
 	&.backgroundstyle {
 		/* Reset to foundry defaults to fix wonky styling on headers due to the background covering it too. */
 		background: url("/ui/denim075.png") repeat;
@@ -312,18 +493,48 @@ li.folder>.folder-header .create-button {
 		background-repeat: unset;
 		background-position: unset;
 		background-color: unset !important;
-		border: 1px solid var(--pfu-color-app-border);
+		border: 1px solid var(--pfu-color-sheet-border);
+
+		& .window-content {
+			background: var(--pfu-sheet-bg-image), var(--pfu-color-sheet-body-primary-fill);
+			background-size: 100% auto;
+
+			& * {
+				scrollbar-color: var(--pfu-color-sheet-scrollbar) var(--pfu-color-sheet-scrollbar-track);
+			}
+
+			& .resource-content {
+				color: var(--pfu-color-sheet-section-content);
+				& input:is(.fp-resource-inputs, .up-resource-inputs) {
+					color: var(--pfu-color-sheet-section-content);
+				}
+			}
+
+
+			& .section-container, .desc, .resource-content.level-field, .npc-level-container > label {
+				border: 1px solid var(--pfu-color-sheet-section-border);
+				background: var(--pfu-sheet-section-image), var(--pfu-color-sheet-section-primary-fill);
+				background-blend-mode: multiply;
+				background-repeat: repeat-y;
+				background-position: right top;
+				background-size: cover;
+
+			}
+		}
 
 	}
 	
+	.is-two-weapon.equip {
+		color: var(--pfu-color-sheet-section-content) !important;
+	}
 	
 	& a:not(.tab-style):hover {
 		color: var(--pfu-color-app-body-focus-content);
 	}
 	
 	&.window-app {
-		
-		backdrop-filter: blur(5px);
+	
+		backdrop-filter: var(--pfu-backdrop-filter);
 		
 		& .window-header {
 			color: var(--pfu-color-app-header-content);
@@ -334,7 +545,9 @@ li.folder>.folder-header .create-button {
 			&.sheet.backgroundstyle .window-header::after {
 					position: absolute;
 					content: var(--pfu-app-accent-image);
-					transform: scale(1) translate(-10%, -12%);
+					height: 500px;
+					width: auto;
+					transform: translate(-10%, -12%);
 					opacity: 80%;
 					pointer-events: none;
 				}

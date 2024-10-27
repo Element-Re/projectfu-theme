@@ -45,10 +45,12 @@ export class Theme {
 
     // Construct basic style content from theme string properties, excluding "advanced".
     const styleData = Object.keys(this).filter(key => key !== 'advanced').map(themeKey => {
-      let themeValue = this[themeKey];
-      if (!themeValue || typeof themeValue !== 'string') return;
       const themeType = THEME_OPTIONS[themeKey]?.type;
-      if (themeType === 'image') themeValue = `url("/${themeValue}")`
+      let themeValue = this[themeKey];
+      if (themeType === 'image') {
+        // Handle image values, including the case where no image is defined.
+        themeValue = themeValue ? `url("/${themeValue}")` : 'url("")';
+      } else if (!themeValue || typeof themeValue !== 'string') return;
       const rule = `--pfu-${themeKey}: ${themeValue};`;
       return rule;
     }).filter(style => style).join('\n\t');
@@ -158,12 +160,49 @@ export class Theme {
   'color-app-body-focus-content' = '#ffffffff';
   'color-app-body-primary-fill-1' = '#11292980';
   'color-app-body-primary-fill-2' = '#49a49980';
-  // TODO: When background-style is updated for theme.
-  // 'color-app-scrollbar' = '#ebf7afff';
-  // 'color-app-scrollbar-track' = '#00000080';
-  // 'color-app-scrollbar-border' = '#00000000';
+  'color-sheet-body-primary-fill-1' = '#112929e0';
+  'color-sheet-body-primary-fill-2' = '#25544fe0';
+
+  'color-sheet-border' = '#148782ff';
+
+  'color-sheet-control-content' = '#ebf7afff';
+	'color-sheet-control-border' = '#148782ff';
+  'color-sheet-control-shadow' = '#ebf7afff';
+	'color-sheet-control-fill-1' = '#2b4a42ff';
+	'color-sheet-control-fill-2' = '#2b4a42ff';
+	'color-sheet-control-highlight-content' = '#047470ff';
+	'color-sheet-control-highlight-border' = '#148782ff';
+  'color-sheet-control-highlight-shadow' = '#148782ff';
+	'color-sheet-control-highlight-fill-1' = '#dcd374ff';
+	'color-sheet-control-highlight-fill-2' = '#fff79aff';
+	'color-sheet-control-active-content' = '#fff79aff';
+	'color-sheet-control-active-border' = '#753002ff';
+  'color-sheet-control-active-shadow' = '#753002ff';
+	'color-sheet-control-active-fill-1' = '#e28079cc';
+	'color-sheet-control-active-fill-2' = '#f1a372cc';
+
+  'color-sheet-image-fill-1' = '#2b4a42ff';
+	'color-sheet-image-fill-2' = '#3d665aff';
+
+  'color-sheet-item-header-content' = '#ebf7afff';
+  'color-sheet-item-header-fill-1' = '#2c584dff';
+  'color-sheet-item-header-fill-2' = '#a0cdbcff';
+  'color-sheet-item-header-shadow' = '#2b4a42ff';
+
+  'color-sheet-item-highlight-border' = '#2b4a42ff';
+  'color-sheet-item-highlight-fill-1' = '#e1efe3ff';
+  'color-sheet-item-highlight-fill-2' = '#e1efe300';
+  
+  'color-sheet-section-content' = '#2b4a42ff';
+  'color-sheet-section-border' = '#2c4a4254';
+  'color-sheet-section-primary-fill-1' = '#f5f5dcff';
+  'color-sheet-section-primary-fill-2' = '#c9c7b8ff';
+  'color-sheet-scrollbar' = '#5d142bff';
+  'color-sheet-scrollbar-track' = '#00000000';
   'app-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
-  'app-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita.png`;
+  'app-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita_half.png`;
+  'sheet-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita.png`;
+  'sheet-section-image' = `systems/projectfu/styles/static/ui/bg.webp`;
   'ui-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
   
   /* Misc */
@@ -184,7 +223,7 @@ export class Theme {
     '  --pfu-border-radius-large: 20px;',
     '  --pfu-border-radius-medium: 10px;',
     '  --pfu-border-radius-small: 5px;',
-    '  --pfu-border-width: 0.1em;',
+    '  --pfu-border-width: 1px;',
     '}'
   ].join('\n');
 }
@@ -293,19 +332,143 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.color-app-body-primary-fill-2.label',
     type: 'color'
   },
-  // TODO: When backgroundstyle is updated for theme.
-  // 'color-app-scrollbar': {
-  //   label: 'projectfu-theme.color-app-scrollbar.label',
-  //   type: 'color'
-  // },
-  // 'color-app-scrollbar-track': {
-  //   label: 'projectfu-theme.color-app-scrollbar-track.label',
-  //   type: 'color'
-  // },
-  // 'color-app-scrollbar-border': {
-  //   label: 'projectfu-theme.color-app-scrollbar-border.label',
-  //   type: 'color'
-  // },
+  'color-sheet-body-primary-fill-1': {
+    label: 'projectfu-theme.color-sheet-body-primary-fill-1.label',
+    type: 'color'
+  },
+  'color-sheet-body-primary-fill-2': {
+    label: 'projectfu-theme.color-sheet-body-primary-fill-2.label',
+    type: 'color'
+  },
+  'color-sheet-border': {
+    label: 'projectfu-theme.color-sheet-border',
+    type: 'color'
+  },
+
+  'color-sheet-control-content': {
+    label: 'projectfu-theme.color-sheet-control-content.label',
+    type: 'color'
+  },
+	'color-sheet-control-border': {
+    label: 'projectfu-theme.color-sheet-control-border.label',
+    type: 'color'
+  },
+  'color-sheet-control-shadow': {
+    label: 'projectfu-theme.color-sheet-control-shadow.label',
+    type: 'color'
+  },
+	'color-sheet-control-fill-1': {
+    label: 'projectfu-theme.color-sheet-control-fill-1.label',
+    type: 'color'
+  },
+	'color-sheet-control-fill-2': {
+    label: 'projectfu-theme.color-sheet-control-fill-2.label',
+    type: 'color'
+  },
+	'color-sheet-control-highlight-content': {
+    label: 'projectfu-theme.color-sheet-control-highlight-content.label',
+    type: 'color'
+  },
+	'color-sheet-control-highlight-border': {
+    label: 'projectfu-theme.color-sheet-control-highlight-border.label',
+    type: 'color'
+  },
+  'color-sheet-control-highlight-shadow': {
+    label: 'projectfu-theme.color-sheet-control-highlight-shadow.label',
+    type: 'color'
+  },
+	'color-sheet-control-highlight-fill-1': {
+    label: 'projectfu-theme.color-sheet-control-highlight-fill-1.label',
+    type: 'color'
+  },
+	'color-sheet-control-highlight-fill-2': {
+    label: 'projectfu-theme.color-sheet-control-highlight-fill-2.label',
+    type: 'color'
+  },
+	'color-sheet-control-active-content': {
+    label: 'projectfu-theme.color-sheet-control-active-content.label',
+    type: 'color'
+  },
+	'color-sheet-control-active-border': {
+    label: 'projectfu-theme.color-sheet-control-active-border.label',
+    type: 'color'
+  },
+  'color-sheet-control-active-shadow': {
+    label: 'projectfu-theme.color-sheet-control-active-shadow.label',
+    type: 'color'
+  },
+	'color-sheet-control-active-fill-1': {
+    label: 'projectfu-theme.color-sheet-control-active-fill-1.label',
+    type: 'color'
+  },
+	'color-sheet-control-active-fill-2': {
+    label: 'projectfu-theme.color-sheet-control-active-fill-2.label',
+    type: 'color'
+  },
+  'color-sheet-item-header-content': {
+    label: 'projectfu-theme.color-sheet-item-header-content.label',
+    type: 'color'
+  },
+  'color-sheet-item-header-fill-1': {
+    label: 'projectfu-theme.color-sheet-item-header-fill-1.label',
+    type: 'color'
+  },
+  'color-sheet-item-header-fill-2': {
+    label: 'projectfu-theme.color-sheet-item-header-fill-2.label',
+    type: 'color'
+  },
+  'color-sheet-item-header-shadow': {
+    label: 'projectfu-theme.color-sheet-item-header-shadow.label',
+    type: 'color'
+  },
+  'color-sheet-item-highlight-border': {
+    label: 'projectfu-theme.color-sheet-item-highlight-border.label',
+    type: 'color'
+  },
+  'color-sheet-item-highlight-fill-1': {
+    label: 'projectfu-theme.color-sheet-item-highlight-fill-1.label',
+    type: 'color'
+  },
+  'color-sheet-item-highlight-fill-2': {
+    label: 'projectfu-theme.color-sheet-item-highlight-fill-2.label',
+    type: 'color'
+  },
+
+
+  'color-sheet-image-fill-1': {
+    label: 'projectfu-theme.color-sheet-image-fill-1.label',
+    type: 'color'
+  },
+  'color-sheet-image-fill-2': {
+    label: 'projectfu-theme.color-sheet-image-fill-2.label',
+    type: 'color'
+  },
+
+  'color-sheet-section-content': {
+    label: 'projectfu-theme.color-sheet-section-content.label',
+    type: 'color'
+  },
+  'color-sheet-section-border': {
+    label: 'projectfu-theme.color-sheet-section-border.label',
+    type: 'color'
+  },
+  'color-sheet-section-primary-fill-1': {
+    label: 'projectfu-theme.color-sheet-section-primary-fill-1.label',
+    type: 'color'
+  },
+  'color-sheet-section-primary-fill-2': {
+    label: 'projectfu-theme.color-sheet-section-primary-fill-2.label',
+    type: 'color'
+  },
+  
+  'color-sheet-scrollbar': {
+    label: 'projectfu-theme.color-sheet-scrollbar.label',
+    type: 'color'
+  },
+  'color-sheet-scrollbar-track': {
+    label: 'projectfu-theme.color-sheet-scrollbar-track.label',
+    type: 'color'
+  },
   
   /* Misc */
   'color-misc-shadow-primary': {
@@ -343,6 +506,14 @@ export const THEME_OPTIONS = deepFreeze({
   },
   'app-bg-image': {
     label: 'projectfu-theme.app-bg-image.label',
+    type: 'image'
+  },
+  'sheet-bg-image': {
+    label: 'projectfu-theme.sheet-bg-image.label',
+    type: 'image'
+  },
+  'sheet-section-image': {
+    label: 'projectfu-theme.sheet-section-image.label',
     type: 'image'
   },
   'advanced': {

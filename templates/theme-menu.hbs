@@ -37,7 +37,7 @@
   <div class="form-group">
     <label for="{{@key}}">{{localize label}}</label>
     <div class="form-fields">
-      <input type="text" name="{{@key}}" {{#if (eq this.type "color")}}data-color-picker="{alphaChannel: true, format: 'hexa'}"{{/if}} value="{{lookup ../current @key}}">
+      <input type="text" name="{{@key}}" {{#if (eq this.type "color")}}data-color-picker="{alphaChannel: true, format: 'hexa', required: false}"{{/if}} value="{{lookup ../current @key}}">
       {{#if (eq this.type "image")}}{{filePicker target=@key type="image"}}{{/if}}
     </div>
     <p class="notes">{{localize hint}}</p>
