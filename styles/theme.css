@@ -125,7 +125,7 @@ body {
 	--color-scrollbar-border: var(--pfu-color-misc-scrollbar-border);
 }
 
-.star-label {
+.sheet .star-label {
 	&.fus-sl-star {
 		background-image: none;
 		color: var(--pfu-color-sheet-section-content)
@@ -562,14 +562,19 @@ li.folder>.folder-header .create-button {
 		}
 
 		&:not(.minimized) {
-			&.sheet.backgroundstyle .window-header::after {
+			&.backgroundstyle::after {
+					content: '';
 					position: absolute;
-					content: var(--pfu-app-accent-image);
+					background: var(--pfu-app-accent-image);
+					background-size: contain;
+					background-repeat: no-repeat;
 					height: 500px;
-					width: auto;
-					transform: translate(-10%, -12%);
+					width: 500px;
 					opacity: 80%;
 					pointer-events: none;
+					top: -60px;
+					left: -40px;
+					z-index: 1000;
 				}
 				& .window-header {
 				padding: 2px 8px;
