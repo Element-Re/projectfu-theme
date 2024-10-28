@@ -125,6 +125,26 @@ body {
 	--color-scrollbar-border: var(--pfu-color-misc-scrollbar-border);
 }
 
+.star-label {
+	&.fus-sl-star {
+		background-image: none;
+		color: var(--pfu-color-sheet-section-content)
+	}
+	
+	&.ful-sl-star {
+		background-image: none;
+		&::after {
+			color: transparent;
+		}
+	}
+	&::after{
+		-webkit-text-stroke: 2px var(--pfu-color-sheet-section-content);
+		content: "🟆";
+		line-height: 28px;
+		font-size: 24px;
+	}
+}
+
 li.folder>.folder-header .create-button {
 	&:hover {
 		color: var(--pfu-color-control-focus-content);
