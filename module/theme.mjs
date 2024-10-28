@@ -202,7 +202,7 @@ export class Theme {
   'ui-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
   'app-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
   'app-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita.png`;
-  'app-section-image' = `systems/projectfu/styles/static/ui/bg.webp`;
+  'app-section-bg-image' = `systems/projectfu/styles/static/ui/bg.webp`;
   'sidebar-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita_half.png`;
   
   /* Misc */
@@ -341,7 +341,7 @@ export const THEME_OPTIONS = deepFreeze({
     type: 'color'
   },
   'color-app-border': {
-    label: 'projectfu-theme.color-app-border',
+    label: 'projectfu-theme.color-app-border.label',
     type: 'color'
   },
 
@@ -508,8 +508,8 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.app-bg-image.label',
     type: 'image'
   },
-  'app-section-image': {
-    label: 'projectfu-theme.app-section-image.label',
+  'app-section-bg-image': {
+    label: 'projectfu-theme.app-section-bg-image.label',
     type: 'image'
   },
   'sidebar-bg-image': {

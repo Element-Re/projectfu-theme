@@ -113,7 +113,7 @@
 	/* Assets */
 	--pfu-ui-accent-image: url("../assets/images/logo.png");
 	--pfu-app-accent-image: url("../assets/images/logo.png");
-	--pfu-app-section-image: url("/systems/projectfu/styles/static/ui/bg.webp");
+	--pfu-app-section-bg-image: url("/systems/projectfu/styles/static/ui/bg.webp");
 	--pfu-app-bg-image: url("../assets/images/pattern_hojita.png");
 	--pfu-sidebar-bg-image: url("../assets/images/pattern_hojita_half.png");
 }
@@ -410,7 +410,7 @@ a.inline-roll {
 	.chat-message,
 	.chat-message.whisper {
 		border: 2px solid var(--pfu-color-app-section-border);
-		background: var(--pfu-app-section-image), var(--pfu-color-app-section-primary-fill);
+		background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
 		& .chat-desc {
 			background: var(--pfu-color-control-highlight-fill);
 			box-shadow: 1px 2px var(--pfu-color-app-control-highlight-shadow);
@@ -609,7 +609,7 @@ a.inline-roll {
 
 			& .section-container, .desc, .resource-content.level-field, .npc-level-container > label {
 				border: 1px solid var(--pfu-color-app-section-border);
-				background: var(--pfu-app-section-image), var(--pfu-color-app-section-primary-fill);
+				background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
 				background-blend-mode: multiply;
 				background-repeat: repeat-y;
 				background-position: right top;
