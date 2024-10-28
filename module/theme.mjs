@@ -160,50 +160,50 @@ export class Theme {
   'color-app-body-focus-content' = '#ffffffff';
   'color-app-body-primary-fill-1' = '#11292980';
   'color-app-body-primary-fill-2' = '#49a49980';
-  'color-sheet-body-primary-fill-1' = '#112929e0';
-  'color-sheet-body-primary-fill-2' = '#25544fe0';
+  'color-app-body-primary-fill-1' = '#112929e0';
+  'color-app-body-primary-fill-2' = '#25544fe0';
 
-  'color-sheet-border' = '#148782ff';
+  'color-app-border' = '#148782ff';
 
-  'color-sheet-control-content' = '#ebf7afff';
-	'color-sheet-control-border' = '#148782ff';
-  'color-sheet-control-shadow' = '#ebf7afff';
-	'color-sheet-control-fill-1' = '#2b4a42ff';
-	'color-sheet-control-fill-2' = '#2b4a42ff';
-	'color-sheet-control-highlight-content' = '#047470ff';
-	'color-sheet-control-highlight-border' = '#148782ff';
-  'color-sheet-control-highlight-shadow' = '#148782ff';
-	'color-sheet-control-highlight-fill-1' = '#dcd374ff';
-	'color-sheet-control-highlight-fill-2' = '#fff79aff';
-	'color-sheet-control-active-content' = '#fff79aff';
-	'color-sheet-control-active-border' = '#753002ff';
-  'color-sheet-control-active-shadow' = '#753002ff';
-	'color-sheet-control-active-fill-1' = '#e28079cc';
-	'color-sheet-control-active-fill-2' = '#f1a372cc';
+  'color-app-control-content' = '#ebf7afff';
+	'color-app-control-border' = '#148782ff';
+  'color-app-control-shadow' = '#ebf7afff';
+	'color-app-control-fill-1' = '#2b4a42ff';
+	'color-app-control-fill-2' = '#2b4a42ff';
+	'color-app-control-highlight-content' = '#047470ff';
+	'color-app-control-highlight-border' = '#148782ff';
+  'color-app-control-highlight-shadow' = '#148782ff';
+	'color-app-control-highlight-fill-1' = '#dcd374ff';
+	'color-app-control-highlight-fill-2' = '#fff79aff';
+	'color-app-control-active-content' = '#fff79aff';
+	'color-app-control-active-border' = '#753002ff';
+  'color-app-control-active-shadow' = '#753002ff';
+	'color-app-control-active-fill-1' = '#e28079cc';
+	'color-app-control-active-fill-2' = '#f1a372cc';
 
-  'color-sheet-image-fill-1' = '#2b4a42ff';
-	'color-sheet-image-fill-2' = '#3d665aff';
+  'color-app-image-fill-1' = '#2b4a42ff';
+	'color-app-image-fill-2' = '#3d665aff';
 
-  'color-sheet-item-header-content' = '#ebf7afff';
-  'color-sheet-item-header-fill-1' = '#2c584dff';
-  'color-sheet-item-header-fill-2' = '#a0cdbcff';
-  'color-sheet-item-header-shadow' = '#2b4a42ff';
+  'color-app-item-header-content' = '#ebf7afff';
+  'color-app-item-header-fill-1' = '#2c584dff';
+  'color-app-item-header-fill-2' = '#a0cdbcff';
+  'color-app-item-header-shadow' = '#2b4a42ff';
 
-  'color-sheet-item-highlight-border' = '#2b4a42ff';
-  'color-sheet-item-highlight-fill-1' = '#e1efe3ff';
-  'color-sheet-item-highlight-fill-2' = '#e1efe300';
+  'color-app-item-highlight-border' = '#2b4a42ff';
+  'color-app-item-highlight-fill-1' = '#e1efe3ff';
+  'color-app-item-highlight-fill-2' = '#e1efe300';
   
-  'color-sheet-section-content' = '#2b4a42ff';
-  'color-sheet-section-border' = '#2c4a4254';
-  'color-sheet-section-primary-fill-1' = '#f5f5dcff';
-  'color-sheet-section-primary-fill-2' = '#c9c7b8ff';
-  'color-sheet-scrollbar' = '#5d142bff';
-  'color-sheet-scrollbar-track' = '#00000000';
-  'app-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
-  'app-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita_half.png`;
-  'sheet-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita.png`;
-  'sheet-section-image' = `systems/projectfu/styles/static/ui/bg.webp`;
+  'color-app-section-content' = '#2b4a42ff';
+  'color-app-section-border' = '#2c4a4254';
+  'color-app-section-primary-fill-1' = '#f5f5dcff';
+  'color-app-section-primary-fill-2' = '#c9c7b8ff';
+  'color-app-scrollbar' = '#5d142bff';
+  'color-app-scrollbar-track' = '#00000000';
   'ui-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
+  'app-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
+  'app-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita.png`;
+  'app-section-image' = `systems/projectfu/styles/static/ui/bg.webp`;
+  'sidebar-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita_half.png`;
   
   /* Misc */
   'color-misc-shadow-primary' = '#77ebd7ff';
@@ -332,141 +332,141 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.color-app-body-primary-fill-2.label',
     type: 'color'
   },
-  'color-sheet-body-primary-fill-1': {
-    label: 'projectfu-theme.color-sheet-body-primary-fill-1.label',
+  'color-app-body-primary-fill-1': {
+    label: 'projectfu-theme.color-app-body-primary-fill-1.label',
     type: 'color'
   },
-  'color-sheet-body-primary-fill-2': {
-    label: 'projectfu-theme.color-sheet-body-primary-fill-2.label',
+  'color-app-body-primary-fill-2': {
+    label: 'projectfu-theme.color-app-body-primary-fill-2.label',
     type: 'color'
   },
-  'color-sheet-border': {
-    label: 'projectfu-theme.color-sheet-border',
-    type: 'color'
-  },
-
-  'color-sheet-control-content': {
-    label: 'projectfu-theme.color-sheet-control-content.label',
-    type: 'color'
-  },
-	'color-sheet-control-border': {
-    label: 'projectfu-theme.color-sheet-control-border.label',
-    type: 'color'
-  },
-  'color-sheet-control-shadow': {
-    label: 'projectfu-theme.color-sheet-control-shadow.label',
-    type: 'color'
-  },
-	'color-sheet-control-fill-1': {
-    label: 'projectfu-theme.color-sheet-control-fill-1.label',
-    type: 'color'
-  },
-	'color-sheet-control-fill-2': {
-    label: 'projectfu-theme.color-sheet-control-fill-2.label',
-    type: 'color'
-  },
-	'color-sheet-control-highlight-content': {
-    label: 'projectfu-theme.color-sheet-control-highlight-content.label',
-    type: 'color'
-  },
-	'color-sheet-control-highlight-border': {
-    label: 'projectfu-theme.color-sheet-control-highlight-border.label',
-    type: 'color'
-  },
-  'color-sheet-control-highlight-shadow': {
-    label: 'projectfu-theme.color-sheet-control-highlight-shadow.label',
-    type: 'color'
-  },
-	'color-sheet-control-highlight-fill-1': {
-    label: 'projectfu-theme.color-sheet-control-highlight-fill-1.label',
-    type: 'color'
-  },
-	'color-sheet-control-highlight-fill-2': {
-    label: 'projectfu-theme.color-sheet-control-highlight-fill-2.label',
-    type: 'color'
-  },
-	'color-sheet-control-active-content': {
-    label: 'projectfu-theme.color-sheet-control-active-content.label',
-    type: 'color'
-  },
-	'color-sheet-control-active-border': {
-    label: 'projectfu-theme.color-sheet-control-active-border.label',
-    type: 'color'
-  },
-  'color-sheet-control-active-shadow': {
-    label: 'projectfu-theme.color-sheet-control-active-shadow.label',
-    type: 'color'
-  },
-	'color-sheet-control-active-fill-1': {
-    label: 'projectfu-theme.color-sheet-control-active-fill-1.label',
-    type: 'color'
-  },
-	'color-sheet-control-active-fill-2': {
-    label: 'projectfu-theme.color-sheet-control-active-fill-2.label',
-    type: 'color'
-  },
-  'color-sheet-item-header-content': {
-    label: 'projectfu-theme.color-sheet-item-header-content.label',
-    type: 'color'
-  },
-  'color-sheet-item-header-fill-1': {
-    label: 'projectfu-theme.color-sheet-item-header-fill-1.label',
-    type: 'color'
-  },
-  'color-sheet-item-header-fill-2': {
-    label: 'projectfu-theme.color-sheet-item-header-fill-2.label',
-    type: 'color'
-  },
-  'color-sheet-item-header-shadow': {
-    label: 'projectfu-theme.color-sheet-item-header-shadow.label',
-    type: 'color'
-  },
-  'color-sheet-item-highlight-border': {
-    label: 'projectfu-theme.color-sheet-item-highlight-border.label',
-    type: 'color'
-  },
-  'color-sheet-item-highlight-fill-1': {
-    label: 'projectfu-theme.color-sheet-item-highlight-fill-1.label',
-    type: 'color'
-  },
-  'color-sheet-item-highlight-fill-2': {
-    label: 'projectfu-theme.color-sheet-item-highlight-fill-2.label',
+  'color-app-border': {
+    label: 'projectfu-theme.color-app-border',
     type: 'color'
   },
 
+  'color-app-control-content': {
+    label: 'projectfu-theme.color-app-control-content.label',
+    type: 'color'
+  },
+	'color-app-control-border': {
+    label: 'projectfu-theme.color-app-control-border.label',
+    type: 'color'
+  },
+  'color-app-control-shadow': {
+    label: 'projectfu-theme.color-app-control-shadow.label',
+    type: 'color'
+  },
+	'color-app-control-fill-1': {
+    label: 'projectfu-theme.color-app-control-fill-1.label',
+    type: 'color'
+  },
+	'color-app-control-fill-2': {
+    label: 'projectfu-theme.color-app-control-fill-2.label',
+    type: 'color'
+  },
+	'color-app-control-highlight-content': {
+    label: 'projectfu-theme.color-app-control-highlight-content.label',
+    type: 'color'
+  },
+	'color-app-control-highlight-border': {
+    label: 'projectfu-theme.color-app-control-highlight-border.label',
+    type: 'color'
+  },
+  'color-app-control-highlight-shadow': {
+    label: 'projectfu-theme.color-app-control-highlight-shadow.label',
+    type: 'color'
+  },
+	'color-app-control-highlight-fill-1': {
+    label: 'projectfu-theme.color-app-control-highlight-fill-1.label',
+    type: 'color'
+  },
+	'color-app-control-highlight-fill-2': {
+    label: 'projectfu-theme.color-app-control-highlight-fill-2.label',
+    type: 'color'
+  },
+	'color-app-control-active-content': {
+    label: 'projectfu-theme.color-app-control-active-content.label',
+    type: 'color'
+  },
+	'color-app-control-active-border': {
+    label: 'projectfu-theme.color-app-control-active-border.label',
+    type: 'color'
+  },
+  'color-app-control-active-shadow': {
+    label: 'projectfu-theme.color-app-control-active-shadow.label',
+    type: 'color'
+  },
+	'color-app-control-active-fill-1': {
+    label: 'projectfu-theme.color-app-control-active-fill-1.label',
+    type: 'color'
+  },
+	'color-app-control-active-fill-2': {
+    label: 'projectfu-theme.color-app-control-active-fill-2.label',
+    type: 'color'
+  },
+  'color-app-item-header-content': {
+    label: 'projectfu-theme.color-app-item-header-content.label',
+    type: 'color'
+  },
+  'color-app-item-header-fill-1': {
+    label: 'projectfu-theme.color-app-item-header-fill-1.label',
+    type: 'color'
+  },
+  'color-app-item-header-fill-2': {
+    label: 'projectfu-theme.color-app-item-header-fill-2.label',
+    type: 'color'
+  },
+  'color-app-item-header-shadow': {
+    label: 'projectfu-theme.color-app-item-header-shadow.label',
+    type: 'color'
+  },
+  'color-app-item-highlight-border': {
+    label: 'projectfu-theme.color-app-item-highlight-border.label',
+    type: 'color'
+  },
+  'color-app-item-highlight-fill-1': {
+    label: 'projectfu-theme.color-app-item-highlight-fill-1.label',
+    type: 'color'
+  },
+  'color-app-item-highlight-fill-2': {
+    label: 'projectfu-theme.color-app-item-highlight-fill-2.label',
+    type: 'color'
+  },
 
-  'color-sheet-image-fill-1': {
-    label: 'projectfu-theme.color-sheet-image-fill-1.label',
+
+  'color-app-image-fill-1': {
+    label: 'projectfu-theme.color-app-image-fill-1.label',
     type: 'color'
   },
-  'color-sheet-image-fill-2': {
-    label: 'projectfu-theme.color-sheet-image-fill-2.label',
+  'color-app-image-fill-2': {
+    label: 'projectfu-theme.color-app-image-fill-2.label',
     type: 'color'
   },
 
-  'color-sheet-section-content': {
-    label: 'projectfu-theme.color-sheet-section-content.label',
+  'color-app-section-content': {
+    label: 'projectfu-theme.color-app-section-content.label',
     type: 'color'
   },
-  'color-sheet-section-border': {
-    label: 'projectfu-theme.color-sheet-section-border.label',
+  'color-app-section-border': {
+    label: 'projectfu-theme.color-app-section-border.label',
     type: 'color'
   },
-  'color-sheet-section-primary-fill-1': {
-    label: 'projectfu-theme.color-sheet-section-primary-fill-1.label',
+  'color-app-section-primary-fill-1': {
+    label: 'projectfu-theme.color-app-section-primary-fill-1.label',
     type: 'color'
   },
-  'color-sheet-section-primary-fill-2': {
-    label: 'projectfu-theme.color-sheet-section-primary-fill-2.label',
+  'color-app-section-primary-fill-2': {
+    label: 'projectfu-theme.color-app-section-primary-fill-2.label',
     type: 'color'
   },
   
-  'color-sheet-scrollbar': {
-    label: 'projectfu-theme.color-sheet-scrollbar.label',
+  'color-app-scrollbar': {
+    label: 'projectfu-theme.color-app-scrollbar.label',
     type: 'color'
   },
-  'color-sheet-scrollbar-track': {
-    label: 'projectfu-theme.color-sheet-scrollbar-track.label',
+  'color-app-scrollbar-track': {
+    label: 'projectfu-theme.color-app-scrollbar-track.label',
     type: 'color'
   },
   
@@ -508,12 +508,12 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.app-bg-image.label',
     type: 'image'
   },
-  'sheet-bg-image': {
-    label: 'projectfu-theme.sheet-bg-image.label',
+  'app-section-image': {
+    label: 'projectfu-theme.app-section-image.label',
     type: 'image'
   },
-  'sheet-section-image': {
-    label: 'projectfu-theme.sheet-section-image.label',
+  'sidebar-bg-image': {
+    label: 'projectfu-theme.sidebar-bg-image.label',
     type: 'image'
   },
   'advanced': {
