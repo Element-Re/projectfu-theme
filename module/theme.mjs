@@ -158,21 +158,18 @@ export class Theme {
   /* Apps - Body */
   'color-app-body-content' = '#ebf7afff';
   'color-app-body-focus-content' = '#ffffffff';
-  'color-app-body-primary-fill-1' = '#11292980';
-  'color-app-body-primary-fill-2' = '#49a49980';
   'color-app-body-primary-fill-1' = '#112929e0';
   'color-app-body-primary-fill-2' = '#25544fe0';
 
-  'color-app-border' = '#148782ff';
 
   'color-app-control-content' = '#ebf7afff';
 	'color-app-control-border' = '#148782ff';
-  'color-app-control-shadow' = '#ebf7afff';
+  'color-app-control-shadow' = '#2b4a42ff';
 	'color-app-control-fill-1' = '#2b4a42ff';
 	'color-app-control-fill-2' = '#2b4a42ff';
 	'color-app-control-highlight-content' = '#047470ff';
-	'color-app-control-highlight-border' = '#148782ff';
-  'color-app-control-highlight-shadow' = '#148782ff';
+	'color-app-control-highlight-border' = '#3A6359FF';
+  'color-app-control-highlight-shadow' = '#3A6359FF';
 	'color-app-control-highlight-fill-1' = '#dcd374ff';
 	'color-app-control-highlight-fill-2' = '#fff79aff';
 	'color-app-control-active-content' = '#fff79aff';
@@ -193,6 +190,13 @@ export class Theme {
   'color-app-item-highlight-fill-1' = '#e1efe3ff';
   'color-app-item-highlight-fill-2' = '#e1efe300';
   
+  'color-app-detail-section-content' = '#272a2aff';
+  'color-app-detail-section-border' = '#c9c7b8ff';
+  'color-app-detail-section-shadow' = '#2b4a42ff';
+  'color-app-detail-section-label' = '#2b4a42ff';
+  'color-app-detail-section-primary-fill-1' = '#d4e7e8ff';
+  'color-app-detail-section-primary-fill-2' = '#c3dbd6b3';
+
   'color-app-section-content' = '#2b4a42ff';
   'color-app-section-border' = '#2c4a4254';
   'color-app-section-primary-fill-1' = '#f5f5dcff';
@@ -405,6 +409,28 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.color-app-control-active-fill-2.label',
     type: 'color'
   },
+
+  'color-app-detail-section-content': {
+    label: 'projectfu-theme.color-app-detail-section-content.label',
+    type: 'color'
+  },
+  'color-app-detail-section-label': {
+    label: 'projectfu-theme.color-app-detail-section-label.label',
+    type: 'color'
+  },
+  'color-app-detail-section-shadow': {
+    label: 'projectfu-theme.color-app-detail-section-shadow.label',
+    type: 'color'
+  },
+  'color-app-detail-section-primary-fill-1': {
+    label: 'projectfu-theme.color-app-detail-section-primary-fill-1.label',
+    type: 'color'
+  },
+  'color-app-detail-section-primary-fill-2': {
+    label: 'projectfu-theme.color-app-detail-section-primary-fill-2.label',
+    type: 'color'
+  },
+
   'color-app-item-header-content': {
     label: 'projectfu-theme.color-app-item-header-content.label',
     type: 'color'
@@ -434,6 +460,8 @@ export const THEME_OPTIONS = deepFreeze({
     type: 'color'
   },
 
+
+  
 
   'color-app-image-fill-1': {
     label: 'projectfu-theme.color-app-image-fill-1.label',
