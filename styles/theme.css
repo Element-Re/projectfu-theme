@@ -456,7 +456,7 @@ a.inline-roll {
 		& .rollable:hover,
 		.rollable:focus {
 			color: var(--pfu-color-app-control-content);
-			text-shadow: 0px 0px 5px var(--pfu-color-app-control-fill-1);
+			text-shadow: 2px 2px 12px var(--pfu-color-app-control-fill-1);
 		}
 
 		& .breakline-border {
@@ -548,6 +548,10 @@ a.inline-roll {
 			margin: 0 1px 0 1px;
 			color: var(--pfu-color-app-control-content);
 			background: var(--pfu-color-app-control-fill);
+			&:hover {
+				border: none;
+				color: var(--pfu-color-app-control-content);
+			}
 			&::placeholder {
 				color: var(--pfu-color-app-control-content);
 				opacity: 0.5;
@@ -579,6 +583,7 @@ a.inline-roll {
 			}
 
 			&:not(.active):hover {
+				text-shadow: none;
 				color: var(--pfu-color-app-control-highlight-content) !important;
 				border: thin solid var(--pfu-color-app-control-highlight-border);
 				background: var(--pfu-color-app-control-highlight-fill) !important;
@@ -677,6 +682,9 @@ a.inline-roll {
 							
 							& .charname-container {
 								border: none;
+								& input {
+									color: var(--pfu-color-app-body-content);
+								}
 							}
 						}
 				}
