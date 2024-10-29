@@ -520,8 +520,13 @@ a.inline-roll {
 		& 
 		.resource-content .resource-inputs, 
 		.resource-content.levelup-container.creature .resource-inputs {
+			border: thin solid transparent;
 			color: var(--pfu-color-app-control-content);
 			background: var(--pfu-color-app-control-fill);
+			& option {
+				background-color: var(--pfu-color-app-control-fill-1);
+				color: var(--pfu-color-app-control-content);
+			}
 			&::placeholder {
 				color: var(--pfu-color-app-control-content);
 				opacity: 0.5;
@@ -539,9 +544,10 @@ a.inline-roll {
 		}
 
 		& .resource-max-input, .resource-current-input {
+			border: none;
+			margin: 0 1px 0 1px;
 			color: var(--pfu-color-app-control-content);
 			background: var(--pfu-color-app-control-fill);
-			border: 1px solid var(--pfu-color-app-control-border);
 			&::placeholder {
 				color: var(--pfu-color-app-control-content);
 				opacity: 0.5;
@@ -620,7 +626,7 @@ a.inline-roll {
 			}
 
 
-			& .section-container, .desc, .resource-content.level-field, .npc-level-container > label {
+			& .section-container, .desc {
 				border: 1px solid var(--pfu-color-app-section-border);
 				background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
 				background-blend-mode: multiply;
@@ -628,6 +634,52 @@ a.inline-roll {
 				background-position: right top;
 				background-size: cover;
 
+			}
+			& .sheet-header {
+				& > .combine-header {
+					
+					& > .header-fields {
+							border: solid var(--pfu-color-app-section-border);
+							border-top-width: 1px;
+							border-right-width: 1px;
+							border-bottom-width: 1px;
+							border-left-width: 0;
+							border-radius: 0 12px 12px 0;
+							background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
+							background-blend-mode: multiply;
+							background-repeat: repeat-y;
+							background-position: right top;
+							background-size: cover;
+					
+							& .species-select {
+								margin: 0 -1px 0 -1px;
+								border-radius: unset;
+							}
+							& > .desc {
+								border: none;
+							}
+							& .header-start {
+								border: none;
+							}
+							& .header-center {
+								background: none;
+							}
+					
+							& .resource-content.level-field {
+								border: none;
+								background: none;
+								margin: 0 1px 0 1px;
+							}
+							& .npc-level-container>label {
+								border: none;
+								background: none;
+							}
+							
+							& .charname-container {
+								border: none;
+							}
+						}
+				}
 			}
 		}
 
