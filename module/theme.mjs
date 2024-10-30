@@ -470,9 +470,6 @@ export const THEME_OPTIONS = deepFreeze({
     type: 'color'
   },
 
-
-  
-
   'color-app-image-fill-1': {
     label: 'projectfu-theme.color-app-image-fill-1.label',
     type: 'color'
@@ -490,26 +487,11 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.color-app-section-content-secondary.label',
     type: 'color'
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   'color-app-section-content-tertiary': {
     label: 'projectfu-theme.color-app-section-content-tertiary.label',
     type: 'color'
   },
+  
   'color-app-section-border': {
     label: 'projectfu-theme.color-app-section-border.label',
     type: 'color'
