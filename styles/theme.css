@@ -445,6 +445,10 @@ a.inline-roll {
 	
 	&.projectfu {
 	
+		& .resource-middle-input {
+			border: 1px solid var(--pfu-color-app-section-border);
+		}
+
 		& .star-label {
 			&.fus-sl-star {
 				background-image: none;
@@ -487,7 +491,7 @@ a.inline-roll {
 			color: var(--pfu-color-app-section-content-secondary);
 		}
 
-				& .items-main {
+		& .items-main {
 			color: var(--pfu-color-app-item-header-content);
 			background: var(--pfu-color-app-item-header-fill);
 			text-shadow: 1px 1px var(--pfu-color-app-item-header-shadow);
@@ -663,7 +667,8 @@ a.inline-roll {
 			& .sheet-header {
 				& > .combine-header {
 
-					& .profile-img {
+					& .profile-img, .item-profile-img {
+						flex: 0 0 64px;
 						border: 1px solid var(--pfu-color-app-section-border);
 						background: var(--pfu-color-app-image-fill);
 					}
