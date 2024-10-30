@@ -155,13 +155,18 @@ export class Theme {
   'color-app-header-fill-1' = '#51c7ad4d';
   'color-app-header-fill-2' = '#044a2c4d';
   
+  
   /* Apps - Body */
-  'color-app-body-content' = '#ebf7afff';
+  'color-app-body-content' = '#ebF7afff';
   'color-app-body-focus-content' = '#ffffffff';
   'color-app-body-primary-fill-1' = '#112929e0';
   'color-app-body-primary-fill-2' = '#25544fe0';
-
-
+  
+  'color-app-name-section-content' = "#ebf7afff";
+  'color-app-name-section-shadow' = "#000000ff";
+  'color-app-name-section-fill-1' = "#532853ff";
+  'color-app-name-section-fill-2' = "#bfb8c4ff";
+  
   'color-app-control-content' = '#ebf7afff';
 	'color-app-control-border' = '#148782ff';
   'color-app-control-shadow' = '#2b4a42ff';
@@ -177,15 +182,15 @@ export class Theme {
   'color-app-control-active-shadow' = '#753002ff';
 	'color-app-control-active-fill-1' = '#e28079cc';
 	'color-app-control-active-fill-2' = '#f1a372cc';
-
+  
   'color-app-image-fill-1' = '#2b4a42ff';
 	'color-app-image-fill-2' = '#3d665aff';
-
+  
   'color-app-item-header-content' = '#ebf7afff';
   'color-app-item-header-fill-1' = '#2c584dff';
   'color-app-item-header-fill-2' = '#a0cdbcff';
   'color-app-item-header-shadow' = '#2b4a42ff';
-
+  
   'color-app-item-highlight-border' = '#2b4a42ff';
   'color-app-item-highlight-fill-1' = '#e1efe3ff';
   'color-app-item-highlight-fill-2' = '#e1efe300';
@@ -196,9 +201,11 @@ export class Theme {
   'color-app-detail-section-label' = '#2b4a42ff';
   'color-app-detail-section-primary-fill-1' = '#d4e7e8ff';
   'color-app-detail-section-primary-fill-2' = '#c3dbd6b3';
-
-  'color-app-section-content' = '#2b4a42ff';
-  'color-app-section-border' = '#2c4a4254';
+  
+  'color-app-section-content-primary' = '#191813ff';
+  'color-app-section-content-secondary' = '#2b4a42ff';
+  'color-app-section-content-tertiary' = '#4b4a44ff';
+  'color-app-section-border' = '#aeb8a8ff';
   'color-app-section-primary-fill-1' = '#f5f5dcff';
   'color-app-section-primary-fill-2' = '#c9c7b8ff';
   'color-app-scrollbar' = '#5d142bff';
@@ -318,7 +325,22 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.color-app-header-fill-2.label',
     type: 'color'
   },
-
+  'color-app-name-section-content': {
+    label: 'projectfu-theme.color-app-name-section-content.label',
+    type: 'color'
+  },
+  'color-app-name-section-shadow': {
+    label: 'projectfu-theme.color-app-name-section-shadow.label',
+    type: 'color'
+  },
+  'color-app-name-section-fill-1': {
+    label: 'projectfu-theme.color-app-name-section-fill-1.label',
+    type: 'color'
+  },
+  'color-app-name-section-fill-2': {
+    label: 'projectfu-theme.color-app-name-section-fill-2.label',
+    type: 'color'
+  },
   /* Apps - Body */
   'color-app-body-content': {
     label: 'projectfu-theme.color-app-body-content.label',
@@ -334,18 +356,6 @@ export const THEME_OPTIONS = deepFreeze({
   },
   'color-app-body-primary-fill-2': {
     label: 'projectfu-theme.color-app-body-primary-fill-2.label',
-    type: 'color'
-  },
-  'color-app-body-primary-fill-1': {
-    label: 'projectfu-theme.color-app-body-primary-fill-1.label',
-    type: 'color'
-  },
-  'color-app-body-primary-fill-2': {
-    label: 'projectfu-theme.color-app-body-primary-fill-2.label',
-    type: 'color'
-  },
-  'color-app-border': {
-    label: 'projectfu-theme.color-app-border.label',
     type: 'color'
   },
 
@@ -472,8 +482,32 @@ export const THEME_OPTIONS = deepFreeze({
     type: 'color'
   },
 
-  'color-app-section-content': {
-    label: 'projectfu-theme.color-app-section-content.label',
+  'color-app-section-content-primary': {
+    label: 'projectfu-theme.color-app-section-content-primary.label',
+    type: 'color'
+  },
+  'color-app-section-content-secondary': {
+    label: 'projectfu-theme.color-app-section-content-secondary.label',
+    type: 'color'
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  'color-app-section-content-tertiary': {
+    label: 'projectfu-theme.color-app-section-content-tertiary.label',
     type: 'color'
   },
   'color-app-section-border': {
