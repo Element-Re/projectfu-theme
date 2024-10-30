@@ -700,6 +700,9 @@ a.inline-roll {
 								background: none;
 							}
 					
+							& span:has(.levelup-container) {
+								border: none !important;
+							}
 							& .resource-content.level-field {
 								border: none;
 								background: none;
@@ -713,6 +716,7 @@ a.inline-roll {
 							& .charname-container {
 								border: none;
 								background: var(--pfu-color-app-name-section-fill);
+								margin-right: 1px;
 								& input {
 									color: var(--pfu-color-app-name-section-content);
 									&.charname  {
