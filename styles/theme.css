@@ -467,10 +467,10 @@ a.inline-roll {
 			border: 1px solid var(--pfu-color-app-section-border);
 		}
 
-		& .star-label {
+		& .star-label:not(.fus-star2-border) {
 			&.fus-sl-star {
 				background-image: none;
-				color: var(--pfu-color-app-section-content-primary)
+				color: var(--pfu-color-app-section-content-secondary)
 			}
 	
 			&.ful-sl-star {
@@ -482,7 +482,7 @@ a.inline-roll {
 			}
 	
 			&::after {
-				-webkit-text-stroke: 2px var(--pfu-color-app-section-content-primary);
+				-webkit-text-stroke: 2px var(--pfu-color-app-section-content-secondary);
 				content: "🟆";
 				line-height: 28px;
 				font-size: 24px;
@@ -679,7 +679,7 @@ a.inline-roll {
 				}
 				& #status-section, #attribute-section, #roll-section {
 					border: unset;
-					background: unset;
+					background: unset !important;
 				}
 			}
 			& .sheet-header {
