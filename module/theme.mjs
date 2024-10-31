@@ -195,7 +195,9 @@ export class Theme {
   'color-app-item-highlight-fill-1' = '#e1efe3ff';
   'color-app-item-highlight-fill-2' = '#e1efe300';
   
-  'color-app-detail-section-content' = '#272a2aff';
+  'color-app-detail-section-content-primary' = '#272a2aff';
+  'color-app-detail-section-content-secondary' = '#2b4a42ff';
+  'color-app-detail-section-content-tertiary' = '#3d665aff';
   'color-app-detail-section-border' = '#c9c7b8ff';
   'color-app-detail-section-shadow' = '#2b4a42ff';
   'color-app-detail-section-label' = '#2b4a42ff';
@@ -420,26 +422,7 @@ export const THEME_OPTIONS = deepFreeze({
     type: 'color'
   },
 
-  'color-app-detail-section-content': {
-    label: 'projectfu-theme.color-app-detail-section-content.label',
-    type: 'color'
-  },
-  'color-app-detail-section-label': {
-    label: 'projectfu-theme.color-app-detail-section-label.label',
-    type: 'color'
-  },
-  'color-app-detail-section-shadow': {
-    label: 'projectfu-theme.color-app-detail-section-shadow.label',
-    type: 'color'
-  },
-  'color-app-detail-section-primary-fill-1': {
-    label: 'projectfu-theme.color-app-detail-section-primary-fill-1.label',
-    type: 'color'
-  },
-  'color-app-detail-section-primary-fill-2': {
-    label: 'projectfu-theme.color-app-detail-section-primary-fill-2.label',
-    type: 'color'
-  },
+  
 
   'color-app-item-header-content': {
     label: 'projectfu-theme.color-app-item-header-content.label',
@@ -502,6 +485,31 @@ export const THEME_OPTIONS = deepFreeze({
   },
   'color-app-section-primary-fill-2': {
     label: 'projectfu-theme.color-app-section-primary-fill-2.label',
+    type: 'color'
+  },
+
+  'color-app-detail-section-content-primary': {
+    label: 'projectfu-theme.color-app-detail-section-content-primary.label',
+    type: 'color'
+  },
+  'color-app-detail-section-content-secondary': {
+    label: 'projectfu-theme.color-app-detail-section-content.secondary',
+    type: 'color'
+  },
+  'color-app-detail-section-content-tertiary': {
+    label: 'projectfu-theme.color-app-detail-section-label.tertiary',
+    type: 'color'
+  },
+  'color-app-detail-section-shadow': {
+    label: 'projectfu-theme.color-app-detail-section-shadow.label',
+    type: 'color'
+  },
+  'color-app-detail-section-primary-fill-1': {
+    label: 'projectfu-theme.color-app-detail-section-primary-fill-1.label',
+    type: 'color'
+  },
+  'color-app-detail-section-primary-fill-2': {
+    label: 'projectfu-theme.color-app-detail-section-primary-fill-2.label',
     type: 'color'
   },
   

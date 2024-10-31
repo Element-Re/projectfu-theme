@@ -76,12 +76,14 @@
 	--pfu-color-app-section-content-primary: #191813ff;
 	--pfu-color-app-section-content-secondary: #2b4a42ff;
 	--pfu-color-app-section-content-tertiary: #4b4a44ff;
+	--pfu-color-app-section-divider: #7a7971ff;
 	--pfu-color-app-section-border: #aeb8a8ff;
 	--pfu-color-app-section-primary-fill-1: #d4e7e8ff;
 	--pfu-color-app-section-primary-fill-2: #c3dbd6b3;
 	--pfu-color-app-section-primary-fill: linear-gradient(270deg, var(--pfu-color-app-section-primary-fill-1) 0%, var(--pfu-color-app-section-primary-fill-2) 100%);
-	--pfu-color-app-detail-section-content: #272a2aff;
-	--pfu-color-app-detail-section-label: #2b4a42ff;
+	--pfu-color-app-detail-section-content-primary: #272a2aff;
+	--pfu-color-app-detail-section-content-secondary: #2b4a42ff;
+	--pfu-color-app-detail-section-content-tertiary: #3d665aff;
 	--pfu-color-app-detail-section-shadow: #2b4a42ff;
 	--pfu-color-app-detail-section-primary-fill-1: #d4e7e8ff;
 	--pfu-color-app-detail-section-primary-fill-2: #c3dbd6b3;
@@ -356,9 +358,13 @@ a.content-link,
 a.inline-roll {
 
 	color: var(--pfu-color-app-control-content);
+	border: 0.063rem solid var(--pfu-color-app-control-border);
 	background: var(--pfu-color-app-control-fill);
 	box-shadow: 0.063rem 0.1rem var(--pfu-color-app-control-shadow);
-	border: 0.063rem solid var(--pfu-color-app-control-border);
+	&.broken {
+		background: var(--pfu-color-app-control-fill);
+		box-shadow: 0.063rem 0.1rem var(--pfu-color-app-control-shadow);
+	}
 	&:hover i {
 		color: var(--pfu-color-app-body-focus-content);
 	}
@@ -387,11 +393,17 @@ a.inline-roll {
 }
 
 .detail-desc {
-	color: var(--pfu-color-app-detail-section-content);
+	color: var(--pfu-color-app-detail-section-content-primary);
 	background: var(--pfu-color-app-detail-section-primary-fill);
 	box-shadow: 1px 2px var(--pfu-color-app-detail-section-shadow);
+	& .summary {
+		color: var(--pfu-color-app-detail-section-content-tertiary);
+	}
+	& strong {
+		color: var(--pfu-color-app-detail-section-content-primary);
+	}
 	& label.title {
-		color: var(--pfu-color-app-detail-section-label);
+		color: var(--pfu-color-app-detail-section-content-secondary);
 	}
 }
 
@@ -423,22 +435,28 @@ a.inline-roll {
 	color: var(--pfu-color-app-body-content);
 	box-shadow: 0 0 10px #2b1c02;
 
-	.chat-message {
-		color: var(--pfu-color-app-section-content-primary);
-		& .message-header {
-			color: var(--pfu-color-app-section-content-tertiary);
-		}
-	}
 	.chat-message,
 	.chat-message.whisper {
+		color: var(--pfu-color-app-section-content-primary);
 		border: 2px solid var(--pfu-color-app-section-border);
 		background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
 		background-size: cover;
+		& .message-header {
+			color: var(--pfu-color-app-section-content-tertiary);
+		}
 		& .chat-desc {
-			color: var(--pfu-color-app-detail-section-content);
+			color: var(--pfu-color-app-detail-section-content-primary);
 			border-top: unset;
 			background: var(--pfu-color-app-detail-section-primary-fill);
 			box-shadow: 1px 2px var(--pfu-color-app-detail-section-shadow);
+
+			& strong {
+				color: var(--pfu-color-app-detail-section-content-primary);
+			}
+			& .summary {
+				color: var(--pfu-color-app-detail-section-content-tertiary);
+			}
+		
 		}
 	}
 
