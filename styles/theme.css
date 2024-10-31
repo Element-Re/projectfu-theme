@@ -496,11 +496,11 @@ a.inline-roll {
 		}
 
 		& .breakline-border {
-			background: linear-gradient(to left, transparent, var(--pfu-color-app-section-primary-fill-1), transparent);
+			background: linear-gradient(to right, transparent, var(--pfu-color-app-section-primary-fill-1), transparent);
 		}
 
 		& .desc .inline-desc {
-			background: linear-gradient(to left, var(--pfu-color-app-item-highlight-fill-1), var(--pfu-color-app-item-highlight-fill-2));
+			background: linear-gradient(to right, var(--pfu-color-app-item-highlight-fill-1) 0%, var(--pfu-color-app-item-highlight-fill-2) 500%);
 			border: 1px solid var(--pfu-color-app-item-highlight-border);
 		}
 
@@ -799,11 +799,6 @@ a.inline-roll {
 			border-radius: var(--pfu-border-radius-small);
 		}
 		
-		& .window-content {
-			& a:not(.tab-style):hover {
-				color: unset;
-			}
-		}
 	}
 	
 	
