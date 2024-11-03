@@ -468,8 +468,8 @@ a.inline-roll {
 		}
 	}
 
-	
-	&.projectfu {
+	&.projectfu, 
+	&:is(#auto-target-dialog, #auto-spend-dialog) .projectfu {
 	
 		& .resource-middle-input {
 			border: 1px solid var(--pfu-color-app-section-border);
@@ -538,10 +538,10 @@ a.inline-roll {
 				}
 
 				&:hover {
+					color: var(--pfu-color-app-section-content-secondary);
 					border-color: var(--pfu-color-app-item-highlight-border);
 					background: var(--pfu-color-app-item-highlight-fill);
 				}
-
 			}
 
 			&.items-header > * {
@@ -591,7 +591,10 @@ a.inline-roll {
 			background: var(--pfu-color-app-control-fill);
 			box-shadow: 1px 2px var(--pfu-color-app-control-shadow);
 
-			&.active, &.active:hover {
+			&.active,
+			&.active:hover,
+			&:active,
+			&:active:hover {
 				margin: 1px -1px -1px 1px;
 				-webkit-transform: unset;
 				transform: unset;
@@ -602,7 +605,7 @@ a.inline-roll {
 				text-shadow: none;
 			}
 
-			&:not(.active):hover {
+			&:not(.active, :active):hover {
 				text-shadow: none;
 				color: var(--pfu-color-app-control-highlight-content) !important;
 				border: thin solid var(--pfu-color-app-control-highlight-border);
@@ -610,23 +613,15 @@ a.inline-roll {
 				box-shadow: 1px 2px var(--pfu-color-app-control-highlight-shadow);
 			}
 		}
-
-		& .title-fieldset legend {
-			border: 1px solid var(--pfu-color-app-control-border);
-			color: var(--pfu-color-app-control-content);
-			background: var(--pfu-color-app-control-fill);
-
-
-
-			& .resource-inputs {
-				color: var(--pfu-color-app-control-content);
-				border: none;
-				background: none;
-			}
+		& #autoTargetForm, #autoSpendForm {
+			margin-top: 0.5em;
+			margin-bottom: 0.5em;
 		}
 	}
+	
 
-	&:is(.backgroundstyle, .unique-dialog) {
+	&:is(.backgroundstyle, .unique-dialog, #auto-target-dialog, #auto-spend-dialog) {
+	
 		/* Reset to foundry defaults to fix wonky styling on headers due to the background covering it too. */
 		background: url("/ui/denim075.png") repeat;
 		background-blend-mode: unset;
@@ -635,6 +630,49 @@ a.inline-roll {
 		background-color: unset !important;
 		border: 1px solid var(--pfu-color-app-border);
 
+    /* TODO: Move somewhere with more reusability. */
+		& .dialog-buttons, .meta-currency-tracker > .resource-content {
+			padding: 0.5em;
+			border-radius: var(--pfu-border-radius-medium);
+			color: var(--pfu-color-app-section-content-primary);
+			border: 1px solid var(--pfu-color-app-section-border);
+			background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
+			background-blend-mode: multiply;
+			background-position: right top;
+			background-size: var(--pfu-app-section-bg-image-size), cover;
+			background-repeat: var(--pfu-app-section-bg-image-repeat);
+
+			button {
+				border-radius: var(--pfu-border-radius-medium);
+				border: thin solid var(--pfu-color-app-control-border);
+				color: var(--pfu-color-app-control-content);
+				background: var(--pfu-color-app-control-fill);
+				box-shadow: 1px 2px var(--pfu-color-app-control-shadow);
+			
+				&.active,
+				&.active:hover,
+				&:active,
+				&:active:hover {
+					margin: 1px -1px -1px 1px;
+					-webkit-transform: unset;
+					transform: unset;
+					color: var(--pfu-color-app-control-active-content) !important;
+					border: thin solid var(--pfu-color-app-control-active-border);
+					background: var(--pfu-color-app-control-active-fill) !important;
+					box-shadow: 0 1px var(--pfu-color-app-control-active-shadow);
+					text-shadow: none;
+				}
+			
+				&:not(.active, :active):hover {
+					text-shadow: none;
+					color: var(--pfu-color-app-control-highlight-content) !important;
+					border: thin solid var(--pfu-color-app-control-highlight-border);
+					background: var(--pfu-color-app-control-highlight-fill) !important;
+					box-shadow: 1px 2px var(--pfu-color-app-control-highlight-shadow);
+				}
+			}
+		}
+
 		& .window-content {
 			color: var(--pfu-color-app-body-content);
 			background: var(--pfu-app-bg-image), var(--pfu-color-app-body-primary-fill);
@@ -642,6 +680,9 @@ a.inline-roll {
 
 			& * {
 				scrollbar-color: var(--pfu-color-app-scrollbar) var(--pfu-color-app-scrollbar-track);
+			}
+			& abbr[title] {
+				text-decoration: unset;
 			}
 
 			& .resource-content, .resource-content.desc {
@@ -655,7 +696,8 @@ a.inline-roll {
 			.resource-content .resource-inputs,
 			.resource-content.levelup-container.creature .resource-inputs,
 			.bond-strength,
-			.resource-content.traits input {
+			.resource-content.traits input,
+			fieldset:is(.form-fields, .resource-content) input {
 				border: thin solid transparent;
 				color: var(--pfu-color-app-control-content);
 				background: var(--pfu-color-app-control-fill);
@@ -675,7 +717,9 @@ a.inline-roll {
 			.section-container,
 			.desc,
 			.header-fields:has(#status-section, #attribute-section, #roll-section),
-			.dialog-content fieldset {
+			.dialog-content fieldset, 
+			.projectfu>.items-list {
+				border-radius: var(--pfu-border-radius-medium);
 				color: var(--pfu-color-app-section-content-primary);
 				border: 1px solid var(--pfu-color-app-section-border);
 				background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
@@ -691,6 +735,9 @@ a.inline-roll {
 				& #status-section, #attribute-section, #roll-section {
 					border: unset;
 					background: unset !important;
+				}
+				& .desc, fieldset, .header-fields {
+					background: unset;
 				}
 			}
 			& .sheet-header {
@@ -760,7 +807,6 @@ a.inline-roll {
 				}
 			}
 		}
-
 	}
 	
 	.is-two-weapon.equip {
@@ -869,6 +915,19 @@ a.inline-roll {
 			}
 		}
 	} 
+}
+
+.projectfu .title-fieldset legend,
+.projectfu.unique-dialog .dialog-content fieldset legend {
+	border: 1px solid var(--pfu-color-app-control-border);
+	color: var(--pfu-color-app-control-content);
+	background: var(--pfu-color-app-control-fill);
+
+	& .resource-inputs {
+		color: var(--pfu-color-app-control-content);
+		border: none;
+		background: none;
+	}
 }
 
 /* Theme Menu */
