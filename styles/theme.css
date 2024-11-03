@@ -117,14 +117,20 @@
 	--pfu-ui-accent-position-top: -24px;
 	--pfu-ui-accent-position-left: 1px;
 	--pfu-ui-accent-clip-path: inset(0 370px 402px 0);
+	--pfu-app-section-bg-image-size: cover;
+	--pfu-app-section-bg-image-repeat: repeat-y;
+	--pfu-app-accent-width: 200px;
+	--pfu-app-accent-height: 200px;
+	--pfu-app-accent-position-top: -42px;
+	--pfu-app-accent-position-left: -47px;
 	
 		
 	/* Assets */
 	--pfu-ui-accent-image: url("../assets/images/logo.png");
 	--pfu-app-accent-image: url("../assets/images/logo.png");
-	--pfu-app-section-bg-image: url("/systems/projectfu/styles/static/ui/bg.webp");
-	--pfu-app-bg-image: url("../assets/images/pattern_hojita.png");
-	--pfu-sidebar-bg-image: url("../assets/images/pattern_hojita_half.png");
+	--pfu-app-section-bg-image: url("../assets/images/Bkg_pattern_highres");
+	--pfu-app-bg-image: url("../assets/images/Hojitas_highres.png");
+	--pfu-sidebar-bg-image: url("../assets/images/Hojitas_double_highres.png");
 }
 
 /* Foundry Overrides */
@@ -440,7 +446,9 @@ a.inline-roll {
 		color: var(--pfu-color-app-section-content-primary);
 		border: 2px solid var(--pfu-color-app-section-border);
 		background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
-		background-size: cover;
+		background-position: right top;
+		background-size: var(--pfu-app-section-bg-image-size), cover;
+		background-repeat: var(--pfu-app-section-bg-image-repeat);
 		& .message-header {
 			color: var(--pfu-color-app-section-content-tertiary);
 		}
@@ -542,27 +550,7 @@ a.inline-roll {
 					text-shadow: 1px 1px var(--pfu-color-app-item-header-shadow);
 					box-shadow: 1px 2px var(--pfu-color-app-item-header-shadow);
 			}
-
-			
-
-			
 				
-		}
-
-		& 
-		.resource-content .resource-inputs, 
-		.resource-content.levelup-container.creature .resource-inputs {
-			border: thin solid transparent;
-			color: var(--pfu-color-app-control-content);
-			background: var(--pfu-color-app-control-fill);
-			& option {
-				background-color: var(--pfu-color-app-control-fill-1);
-				color: var(--pfu-color-app-control-content);
-			}
-			&::placeholder {
-				color: var(--pfu-color-app-control-content);
-				opacity: 0.5;
-			}
 		}
 
 		& .body-section .section-container .desc-header.resource-content .traitdesc {
@@ -638,7 +626,7 @@ a.inline-roll {
 		}
 	}
 
-	&.backgroundstyle {
+	&:is(.backgroundstyle, .unique-dialog) {
 		/* Reset to foundry defaults to fix wonky styling on headers due to the background covering it too. */
 		background: url("/ui/denim075.png") repeat;
 		background-blend-mode: unset;
@@ -663,15 +651,38 @@ a.inline-roll {
 				}
 			}
 
+			& 
+			.resource-content .resource-inputs,
+			.resource-content.levelup-container.creature .resource-inputs,
+			.bond-strength,
+			.resource-content.traits input {
+				border: thin solid transparent;
+				color: var(--pfu-color-app-control-content);
+				background: var(--pfu-color-app-control-fill);
 
-			& .section-container, .desc, .header-fields:has(#status-section, #attribute-section, #roll-section) {
+				& option {
+					background-color: var(--pfu-color-app-control-fill-1);
+					color: var(--pfu-color-app-control-content);
+				}
+
+				&::placeholder {
+					color: var(--pfu-color-app-control-content);
+					opacity: 0.5;
+				}
+			}
+
+			& 
+			.section-container,
+			.desc,
+			.header-fields:has(#status-section, #attribute-section, #roll-section),
+			.dialog-content fieldset {
 				color: var(--pfu-color-app-section-content-primary);
 				border: 1px solid var(--pfu-color-app-section-border);
 				background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
 				background-blend-mode: multiply;
-				background-repeat: repeat-y;
 				background-position: right top;
-				background-size: cover;
+				background-size: var(--pfu-app-section-bg-image-size), cover;
+				background-repeat: var(--pfu-app-section-bg-image-repeat);
 				&:has(#status-section,
 					#attribute-section,
 					#roll-section) {
@@ -700,9 +711,9 @@ a.inline-roll {
 							border-radius: 0 12px 12px 0;
 							background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
 							background-blend-mode: multiply;
-							background-repeat: repeat-y;
 							background-position: right top;
-							background-size: cover;
+							background-size: var(--pfu-app-section-bg-image-size), cover;
+							background-repeat: var(--pfu-app-section-bg-image-repeat);
 					
 							& .species-select {
 								margin: 0 -1px 0 -1px;
@@ -776,12 +787,12 @@ a.inline-roll {
 					background: var(--pfu-app-accent-image);
 					background-size: contain;
 					background-repeat: no-repeat;
-					height: 500px;
-					width: 500px;
+					height: var(--pfu-app-accent-height);
+					width: var(--pfu-app-accent-width);
 					opacity: 80%;
 					pointer-events: none;
-					top: -60px;
-					left: -40px;
+					top: var(--pfu-app-accent-position-top);
+					left: var(--pfu-app-accent-position-left);
 					z-index: 1000;
 				}
 				& .window-header {
@@ -862,11 +873,23 @@ a.inline-roll {
 
 /* Theme Menu */
 #projectfu-theme-menu {
+
+	& form#themeMenuForm {
+		display: flex;
+		flex-direction: column;
+		height: 1vh;
+		
+		.settings {
+			flex: 1 1 auto;
+			overflow-y: auto;
+		}
+	
 		& summary {
 			cursor: pointer;
-
+	
 			& h4 {
 				display: inline-block;
 			}
 		}
+	}
 }

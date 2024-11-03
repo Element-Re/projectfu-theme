@@ -49,7 +49,17 @@ export class Theme {
       let themeValue = this[themeKey];
       if (themeType === 'image') {
         // Handle image values, including the case where no image is defined.
-        themeValue = themeValue ? `url("/${themeValue}")` : 'url("")';
+        if (!themeValue) {
+          themeValue = 'url("")';
+        } else try {
+          const isRelativeUrl = new URL(document.baseURI).origin === new URL(themeValue, document.baseURI).origin;
+          const prefix = isRelativeUrl ? '/' : '';
+          themeValue = `url("${prefix}${themeValue}")`;
+        } catch (e) {
+          console.error(e);
+          themeValue = 'url("")';
+        }
+        
       } else if (!themeValue || typeof themeValue !== 'string') return;
       const rule = `--pfu-${themeKey}: ${themeValue};`;
       return rule;
@@ -213,10 +223,10 @@ export class Theme {
   'color-app-scrollbar' = '#5d142bff';
   'color-app-scrollbar-track' = '#00000000';
   'ui-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
-  'app-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
-  'app-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita.png`;
-  'app-section-bg-image' = `systems/projectfu/styles/static/ui/bg.webp`;
-  'sidebar-bg-image' = `modules/${MODULE}/assets/images/pattern_hojita_half.png`;
+  'app-accent-image' = `modules/${MODULE}/assets/images/Acento_highres.png`;
+  'app-bg-image' = `modules/${MODULE}/assets/images/HojitasDouble_highres.png`;
+  'app-section-bg-image' = `modules/${MODULE}/assets/images/Bkg_highres.png`;
+  'sidebar-bg-image' = `modules/${MODULE}/assets/images/Hojitas_highres.png`;
   
   /* Misc */
   'color-misc-shadow-primary' = '#77ebd7ff';
@@ -233,10 +243,15 @@ export class Theme {
     '  --pfu-ui-accent-position-top: -24px;',
     '  --pfu-ui-accent-position-left: 1px;',
     '  --pfu-ui-accent-clip-path: inset(0 370px 402px 0);',
+    '  --pfu-app-accent-width: 200px;',
+    '  --pfu-app-accent-height: 200px;',
+	  '  --pfu-app-accent-position-top: -42px;',
+	  '  --pfu-app-accent-position-left: -47px;',
     '  --pfu-border-radius-large: 20px;',
     '  --pfu-border-radius-medium: 10px;',
     '  --pfu-border-radius-small: 5px;',
     '  --pfu-border-width: 1px;',
+    '  --pfu-app-section-bg-image-size: clamp(25%, 250px, 100%) auto;',
     '}'
   ].join('\n');
 }
