@@ -587,30 +587,32 @@ a.inline-roll {
 
 		& .button-style {
 			border: thin solid var(--pfu-color-app-control-border);
-			color: var(--pfu-color-app-control-content);
-			background: var(--pfu-color-app-control-fill);
+			color: var(--pfu-color-app-control-content) !important;
+			background: var(--pfu-color-app-control-fill) !important;
 			box-shadow: 1px 2px var(--pfu-color-app-control-shadow);
 
-			&.active,
-			&.active:hover,
-			&:active,
-			&:active:hover {
-				margin: 1px -1px -1px 1px;
-				-webkit-transform: unset;
-				transform: unset;
-				color: var(--pfu-color-app-control-active-content) !important;
-				border: thin solid var(--pfu-color-app-control-active-border);
-				background: var(--pfu-color-app-control-active-fill) !important;
-				box-shadow: 0 1px var(--pfu-color-app-control-active-shadow);
-				text-shadow: none;
-			}
-
-			&:not(.active, :active):hover {
-				text-shadow: none;
-				color: var(--pfu-color-app-control-highlight-content) !important;
-				border: thin solid var(--pfu-color-app-control-highlight-border);
-				background: var(--pfu-color-app-control-highlight-fill) !important;
-				box-shadow: 1px 2px var(--pfu-color-app-control-highlight-shadow);
+			&:not(:has(input)) {
+				&.active,
+				&.active:hover,
+				&:active,
+				&:active:hover {
+					margin: 1px -1px -1px 1px;
+					-webkit-transform: unset;
+					transform: unset;
+					color: var(--pfu-color-app-control-active-content) !important;
+					border: thin solid var(--pfu-color-app-control-active-border);
+					background: var(--pfu-color-app-control-active-fill) !important;
+					box-shadow: 0 1px var(--pfu-color-app-control-active-shadow);
+					text-shadow: none;
+				}
+	
+				&:not(.active, :active):hover {
+					text-shadow: none;
+					color: var(--pfu-color-app-control-highlight-content) !important;
+					border: thin solid var(--pfu-color-app-control-highlight-border);
+					background: var(--pfu-color-app-control-highlight-fill) !important;
+					box-shadow: 1px 2px var(--pfu-color-app-control-highlight-shadow);
+				}
 			}
 		}
 		& #autoTargetForm, #autoSpendForm {
