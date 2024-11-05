@@ -508,11 +508,11 @@ export const THEME_OPTIONS = deepFreeze({
     type: 'color'
   },
   'color-app-detail-section-content-secondary': {
-    label: 'projectfu-theme.color-app-detail-section-content.secondary',
+    label: 'projectfu-theme.color-app-detail-section-content-secondary.label',
     type: 'color'
   },
   'color-app-detail-section-content-tertiary': {
-    label: 'projectfu-theme.color-app-detail-section-label.tertiary',
+    label: 'projectfu-theme.color-app-detail-section-content-tertiary.label',
     type: 'color'
   },
   'color-app-detail-section-shadow': {
