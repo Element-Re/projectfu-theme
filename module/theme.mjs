@@ -168,7 +168,6 @@ export class Theme {
   
   /* Apps - Body */
   'color-app-body-content' = '#ebF7afff';
-  'color-app-body-focus-content' = '#ffffffff';
   'color-app-body-primary-fill-1' = '#112929e0';
   'color-app-body-primary-fill-2' = '#25544fe0';
   
@@ -178,6 +177,7 @@ export class Theme {
   'color-app-name-section-fill-2' = "#bfb8c4ff";
   
   'color-app-control-content' = '#ebf7afff';
+  'color-app-control-focus-content' = '#ffffffff';
 	'color-app-control-border' = '#148782ff';
   'color-app-control-shadow' = '#2b4a42ff';
 	'color-app-control-fill-1' = '#2b4a42ff';
@@ -363,10 +363,6 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.color-app-body-content.label',
     type: 'color'
   },
-  'color-app-body-focus-content': {
-    label: 'projectfu-theme.color-app-body-focus-content.label',
-    type: 'color'
-  },
   'color-app-body-primary-fill-1': {
     label: 'projectfu-theme.color-app-body-primary-fill-1.label',
     type: 'color'
@@ -375,9 +371,13 @@ export const THEME_OPTIONS = deepFreeze({
     label: 'projectfu-theme.color-app-body-primary-fill-2.label',
     type: 'color'
   },
-
+  
   'color-app-control-content': {
     label: 'projectfu-theme.color-app-control-content.label',
+    type: 'color'
+  },
+  'color-app-control-focus-content': {
+    label: 'projectfu-theme.color-app-control-focus-content.label',
     type: 'color'
   },
 	'color-app-control-border': {
