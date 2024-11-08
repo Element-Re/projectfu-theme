@@ -402,6 +402,7 @@ a.inline-roll {
 	border: 0.063rem solid var(--pfu-color-app-control-border);
 	background: var(--pfu-color-app-control-fill);
 	box-shadow: 0.063rem 0.1rem var(--pfu-color-app-control-shadow);
+	text-shadow: none;
 	&.broken {
 		background: var(--pfu-color-app-control-fill);
 		box-shadow: 0.063rem 0.1rem var(--pfu-color-app-control-shadow);
@@ -422,6 +423,7 @@ a.inline-roll {
 	background: var(--pfu-color-app-control-fill);
 	box-shadow: 0.063rem 0.1rem var(--pfu-color-app-control-shadow);
 	border: 0.063rem solid var(--pfu-color-app-control-border);
+	text-shadow: unset;
 	& i {
 		color: var(--pfu-color-app-control-content);
 	}
@@ -728,7 +730,7 @@ a.inline-roll {
 		& .body-section .section-container .desc-header.resource-content .traitdesc {
 			color: var(--pfu-color-app-control-content);
 			background: var(--pfu-color-app-control-fill);
-			border: 1px solid transparent;
+			border: none;
 			&::placeholder {
 				color: var(--pfu-color-app-control-content);
 				opacity: 0.5;
