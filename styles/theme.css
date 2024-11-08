@@ -510,11 +510,12 @@ a.inline-roll {
 
 
 		& .unique-clock {
-			.pie {
+			& .pie {
 				pointer-events: none;
 			}
 
 			& .progress-container {
+				padding: 2px;
 				& .progress {
 					--border-width: 2px;
 				}
@@ -522,6 +523,13 @@ a.inline-roll {
 					content: unset;
 					background: unset;
 				}
+			}
+		}
+
+		& .inline-desc .progress-container {
+			padding: 2px;
+			& .progress {
+				--border-width: 2px;
 			}
 		}
 		
