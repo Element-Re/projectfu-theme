@@ -40,7 +40,7 @@
 	--pfu-color-app-name-section-shadow: #000000ff;
 	--pfu-color-app-name-section-fill-1: #532853ff;
 	--pfu-color-app-name-section-fill-2: #bfb8c4ff;
-	--pfu-color-app-name-section-fill: linear-gradient(90deg, var(--pfu-color-app-name-section-fill-1) 0%, var(--pfu-color-app-name-section-fill-2) 100%);;
+	--pfu-color-app-name-section-fill: linear-gradient(90deg, var(--pfu-color-app-name-section-fill-1) 0%, var(--pfu-color-app-name-section-fill-2) 100%);
 	--pfu-color-app-control-content: #ebf7afff;
 	--pfu-color-app-control-border: #148782ff;
 	--pfu-color-app-control-shadow: #2b4a42ff;
@@ -70,6 +70,13 @@
 	--pfu-color-app-item-highlight-fill-1: #e1efe3ff;
 	--pfu-color-app-item-highlight-fill-2: #e1efe300;
 	--pfu-color-app-item-highlight-fill: linear-gradient(90deg, var(--pfu-color-app-item-highlight-fill-1), var(--pfu-color-app-item-highlight-fill-2));
+	--pfu-color-app-clock-border: #2b4a42ff;
+	--pfu-color-app-clock-fill-1: #2b4a42e0;
+	--pfu-color-app-clock-fill-2: #2b4a42e0;
+	--pfu-color-app-clock-fill: linear-gradient(0deg, var(--pfu-color-app-clock-fill-1) 0%, var(--pfu-color-app-clock-fill-2) 100%);
+	--pfu-color-app-clock-bg-1: #ffffffff;
+	--pfu-color-app-clock-bg-2: #ffffffff;
+	--pfu-color-app-clock-bg: linear-gradient(0deg, var(--pfu-color-app-clock-bg-1) 0%, var(--pfu-color-app-clock-bg-2) 100%);
 	--pfu-color-app-image-fill-1: #2b4a42ff;
 	--pfu-color-app-image-fill-2: #3d665aff;
 	--pfu-color-app-image-fill: linear-gradient(90deg, var(--pfu-color-app-image-fill-1), var(--pfu-color-app-image-fill-2));
@@ -446,6 +453,7 @@ a.inline-roll {
 	background: var(--pfu-color-app-control-fill);
 	box-shadow: 0.063rem 0.1rem var(--pfu-color-app-control-shadow);
 	border: 0.063rem solid var(--pfu-color-app-control-border);
+	text-shadow: none;
 	&:hover i.fun {
 		background-color: var(--pfu-color-app-control-focus-content);
 	}
@@ -499,6 +507,66 @@ a.inline-roll {
 	&.projectfu, 
 	&:is(#auto-target-dialog, #auto-spend-dialog) .projectfu,
 	.chat-message {
+
+
+		& .unique-clock {
+			.pie {
+				pointer-events: none;
+			}
+
+			& .progress-container {
+				& .progress {
+					--border-width: 2px;
+				}
+				&::after {
+					content: unset;
+					background: unset;
+				}
+			}
+		}
+		
+		& .progress-container {
+			background: var(--pfu-color-app-clock-bg);
+			border-radius: 50%;
+			& .progress {
+				
+				--border-width: 3px;
+
+				& .pie {
+					background: var(--pfu-color-app-clock-fill);
+					opacity: 0.4;
+				}
+	
+				&
+				.pie:hover,
+				.pie:hover~.pie {
+					opacity: 0.7;
+				}
+	
+				&
+				.pie:checked,
+				.pie:checked ~ .pie,
+				.pie:checked:hover,
+				.pie:checked:hover ~ .pie,
+				.pie:checked ~ .pie:hover,
+				.pie:checked ~ .pie:hover ~ .pie,
+				.pie:hover ~ .pie:checked,
+				.pie:hover ~ .pie:checked ~ .pie {
+					opacity: 1;
+				}
+				& .divider {
+					background: var(--pfu-color-app-clock-border);
+					box-shadow: unset;
+				}
+				& .foreground {
+					border-left-color: var(--pfu-color-app-clock-border);
+					border-right-color: var(--pfu-color-app-clock-border);
+					border-bottom-color: var(--pfu-color-app-clock-border);
+					border-top-color: var(--pfu-color-app-clock-border);
+				}
+			}
+		}
+		
 	
 		& .button-style {
 			border: thin solid var(--pfu-color-app-control-border);
@@ -580,10 +648,33 @@ a.inline-roll {
 			background: linear-gradient(to right, transparent, var(--pfu-color-app-section-primary-fill-1), transparent);
 		}
 
-		& .desc .inline-desc {
+		& .desc .inline-desc, .unique-rp, .unique-clock {
 			color: var(--pfu-color-app-control-content);
 			background: var(--pfu-color-app-control-fill);
 			border: 1px solid var(--pfu-color-app-control-border);
+			& .buttons-inc :is(.increment-button, .decrement-button) {
+				color: var(--pfu-color-app-control-content);
+				background-color: unset;
+		
+				&:hover {
+					color: var(--pfu-color-control-focus-content);
+					text-shadow: 0 0 8px var(--pfu-color-misc-shadow-highlight);
+				}
+			}
+
+			& .stat-current, .stat-max {
+				background: unset;
+				color: var(--pfu-color-app-control-content);
+				&::after {
+					content: unset;
+					background: unset;
+					z-index: -1;
+					opacity: unset;
+				}
+			}
+			& .rp-label, .stat-divider {
+				color: var(--pfu-color-app-control-content);
+			}
 			& a {
 				color: var(--pfu-color-app-control-content);
 				&:hover {
@@ -672,7 +763,7 @@ a.inline-roll {
 			margin-bottom: 0.5em;
 		}
 	}
-	
+		
 
 	&:is(.backgroundstyle, .unique-dialog, #auto-target-dialog, #auto-spend-dialog) {
 	
@@ -730,7 +821,7 @@ a.inline-roll {
 			}
 		}
 
-		& .window-content {
+		& .window-content, .dialog-content {
 			color: var(--pfu-color-app-body-content);
 			background: var(--pfu-app-bg-image), var(--pfu-color-app-body-primary-fill);
 			background-size: 100% auto;
@@ -746,6 +837,20 @@ a.inline-roll {
 				color: var(--pfu-color-app-section-content-secondary);
 				& input:is(.fp-resource-inputs, .up-resource-inputs) {
 					color: var(--pfu-color-app-section-content-secondary);
+				}
+			}
+
+
+			& .title-fieldset legend {
+				border: 1px solid var(--pfu-color-app-control-border);
+				color: var(--pfu-color-app-control-content);
+				background: var(--pfu-color-app-control-fill);
+
+				& .resource-inputs,
+				.resource-content .resource-inputs {
+					color: var(--pfu-color-app-control-content);
+					border: none;
+					background: none;
 				}
 			}
 
@@ -784,6 +889,10 @@ a.inline-roll {
 				background-position: right top;
 				background-size: var(--pfu-app-section-bg-image-size), cover;
 				background-repeat: var(--pfu-app-section-bg-image-repeat);
+				& .buttons-inc :is(.increment-button, .decrement-button) {
+					color: var(--pfu-color-app-section-content-secondary);
+					background-color: unset;
+				}
 				&:has(#status-section,
 					#attribute-section,
 					#roll-section) {
@@ -974,18 +1083,6 @@ a.inline-roll {
 	} 
 }
 
-.projectfu .title-fieldset legend,
-.projectfu.unique-dialog .dialog-content fieldset legend {
-	border: 1px solid var(--pfu-color-app-control-border);
-	color: var(--pfu-color-app-control-content);
-	background: var(--pfu-color-app-control-fill);
-
-	& .resource-inputs {
-		color: var(--pfu-color-app-control-content);
-		border: none;
-		background: none;
-	}
-}
 
 /* Theme Menu */
 #projectfu-theme-menu {

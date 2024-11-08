@@ -204,6 +204,12 @@ export class Theme {
   'color-app-item-highlight-border' = '#2b4a42ff';
   'color-app-item-highlight-fill-1' = '#e1efe3ff';
   'color-app-item-highlight-fill-2' = '#e1efe300';
+
+  'color-app-clock-border' = '#2b4a42ff';
+	'color-app-clock-fill-1' = '#2b4a42e0';
+	'color-app-clock-fill-2' = '#2b4a42e0';
+	'color-app-clock-bg-1' = '#ffffffff';
+	'color-app-clock-bg-2' = '#ffffffff';
   
   'color-app-detail-section-content-primary' = '#272a2aff';
   'color-app-detail-section-content-secondary' = '#2b4a42ff';
@@ -465,6 +471,28 @@ export const THEME_OPTIONS = deepFreeze({
   },
   'color-app-item-highlight-fill-2': {
     label: 'projectfu-theme.color-app-item-highlight-fill-2.label',
+    type: 'color'
+  },
+
+
+  'color-app-clock-border': {
+    label: 'projectfu-theme.color-app-clock-border.label',
+    type: 'color'
+  },
+	'color-app-clock-fill-1': {
+    label: 'projectfu-theme.color-app-clock-fill-1.label',
+    type: 'color'
+  },
+	'color-app-clock-fill-2': {
+    label: 'projectfu-theme.color-app-clock-fill-2.label',
+    type: 'color'
+  },
+	'color-app-clock-bg-1': {
+    label: 'projectfu-theme.color-app-clock-bg-1.label',
+    type: 'color'
+  },
+	'color-app-clock-bg-2': {
+    label: 'projectfu-theme.color-app-clock-bg-2.label',
     type: 'color'
   },
 
