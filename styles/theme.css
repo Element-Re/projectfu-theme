@@ -858,8 +858,9 @@ a.inline-roll {
 			.resource-content.levelup-container.creature .resource-inputs,
 			.bond-strength,
 			.resource-content.traits input,
-			fieldset:is(.form-fields, .resource-content) input {
-				border: thin solid transparent;
+			fieldset:is(.form-fields, .resource-content) input,
+			.resource-content.levelup-container .combineBar {
+				border: none;
 				color: var(--pfu-color-app-control-content);
 				background: var(--pfu-color-app-control-fill);
 
@@ -872,13 +873,27 @@ a.inline-roll {
 					color: var(--pfu-color-app-control-content);
 					opacity: 0.5;
 				}
+
+				&.combineBar {
+					&.villain-field {
+						border-radius: 0 0 0 14px;
+					}
+					& .resource-inputs {
+						background: unset;
+						& input {
+							background: inherit;
+						}
+					}
+				}
+
 			}
 
 			& 
 			.section-container,
 			.desc,
 			.header-fields:has(#status-section, #attribute-section, #roll-section),
-			:is(.dialog-content, .inline-effect-config) fieldset {
+			:is(.dialog-content, .inline-effect-config) fieldset,
+			.projectfu > .items-list {
 				border-radius: var(--pfu-border-radius-medium);
 				color: var(--pfu-color-app-section-content-primary);
 				border: 1px solid var(--pfu-color-app-section-border);
@@ -937,9 +952,11 @@ a.inline-roll {
 							background-size: var(--pfu-app-section-bg-image-size), cover;
 							background-repeat: var(--pfu-app-section-bg-image-repeat);
 					
-							& .species-select {
-								margin: 0 -1px 0 -1px;
-								border-radius: unset;
+							& span.combineBar:has(> .species-select) {
+								border: none !important;
+								& > .species-select {
+									border-radius: unset;
+								}
 							}
 							& > .desc {
 								border: none;
