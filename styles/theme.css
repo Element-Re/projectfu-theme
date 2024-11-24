@@ -475,6 +475,20 @@ a.inline-roll {
 	}
 }
 
+.projectfu#combat-hud {
+	& .faction-list .combat-row {
+		color: var(--pfu-color-app-item-header-content);
+		text-shadow: 1px 1px var(--pfu-color-app-item-header-content-shadow, black);
+	}
+	
+	& .window-button {
+		color: var(--pfu-color-app-item-header-content);
+		text-shadow: 1px 1px var(--pfu-color-app-item-header-content-shadow, black);
+		box-shadow: 3px 3px var(--pfu-color-app-item-header-shadow);
+		background: var(--pfu-color-app-item-header-fill);
+	}
+}
+
 .app {
 	color: var(--pfu-color-app-body-content);
 	box-shadow: 0 0 10px #2b1c02;
@@ -505,6 +519,9 @@ a.inline-roll {
 		
 		}
 	}
+
+
+	
 
 	&.projectfu, 
 	&:is(#auto-target-dialog, #auto-spend-dialog) .projectfu,
@@ -905,7 +922,7 @@ a.inline-roll {
 				background-size: var(--pfu-app-section-bg-image-size), cover;
 				background-repeat: var(--pfu-app-section-bg-image-repeat);
 
-				& .items-list>.item .inline-desc .buttons-inc :is(.increment-button, .decrement-button) {
+				& .items-list>.item .buttons-inc :is(.increment-button, .decrement-button) {
 					color: var(--pfu-color-app-control-content);
 					background-color: unset;
 			
