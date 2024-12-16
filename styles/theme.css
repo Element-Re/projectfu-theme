@@ -494,7 +494,8 @@ a.inline-roll {
 
 		&.fu-aura {
 			background-image: unset;
-			mask-image: url(/icons/svg/aura.svg);
+			-webkit-mask-image: url("/icons/svg/aura.svg");
+			mask-image: url("/icons/svg/aura.svg");
 		}
 	}
 }
