@@ -485,7 +485,8 @@ a.inline-macro-execution {
 }
 
 .roll-table-config header.sheet-header>img, 
-.table-results .table-result :is(img.result-image, div.result-image>img) {
+.table-results .table-result :is(img.result-image, div.result-image>img),
+.chat-message .message-content img.item-img {
 	border-radius: 5px;
 	background: var(--pfu-color-app-image-fill);
 }

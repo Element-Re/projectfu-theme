@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Re-added missing text-shadow styling on inline buttons (inline damage, etc.)
 - Style buttons from the Inline Macro Execution module.
 - Improved styling of fabula ultima damage type icons
+- Style item images in chat message content (example: Infusions)
 
 ## [1.0.10]
 - Style Tweak: Added missing hover highlight color on non-macro buttons in the Hotbar UI (Lock Hotbar, Browse Macro Directory).
