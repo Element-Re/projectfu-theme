@@ -491,6 +491,11 @@ a.inline-macro-execution {
 	background: var(--pfu-color-app-image-fill);
 }
 
+.chat-message .message-content .chat-header img.item-img {
+	border-radius: unset;
+	background: unset;
+}
+
 & .fua {
 	-webkit-text-stroke: inherit;
 	text-shadow:  -1px 0 #000, 1px 0 #000, 0 1px #000, 0 -1px #000;
