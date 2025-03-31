@@ -942,6 +942,10 @@ a.inline-macro-execution {
 				scrollbar-color: var(--pfu-color-app-scrollbar) var(--pfu-color-app-scrollbar-track);
 			}
 
+			& > :is(select, input) {
+				background: var(--pfu-app-section-bg-image), var(--pfu-color-app-section-primary-fill);
+			}
+
 			& abbr[title] {
 				text-decoration: unset;
 			}
