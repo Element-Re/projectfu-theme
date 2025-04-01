@@ -526,7 +526,6 @@ a.inline-macro-execution {
 	& .fua {
 		width: inherit;
 		height: inherit;
-		line-height: var(--font-size-14);
 		position: relative;
 		top: 1px;
 		font-weight: normal;
