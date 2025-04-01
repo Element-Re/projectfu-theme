@@ -408,7 +408,7 @@ li.folder>.folder-header .create-button {
 }
 
 a.content-link,
-a.inline-roll,
+a.inline.inline-roll,
 a.inline-macro-execution {
 
 	color: var(--pfu-color-app-control-content);
@@ -501,16 +501,23 @@ a.inline-macro-execution {
 	text-shadow:  -1px 0 #000, 1px 0 #000, 0 1px #000, 0 -1px #000;
 }
 
-.inline:is(.inline-damage, .inline-recovery, .inline-loss, .inline-effect) {
+.inline.inline-damage,
+.inline.inline-recovery,
+.inline.inline-loss,
+.inline.inline-effect,
+.inline.inline-weapon,
+.inline.inline-check {
 	color: var(--pfu-color-app-control-content);
 	background: var(--pfu-color-app-control-fill);
 	box-shadow: 0.063rem 0.1rem var(--pfu-color-app-control-shadow);
 	border: 0.063rem solid var(--pfu-color-app-control-border);
 	text-shadow: 1px 1px var(--pfu-color-app-control-content-shadow);
 	margin: unset;
-	padding: 0 0.2rem;
+	padding: 0 0.25rem;
 	display: inline-flex;
 	align-items: center;
+	vertical-align: text-top;
+	height: calc(var(--font-size-18) + 0.25rem);
 
 	&:hover .fun {
 		background-color: var(--pfu-color-app-control-focus-content);
@@ -519,10 +526,24 @@ a.inline-macro-execution {
 	& .fua {
 		width: inherit;
 		height: inherit;
-		line-height: 16px;
+		line-height: var(--font-size-14);
 		position: relative;
 		top: 1px;
 		font-weight: normal;
+	}
+
+	& i.indicator,
+	& i.fas {
+		font-size: var(--font-size-14);
+	}
+
+	& .connector {
+		font-style: normal;
+		margin: 0 0.1rem
+	}
+
+	& img {
+		border: unset;
 	}
 
 	& .fun {
@@ -598,11 +619,15 @@ a.inline-macro-execution {
 	&:is(#auto-target-dialog, #auto-spend-dialog) .projectfu,
 	.chat-message {
 
+		& .unique-clock .pie {
+			pointer-events: none;
+		}
 
-		& .unique-clock {
-			& .pie {
-				pointer-events: none;
-			}
+		& .unique-clock,
+		& .growth-clock,
+		&.clock-s,
+		&.clock-m,
+		&.clock-l {
 
 			& .progress-container {
 				padding: 2px;
@@ -618,6 +643,47 @@ a.inline-macro-execution {
 			}
 		}
 
+		& .progress {
+
+			--border-width: 2px;
+
+			& .pie {
+				background: var(--pfu-color-app-clock-fill);
+				opacity: 0.4;
+			}
+
+			& .pie:hover,
+			.pie:hover~.pie,
+			.pie:checked:has(~ .pie:hover),
+			.pie:checked ~ .pie:has(~ .pie:hover) {
+				opacity: 0.7;
+			}
+
+			& .pie:checked,
+			.pie:checked~.pie,
+			.pie:checked:hover,
+			.pie:checked:hover~.pie,
+			.pie:checked~.pie:hover,
+			.pie:checked~.pie:hover~.pie,
+			.pie:hover~.pie:checked,
+			.pie:hover~.pie:checked~.pie
+			{
+				opacity: 1;
+			}
+
+			& .divider {
+				background: var(--pfu-color-app-clock-border);
+				box-shadow: unset;
+			}
+
+			& .foreground {
+				border-left-color: var(--pfu-color-app-clock-border);
+				border-right-color: var(--pfu-color-app-clock-border);
+				border-bottom-color: var(--pfu-color-app-clock-border);
+				border-top-color: var(--pfu-color-app-clock-border);
+			}
+		}
+
 		& .inline-desc .progress-container {
 			padding: 2px;
 
@@ -629,44 +695,6 @@ a.inline-macro-execution {
 		& .progress-container {
 			background: var(--pfu-color-app-clock-bg);
 			border-radius: 50%;
-
-			& .progress {
-
-				--border-width: 3px;
-
-				& .pie {
-					background: var(--pfu-color-app-clock-fill);
-					opacity: 0.4;
-				}
-
-				& .pie:hover,
-				.pie:hover~.pie {
-					opacity: 0.7;
-				}
-
-				& .pie:checked,
-				.pie:checked~.pie,
-				.pie:checked:hover,
-				.pie:checked:hover~.pie,
-				.pie:checked~.pie:hover,
-				.pie:checked~.pie:hover~.pie,
-				.pie:hover~.pie:checked,
-				.pie:hover~.pie:checked~.pie {
-					opacity: 1;
-				}
-
-				& .divider {
-					background: var(--pfu-color-app-clock-border);
-					box-shadow: unset;
-				}
-
-				& .foreground {
-					border-left-color: var(--pfu-color-app-clock-border);
-					border-right-color: var(--pfu-color-app-clock-border);
-					border-bottom-color: var(--pfu-color-app-clock-border);
-					border-top-color: var(--pfu-color-app-clock-border);
-				}
-			}
 		}
 
 		& .button-style {
