@@ -3,8 +3,8 @@
   "title": "Project FU Theme",
   "version": "#{VERSION}#",
   "compatibility": {
-    "minimum": "11",
-    "verified": "12"
+    "minimum": "13",
+    "verified": "13"
   },
   "relationships": {
 		"requires": [
