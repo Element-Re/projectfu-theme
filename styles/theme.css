@@ -243,7 +243,8 @@ li.folder>.folder-header .create-button {
 .window-content section button.active,
 .sidebar-tab .header-actions button.active,
 .sidebar-tab nav.encounters button.active,
-.ui-control.active
+.ui-control.active,
+.ui-control[aria-pressed=true]
 {
 	border-color: var(--pfu-color-control-active-border);
 	background: var(--pfu-color-control-active-fill);
