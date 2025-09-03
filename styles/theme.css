@@ -335,7 +335,8 @@ input[type="number"],
 input[type="search"],
 input[type="text"],
 input[type="datetime-local"],
-select {
+select,
+textarea {
 	background: var(--pfu-color-app-control-fill);
 	border-color: var(--pfu-color-app-control-border);
 	color: var(--pfu-color-app-control-content)
@@ -1448,7 +1449,7 @@ a:not(.tab-style):hover {
 		span.label {
 			color: var(--pfu-color-control-content);
 		}
-		
+
 		& .hint,
 		.units {
 			color: var(--pfu-color-control-inactive-content);
