@@ -1495,7 +1495,8 @@ a:not(.tab-style):hover {
 		}
 	}
 
-	& fieldset {
+	& fieldset,
+	.projectfu.settings-config-app & {
 		background: var(--pfu-color-app-section-primary-fill);
 		border-color: var(--pfu-color-app-section-border);
 		color: var(--pfu-color-app-section-content-primary);
@@ -1678,7 +1679,6 @@ a:not(.tab-style):hover {
 		}
 	}
 }
-
 
 
 /* Theme Menu */
