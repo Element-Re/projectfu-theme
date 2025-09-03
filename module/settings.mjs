@@ -100,6 +100,7 @@ const THEMES = deepFreeze({
     "color-app-section-primary-fill-2": "#F5F5FFED",
     "color-app-scrollbar": "#F8F7FFE0",
     "color-app-scrollbar-track": "",
+    "color-hud-background-fill": "#2D3885FF",
     "ui-accent-image": "modules/projectfu-theme/assets/images/simbol_deco.png",
     "app-accent-image": "",
     "app-bg-image": "modules/projectfu-theme/assets/images/Page_deco.png",

@@ -91,6 +91,7 @@
   "projectfu-theme.color-misc-border-highlight.label": "Misc. Border Highlight",
   "projectfu-theme.color-misc-scrollbar.label": "Misc. Scrollbar",
   "projectfu-theme.color-misc-scrollbar-track.label": "Misc. Scrollbar Track",
+  "projectfu-theme.color-hud-background-fill.label": "Combat HUD Background",
   "projectfu-theme.ui-accent-image.label": "UI Accent Image",
   "projectfu-theme.ui-accent-image.hint": "Image to use as an accent for the UI as a whole.",
   "projectfu-theme.app-accent-image.label": "App Accent Image",
