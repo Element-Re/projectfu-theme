@@ -228,6 +228,10 @@ export class Theme {
   'color-app-section-primary-fill-2' = '#c9c7b8ff';
   'color-app-scrollbar' = '#5d142bff';
   'color-app-scrollbar-track' = '#00000000';
+
+  'color-hud-background-fill-1' = '#49a499ff';
+  'color-hud-background-fill-2' = '#49a499ff';
+  
   'ui-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
   'app-accent-image' = `modules/${MODULE}/assets/images/Acento_highres.png`;
   'app-bg-image' = `modules/${MODULE}/assets/images/HojitasDouble_highres.png`;
@@ -562,6 +566,16 @@ export const THEME_OPTIONS = deepFreeze({
   },
   'color-app-scrollbar-track': {
     label: 'projectfu-theme.color-app-scrollbar-track.label',
+    type: 'color'
+  },
+  
+  /* Combat Hud */
+  'color-hud-background-fill-1': {
+    label: 'projectfu-theme.color-hud-background-fill-1.label',
+    type: 'color'
+  },
+  'color-hud-background-fill-2': {
+    label: 'projectfu-theme.color-hud-background-fill-2.label',
     type: 'color'
   },
   
