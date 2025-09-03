@@ -37,7 +37,6 @@
 	--pfu-color-app-header-fill-1: #51c7ad4d;
 	--pfu-color-app-header-fill-2: #044a2c4d;
 	--pfu-color-app-header-fill: linear-gradient(90deg, var(--pfu-color-app-header-fill-1) 0%, var(--pfu-color-app-header-fill-2) 100%);
-
 	--pfu-color-app-body-content: #191813ff;
 	--pfu-color-app-body-content-secondary: #4b4a44ff;
 	--pfu-color-app-body-primary-fill-1: #112929e0;
@@ -108,7 +107,9 @@
 	--pfu-color-app-scrollbar: #5d142bff;
 	--pfu-color-app-scrollbar-track: #00000000;
 
-	--pfu-color-hud-background-fill: #49a499;
+	--pfu-color-hud-background-fill-1: #49a499;
+	--pfu-color-hud-background-fill-2: #49a499;
+	--pfu-color-hud-background-fill: linear-gradient(180deg, var(--pfu-color-hud-background-fill-1) 0%, var(--pfu-color-hud-background-fill-2) 100%);
 
 	/* Misc */
 	--pfu-color-misc-shadow-primary: #77ebd7ff;
@@ -162,7 +163,7 @@ body {
 
 #combat-hud.pixel,
 #token-action-hud.tah-style-pixel-style {
-	--pixel-hud-background-color: var(--pfu-color-hud-background-fill) !important;
+	--pixel-hud-background-color: var(--pfu-color-hud-background-fill-1) !important;
 }
 /* Token Action HUD */
 .tah-style-fu-style {
@@ -800,10 +801,16 @@ a.inline-macro-execution {
 	}
 }
 
-/* .projectfu#combat-hud {
-	& .faction-list .combat-row {
-		color: var(--pfu-color-app-item-header-content);
-		text-shadow: 1px 1px var(--pfu-color-app-item-header-content-shadow, black);
+.projectfu#combat-hud > :not(.pixel, .mother, .modern) {
+	
+	& .faction-list {
+		background: var(--pfu-color-app-item-header-fill);
+		
+		& .combat-row {
+			color: var(--pfu-color-control-content);
+			text-shadow: 1px 1px var(--pfu-color-app-item-header-content-shadow, black);
+			background: var(--pfu-color-control-fill-1);
+		}
 	}
 
 	& .window-button {
@@ -812,7 +819,7 @@ a.inline-macro-execution {
 		box-shadow: 3px 3px var(--pfu-color-app-item-header-shadow);
 		background: var(--pfu-color-app-item-header-fill);
 	}
-} */
+}
 
 
 .chat-message,
