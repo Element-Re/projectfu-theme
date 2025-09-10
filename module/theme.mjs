@@ -168,6 +168,7 @@ export class Theme {
   
   /* Apps - Body */
   'color-app-body-content' = '#ebF7afff';
+  'color-app-body-content-secondary' = '#ebF7afc0';
   'color-app-body-primary-fill-1' = '#112929e0';
   'color-app-body-primary-fill-2' = '#25544fe0';
   
@@ -371,6 +372,10 @@ export const THEME_OPTIONS = deepFreeze({
   /* Apps - Body */
   'color-app-body-content': {
     label: 'projectfu-theme.color-app-body-content.label',
+    type: 'color'
+  },
+  'color-app-body-content-secondary': {
+    label: 'projectfu-theme.color-app-body-content-secondary.label',
     type: 'color'
   },
   'color-app-body-primary-fill-1': {

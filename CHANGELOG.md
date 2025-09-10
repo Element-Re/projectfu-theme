@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## Known Issues
+- Some styles cannot be overridden without changes to the base system styles
+
+## [3.0.2]
+- A comprehensive pass to catch various missing element styles.
+
+## [3.0.1]
+- Additional style tweaks
+
+## [3.0.0]
+- Foundry v13 Compatibility
+
+## [2.0.0]
+- New: Added the Theme Menu accessible through the game world settings which allows customizing various aspects of the theme, exporting and importing themes as well as selecting from one or more preset themes (only the default theme preset for now).
+- Breaking Change: If you installed a pre-release version of `2.0.0`, the paths to your images might need to be changed. Make sure to remove any leading slashes: `\modules\...` should now be `modules\...` and so on.
+- Re-added missing text-shadow styling on inline buttons (inline damage, etc.)
+- Style buttons from the Inline Macro Execution module.
+- Improved styling of fabula ultima damage type icons
+- Style item images in chat message content (example: Infusions)
+
 ## [2.0.0]
 - New: Added the Theme Menu accessible through the game world settings which allows customizing various aspects of the theme, exporting and importing themes as well as selecting from one or more preset themes (only the default theme preset for now).
 - Breaking Change: If you installed a pre-release version of `2.0.0`, the paths to your images might need to be changed. Make sure to remove any leading slashes: `\modules\...` should now be `modules\...` and so on.

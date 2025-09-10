@@ -48,6 +48,7 @@ const THEMES = deepFreeze({
     "color-app-header-fill-1": "#2D38854D",
     "color-app-header-fill-2": "#5C6DD64D",
     "color-app-body-content": "#F7FEFFFF",
+    "color-app-body-content-secondary": "#F7FEFFC0",
     "color-app-body-focus-content": "#FFFFFFFF",
     "color-app-body-primary-fill-1": "#101129FF",
     "color-app-body-primary-fill-2": "#28275CFF",

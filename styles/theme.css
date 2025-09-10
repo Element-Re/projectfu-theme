@@ -198,9 +198,53 @@ h4.divider::after {
 	border-color: var(--pfu-color-app-control-highlight-fill);
 }
 
-.application .window-content {
-	background: var(--pfu-color-app-body-primary-fill);
+.application, .app, #interface {
+
+	.window-content, #sidebar-content > section {
+		background: var(--pfu-color-app-body-primary-fill);
+		color: var(--pfu-color-app-body-content);
+
+		.notes {
+			color: var(--pfu-color-app-body-content-secondary);
+		}
+	}
+
+	footer.action-buttons button,
+	.projectfu .tab-style,
+	.form-footer button,
+	button.combat-control-lg,
+	#settings button,
+	.form-group button,
+	a.button,
+	.window-content section button,
+	.sidebar-tab .header-actions button,
+	.chat-input,
+	.ui-control {
+		color: var(--pfu-color-control-content);
+		text-shadow: none;
+		border: solid;
+		border-width: var(--pfu-border-width);
+		border-color: var(--pfu-color-control-border);
+		border-radius: var(--pfu-border-radius-medium);
+		background: var(--pfu-color-control-fill);
+		&:hover {
+			color: var(--pfu-color-control-highlight-content);
+			border-color: var(--pfu-color-control-highlight-border);
+			background: var(--pfu-color-control-highlight-fill);
+			box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+		}
+		&.active,
+		&[aria-pressed="true"] 	{
+			border-color: var(--pfu-color-control-active-border);
+			background: var(--pfu-color-control-active-fill);
+			box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+			color: var(--pfu-color-control-focus-content);
+			text-shadow: none;
+			outline: none;
+		}
+	}
 }
+
 .resource-inputs,
 .combineBar,
 .bond-strength,
@@ -269,40 +313,7 @@ li.folder>.folder-header .create-button {
 }
 
 
-footer.action-buttons button,
-.projectfu .tab-style,
-.form-footer button,
-button.combat-control-lg,
-#settings button,
-.form-group button,
-a.button,
-.window-content section button,
-.sidebar-tab .header-actions button,
-.chat-input,
-.ui-control {
-	color: var(--pfu-color-control-content);
-	text-shadow: none;
-	border: solid;
-	border-width: var(--pfu-border-width);
-	border-color: var(--pfu-color-control-border);
-	border-radius: var(--pfu-border-radius-medium);
-	background: var(--pfu-color-control-fill);
-	&:hover { 
-		color: var(--pfu-color-control-highlight-content);
-		border-color: var(--pfu-color-control-highlight-border);
-		background: var(--pfu-color-control-highlight-fill);
-		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
-	}
-	&.active,
-	&[aria-pressed="true"] 	{
-		border-color: var(--pfu-color-control-active-border);
-		background: var(--pfu-color-control-active-fill);
-		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
-		color: var(--pfu-color-control-focus-content);
-		text-shadow: none;
-		outline: none;
-	}
-}
+
 
 .chat-input:focus,
 .directory-header input:focus {
@@ -319,17 +330,25 @@ input[type=search]::placeholder {
 input[type="radio"] {
 	background: none;
 } */
-input[type="checkbox"]::before,
-input[type="radio"]::before {
-	color: var(--pfu-color-control-highlight-content);
+input[type=checkbox] {
+	background: none;
+	appearance: none;
+}
+
+input[type=checkbox]::before {
+	color: var(--pfu-color-app-control-fill-1);
 }
 input[type="checkbox"]:checked::before,
 input[type="radio"]:checked::before {
-	color: transparent;
+	color: var(--pfu-color-app-control-content);
+	font-weight: var(--checkbox-font-weight);
 }
 input[type="checkbox"]:checked::after,
 input[type="radio"]:checked::after {
-	color: var(--pfu-color-control-active-content);
+	color: var(--pfu-color-app-control-fill-1);
+	font-family: var(--font-awesome);
+	font-weight: var(--checkbox-font-weight);
+	content: "\f0c8";
 }
 input[type="number"],
 input[type="search"],
@@ -875,6 +894,13 @@ a.inline-macro-execution {
 :is(#auto-target-dialog, #auto-spend-dialog) .projectfu,
 .chat-message {
 
+	.active-effect-sheet label,
+	.active-effect-sheet p,
+	.active-effect-sheet .tab.changes header,
+	.active-effect-sheet .fa-trash {
+		color: var(--pfu-color-app-section-content-secondary) !important;
+	}
+
 	& .unique-clock .pie {
 		pointer-events: none;
 	}
@@ -957,7 +983,9 @@ a.inline-macro-execution {
 		border-radius: 50%;
 	}
 
-	& .button-style {
+	& .button-style,
+	& .cell-item-controls .cell-item-controls__control,
+	& .cell-effect-controls .cell-effect-controls__control {
 		border: thin solid var(--pfu-color-app-control-border);
 		color: var(--pfu-color-app-control-content) !important;
 		background: var(--pfu-color-app-control-fill) !important;
@@ -980,6 +1008,7 @@ a.inline-macro-execution {
 
 		&:not(:has(input), :has(button:disabled), :disabled) {
 
+			&.cell-item-controls__control--active,
 			&.active,
 			&.active:hover,
 			&:active,
@@ -1043,8 +1072,9 @@ a.inline-macro-execution {
 	}
 
 	& :is(.window-content, .dialog-content) .desc :is(.inline-desc, .item-m),
-	.unique-rp,
-	.unique-clock {
+	& .unique-rp,
+	& .unique-clock,
+	& .cell-class-level {
 		color: var(--pfu-color-app-control-content);
 		background: var(--pfu-color-app-control-fill);
 		border: 1px solid var(--pfu-color-app-control-border);
@@ -1090,33 +1120,56 @@ a.inline-macro-execution {
 		box-shadow: 2px 4px var(--pfu-color-app-item-header-shadow);
 	}
 
-	& .items-list :is(.item, .effect) {
+	.cell-item-name .cell-item-name__main,
+	.cell-effect-name .cell-effect-name__main {
 
-		&:not(.items-header) {
+		.cell-item-name__name,
+		.cell-effect-name__name {
 			color: var(--pfu-color-app-section-content-secondary);
-
-			& .item-name {
-				color: var(--pfu-color-app-section-content-secondary);
-
-				& .item-image img {
-					background: var(--pfu-color-app-image-fill);
-				}
-			}
-
-			&:hover {
-				color: var(--pfu-color-app-section-content-secondary);
-				border-color: var(--pfu-color-app-item-highlight-border);
-				background: var(--pfu-color-app-item-highlight-fill);
-			}
 		}
 
-		&.items-header>* {
-			color: var(--pfu-color-app-item-header-content);
-			background: var(--pfu-color-app-item-header-fill);
-			text-shadow: 1px 1px var(--pfu-color-app-item-header-shadow);
-			box-shadow: 1px 2px var(--pfu-color-app-item-header-shadow);
+		.cell-item-name__image,
+		.cell-effect-name__image{
+			background: var(--pfu-color-app-image-fill);
 		}
+	}
 
+	.icon-toggle .toggle-icon {
+		color: var(--pfu-color-app-section-content-secondary);
+		opacity: 0.5;
+	}
+
+	.icon-toggle input:checked + .toggle-icon {
+		opacity: 1;
+	}
+
+	.cell-text,
+	.cell-check,
+	.cell-damage,
+	.cell-equip-status
+	{
+		color: var(--pfu-color-app-section-content-secondary);
+	}
+
+	.fu-table .fu-table__row-caption {
+		color: var(--pfu-color-app-section-content-secondary);
+	}
+
+	.fu-table .fu-table__row-container {
+		color: var(--pfu-color-app-section-content-secondary);
+	}
+
+	.fu-table .fu-table__row-container:hover {
+		color: var(--pfu-color-app-section-content-secondary);
+		border-color: var(--pfu-color-app-item-highlight-border);
+		background: var(--pfu-color-app-item-highlight-fill);
+	}
+
+	.fu-table>.fu-table__header>.fu-table__header-cell {
+		color: var(--pfu-color-app-item-header-content);
+		background: var(--pfu-color-app-item-header-fill);
+		text-shadow: 1px 1px var(--pfu-color-app-item-header-shadow);
+		box-shadow: 1px 2px var(--pfu-color-app-item-header-shadow);
 	}
 
 	& .body-section .section-container .desc-header.resource-content .traitdesc {
@@ -1163,21 +1216,25 @@ a.inline-macro-execution {
 	}
 }
 
+.application.journal-sheet:not([id$="-popout"]),
+.application.projectfu:not([id$="-popout"]),
+.chat-message.message {
+	& .resource-content.affinity label {
+		color: var(--pfu-color-app-section-content-secondary);
+	}
+}
 
-:is(.backgroundstyle, .unique-dialog, #auto-target-dialog, #auto-spend-dialog, .application, .app) {
-
-	/* Reset to foundry defaults to fix wonky styling on headers due to the background covering it too. */
-	/* background: url("/ui/denim075.png") repeat;
-	background-blend-mode: unset;
-	background-repeat: unset;
-	background-position: unset;
-	background-color: unset !important;
-	border: 1px solid var(--pfu-color-app-border); */
+.backgroundstyle,
+.unique-dialog,
+#auto-target-dialog,
+#auto-spend-dialog,
+.active-effect-sheet {
 
 	/* TODO: Move somewhere with more reusability. */
 	& .dialog-buttons,
-	.meta-currency-tracker>.resource-content,
-	.inline-effect-config>footer.sheet-footer {
+	& .meta-currency-tracker>.resource-content,
+	& .inline-effect-config>footer.sheet-footer,
+	& .tab.changes {
 		margin-top: 0.5em;
 		padding: 0.5em;
 		border-radius: var(--pfu-border-radius-medium);
@@ -1189,7 +1246,12 @@ a.inline-macro-execution {
 		background-size: var(--pfu-app-section-bg-image-size), cover;
 		background-repeat: var(--pfu-app-section-bg-image-repeat);
 
-		button {
+		& header {
+			color: var(--pfu-color-app-body-content-secondary);
+		}
+
+		& button,
+		& .fa-trash {
 			border-radius: var(--pfu-border-radius-medium);
 			border: thin solid var(--pfu-color-app-control-border);
 			color: var(--pfu-color-app-control-content);
@@ -1240,6 +1302,7 @@ a.inline-macro-execution {
 
 		& .resource-content,
 		.resource-content.desc {
+
 			color: var(--pfu-color-app-section-content-secondary);
 
 			& input:is(.fp-resource-inputs, .up-resource-inputs) {
@@ -1308,7 +1371,7 @@ a.inline-macro-execution {
 		.desc,
 		.header-fields:has(#status-section, #attribute-section, #roll-section),
 		:is(.dialog-content, .inline-effect-config) fieldset,
-		.projectfu>.items-list {
+		.projectfu>.items-list{
 			border-radius: var(--pfu-border-radius-medium);
 			color: var(--pfu-color-app-section-content-primary);
 			border: 1px solid var(--pfu-color-app-section-border);
@@ -1532,11 +1595,6 @@ a:not(.tab-style):hover {
 				color: var(--pfu-color-app-section-content-primary);
 			}
 		}
-
-		& input[type="checkbox"]:checked::after,
-		input[type="radio"]:checked::after {
-			color: var(--pfu-color-app-section-content-secondary);
-		}
 	}
 }	
 
@@ -1680,7 +1738,6 @@ a:not(.tab-style):hover {
 		}
 	}
 }
-
 
 /* Theme Menu */
 #projectfu-theme-menu {
