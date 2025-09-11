@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.0.3]
+- Fix for illegible text styling in Combat HUD settings menu.
+
 ## [3.0.2]
 - A comprehensive pass to catch various missing element styles.
 

@@ -231,7 +231,7 @@ h4.divider::after {
 			color: var(--pfu-color-control-highlight-content);
 			border-color: var(--pfu-color-control-highlight-border);
 			background: var(--pfu-color-control-highlight-fill);
-			box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+			/* box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight) */;
 		}
 		&.active,
 		&[aria-pressed="true"] 	{
@@ -984,12 +984,14 @@ a.inline-macro-execution {
 	}
 
 	& .button-style,
+	& .desc .form-group button,
 	& .cell-item-controls .cell-item-controls__control,
 	& .cell-effect-controls .cell-effect-controls__control {
 		border: thin solid var(--pfu-color-app-control-border);
 		color: var(--pfu-color-app-control-content) !important;
 		background: var(--pfu-color-app-control-fill) !important;
 		box-shadow: 1px 2px var(--pfu-color-app-control-shadow);
+		transition: none;
 
 		& button {
 			border: none !important;
@@ -1021,6 +1023,7 @@ a.inline-macro-execution {
 				background: var(--pfu-color-app-control-active-fill) !important;
 				box-shadow: 0 1px var(--pfu-color-app-control-active-shadow);
 				text-shadow: none;
+				transition: none;
 			}
 
 			&:not(.active, :active):hover {
@@ -1381,6 +1384,17 @@ a.inline-macro-execution {
 			background-size: var(--pfu-app-section-bg-image-size), cover;
 			background-repeat: var(--pfu-app-section-bg-image-repeat);
 
+			& .form-group {
+				& label,
+				span.label {
+					color: var(--pfu-color-app-section-content-primary);
+				}
+			}
+
+			.notes {
+				color: var(--pfu-color-app-section-content-secondary);
+			}
+
 			& .items-list>.item .buttons-inc :is(.increment-button, .decrement-button) {
 				color: var(--pfu-color-app-control-content);
 				background-color: unset;
@@ -1506,6 +1520,7 @@ a:not(.tab-style):hover {
 
 
 .standard-form {
+
 	& .form-group {
 		
 		& label,
