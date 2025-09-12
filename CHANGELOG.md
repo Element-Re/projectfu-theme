@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.0.4]
+- Removed UI Accent (image in the upper-left corner of the screen) from default themes due to changes in interface layout in v13. The option to set a UI Accent and the assets previously used for the default UI Accents have not been removed from the module.
+- A few additional style tweaks.
+
 ## [3.0.3]
 - Fix for illegible text styling in Combat HUD settings menu.
 
