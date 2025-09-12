@@ -233,7 +233,7 @@ export class Theme {
   'color-hud-background-fill-1' = '#49a499ff';
   'color-hud-background-fill-2' = '#49a499ff';
   
-  'ui-accent-image' = `modules/${MODULE}/assets/images/logo.png`;
+  'ui-accent-image' = 'unset';
   'app-accent-image' = `modules/${MODULE}/assets/images/Acento_highres.png`;
   'app-bg-image' = `modules/${MODULE}/assets/images/HojitasDouble_highres.png`;
   'app-section-bg-image' = `modules/${MODULE}/assets/images/Bkg_highres.png`;

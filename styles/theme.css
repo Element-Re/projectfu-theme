@@ -198,7 +198,7 @@ h4.divider::after {
 	border-color: var(--pfu-color-app-control-highlight-fill);
 }
 
-.application, .app, #interface {
+:is(.application, .app, #interface):not(.forien-quest-preview, .forien-quest-log) {
 
 	.window-content, #sidebar-content > section {
 		background: var(--pfu-color-app-body-primary-fill);
@@ -210,6 +210,7 @@ h4.divider::after {
 	}
 
 	footer.action-buttons button,
+	.dialog-buttons .dialog-button,
 	.projectfu .tab-style,
 	.form-footer button,
 	button.combat-control-lg,
@@ -1254,6 +1255,7 @@ a.inline-macro-execution {
 		}
 
 		& button,
+		& .dialog-button,
 		& .fa-trash {
 			border-radius: var(--pfu-border-radius-medium);
 			border: thin solid var(--pfu-color-app-control-border);
@@ -1579,13 +1581,17 @@ a:not(.tab-style):hover {
 		background: var(--pfu-color-app-section-primary-fill);
 		border-color: var(--pfu-color-app-section-border);
 		color: var(--pfu-color-app-section-content-primary);
-		
+
 		& legend {
 			border: 1px solid var(--pfu-color-app-control-border);
 			color: var(--pfu-color-app-control-content);
 			background: var(--pfu-color-app-control-fill);
 			border-radius: var(--pfu-border-radius-medium);
 			padding: 2px 8px;
+		}
+
+		.hint {
+			color: var(--pfu-color-app-section-content-secondary);
 		}
 
 		& .form-group {
