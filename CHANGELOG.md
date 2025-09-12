@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Some styles cannot be overridden without changes to the base system styles
 
 ## [3.0.4]
-- Removed UI Accent (image in the upper-left corner of the screen) from default themes due to changes in interface layout in v13. The option to set a UI Accent and the assets previously used for the default UI Accents have not been removed from the module.
+- Removed UI Accent (image in the upper-left corner of the screen) from default themes due to changes in interface layout in v13. The option to set a UI Accent and the assets previously used for the default UI Accents have not been removed from the module. Your current theme, default or not, will not be changed until a default theme is specifically loaded.
 - A few additional style tweaks.
 
 ## [3.0.3]
