@@ -27,7 +27,10 @@
     "projectfu-theme.mjs"
   ],
   "styles": [
-    "styles/theme.css"
+	  {
+		  "src": "styles/theme.css",
+		  "layer": "system"
+	  }
   ],
   "url": "https://github.com/Element-Re/projectfu-theme",
 	"manifest": "https://github.com/Element-Re/projectfu-theme/releases/latest/download/module.json",
