@@ -28,8 +28,12 @@
   ],
   "styles": [
 	  {
-		  "src": "styles/theme.css",
+		  "src": "styles/theme-system.css",
 		  "layer": "system"
+	  },
+	  {
+		  "src": "styles/theme-module.css",
+		  "layer": "module"
 	  }
   ],
   "url": "https://github.com/Element-Re/projectfu-theme",

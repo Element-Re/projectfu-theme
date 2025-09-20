@@ -1,0 +1,37 @@
+/* Global Progress Clocks */
+#clock-panel {
+
+    --control-bg-color: var(--pfu-color-control-fill);
+    --control-icon-color: var(--pfu-color-control-content);
+    --control-border-color: var(--pfu-color-control-border);
+
+
+    & .clock-display {
+        & .clock-entry {
+            background: unset;
+            border: unset;
+
+            & a {
+                + .value {
+                    padding-left: unset;
+                }
+
+                &:hover {
+                    text-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+                }
+            }
+
+        }
+    }
+
+    & .clock-display.left .clock-entry::before {
+        border-radius: calc(var(--entry-height) / 2) var(--pfu-border-radius-medium) var(--pfu-border-radius-medium) calc(var(--entry-height) / 2);
+    }
+    & .clock-display:not(.left) .clock-entry::before {
+        border-radius: var(--pfu-border-radius-medium) calc(var(--entry-height) / 2) calc(var(--entry-height) / 2) var(--pfu-border-radius-medium);
+    }
+
+
+
+
+}

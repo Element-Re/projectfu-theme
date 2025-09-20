@@ -152,7 +152,16 @@
 	--pfu-sidebar-bg-image: url("../assets/images/Hojitas_double_highres.png");
 }
 
+.themed:is(.theme-dark, .theme-light) .ui-control,
+.themed:is(.theme-dark, .theme-light) .placeable-hud,
+.themed:is(.theme-dark, .theme-light) #measurement .waypoint-label {
+	--control-bg-color: var(--pfu-color-control-fill);
+	--control-icon-color: var(--pfu-color-control-content);
+	--control-border-color: var(--pfu-color-control-border);
+}
+
 .theme-dark {
+	--color-text-primary: var(--color-light-2);
 	--color-text-secondary: var(--color-light-3);
 }
 
@@ -180,12 +189,12 @@ body {
 	--tah-text-hover-primary-color: var(--pfu-color-control-highlight-content);
 	--tah-text-hover-secondary-color: var(--pfu-color-control-highlight-border);
 	--tah-button-gradient-highlight: var(--pfu-color-control-highlight-fill);
-	--tah-button-hover-box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+	--tah-button-hover-box-shadow: 0 0 0.2rem var(--pfu-color-misc-shadow-highlight);
 
 	#tah-collapse-expand:hover button>i,
 	#tah-buttons button:hover>i {
 		color: var(--pfu-color-control-focus-content);
-		text-shadow: 0 0 8px var(--pfu-color-misc-shadow-primary);
+		text-shadow: 0 0 0.3rem var(--pfu-color-misc-shadow-primary);
 	}
 
 	#tah-expand-hud,
@@ -271,7 +280,6 @@ h4.divider::after {
 	#settings button,
 	.form-group button,
 	a.button,
-	button,
 	.window-content section button,
 	.sidebar-tab .header-actions button,
 	.chat-input,
@@ -299,6 +307,51 @@ h4.divider::after {
 			outline: none;
 		}
 	}
+
+	button.inline-control,
+	button.header-control,
+	.editor-menu button {
+		color: var(--pfu-color-control-content);
+		border: none;
+	}
+	button.inactive {
+		filter: grayscale(100%)
+	}
+	button.plain:hover {
+		color: var(--pfu-color-control-focus-content);
+		border-color: var(--pfu-color-control-active-border);
+	}
+	button.header-control:hover,
+	.editor-menu button:hover {
+		color: var(--pfu-color-app-control-highlight-content);
+		background: var(--pfu-color-app-control-highlight-fill);
+	}
+	button.inline-control:hover {
+		color: var(--pfu-color-control-highlight-content);
+		border-color: var(--pfu-color-control-highlight-border);
+		background: var(--pfu-color-control-highlight-fill);
+		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+	}
+	button.inline-control.active {
+		border-color: var(--pfu-color-control-active-border);
+		background: var(--pfu-color-control-active-fill);
+		box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
+		color: var(--pfu-color-control-focus-content);
+		text-shadow: none;
+		outline: none;
+	}
+	li.folder>.folder-header .create-button {
+		color: var(--pfu-color-app-control-content);
+
+		&:hover {
+			color: var(--pfu-color-control-active-content);
+			text-shadow: 0 0 8px var(--pfu-color-misc-shadow-primary) !important;
+
+			&::after {
+				color: var(--pfu-color-misc-shadow-primary);
+			}
+		}
+	}
 }
 
 .resource-inputs,
@@ -322,53 +375,6 @@ h4.divider::after {
 .application .window-header {
 	background: var(--pfu-color-app-header-fill);
 }
-
-button.inline-control,
-button.header-control,
-.editor-menu button {
-	color: var(--pfu-color-control-content);
-	border: none;
-}
-button.inactive {
-	filter: grayscale(100%)
-}
-button.plain:hover {
-	color: var(--pfu-color-control-focus-content);
-	border-color: var(--pfu-color-control-active-border);
-}
-button.header-control:hover,
-.editor-menu button:hover {
-	color: var(--pfu-color-app-control-highlight-content);
-	background: var(--pfu-color-app-control-highlight-fill);
-}
-button.inline-control:hover {
-	color: var(--pfu-color-control-highlight-content);
-	border-color: var(--pfu-color-control-highlight-border);
-	background: var(--pfu-color-control-highlight-fill);
-	box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
-}
-button.inline-control.active {
-	border-color: var(--pfu-color-control-active-border);
-	background: var(--pfu-color-control-active-fill);
-	box-shadow: 0 0 5px var(--pfu-color-misc-shadow-highlight);
-	color: var(--pfu-color-control-focus-content);
-	text-shadow: none;
-	outline: none;
-}
-li.folder>.folder-header .create-button {
-	color: var(--pfu-color-app-control-content);
-
-	&:hover {
-		color: var(--pfu-color-control-active-content);
-		text-shadow: 0 0 8px var(--pfu-color-misc-shadow-primary) !important;
-
-		&::after {
-			color: var(--pfu-color-misc-shadow-primary);
-		}
-	}
-}
-
-
 
 
 .chat-input:focus,
@@ -509,28 +515,6 @@ prose-mirror {
 }
  */
 
-.journal-sidebar {
-	
-	& nav.toc {
-
-		& li {
-			border-color: var(--pfu-color-app-control-border);
-		}
-		
-		& .page-index {
-			color: var(--pfu-color-control-inactive-content);
-		}
-
-		& .page-title {
-			color: var(--pfu-color-app-control-content);
-
-			&:hover {
-				text-shadow: var(--pfu-color-app-control-shadow)
-			}
-		}
-	}
-}
-
 /* #scene-controls {
 
 	& #scene-controls-layer>li {
@@ -605,9 +589,13 @@ prose-mirror {
 	pointer-events: none;
 }
 
-#players {
+.themed:is(.theme-dark, .theme-light) #players {
 
 	--player-name-color: var(--pfu-color-control-content);
+	--text-color: var(--pfu-color-control-content);
+	--color-rating-good: #58e558;
+	--color-rating-fair: #e3e365;
+	--color-rating-poor: #e85555;
 
 	& #players-active,
 	#players-inactive {
@@ -942,7 +930,11 @@ a.inline-macro-execution {
 		--color-secondary: var(--pfu-color-app-clock-border);
 		--color-border-primary: var(--pfu-color-app-clock-border);
 		--color-text-primary: var(--pfu-color-app-clock-fill);
+		--color-button-hover-bg: transparent;
 
+		& .cell-clock__button:hover {
+			text-shadow: 0 0 0.2rem var(--pfu-color-misc-shadow-highlight);
+		}
 
 		& .cell-clock__clock {
 			border-radius: 50%;
@@ -1012,7 +1004,6 @@ a.inline-macro-execution {
 	}
 
 	& .button-style,
-	& button,
 	& .desc .form-group button,
 	& .cell-item-controls .cell-item-controls__control,
 	& .cell-effect-controls .cell-effect-controls__control {
@@ -1022,10 +1013,13 @@ a.inline-macro-execution {
 		box-shadow: 1px 2px var(--pfu-color-app-control-shadow);
 		transition: none;
 
-		& button {
+		& button, input {
 			border: none !important;
 			background: none !important;
 
+			&:focus {
+				outline: none;
+			}
 			&:disabled {
 				opacity: unset;
 			}
@@ -1044,6 +1038,7 @@ a.inline-macro-execution {
 			&.active:hover,
 			&:active,
 			&:active:hover {
+
 				margin: 1px -1px -1px 1px;
 				-webkit-transform: unset;
 				transform: unset;
@@ -1051,8 +1046,9 @@ a.inline-macro-execution {
 				border: thin solid var(--pfu-color-app-control-active-border);
 				background: var(--pfu-color-app-control-active-fill) !important;
 				box-shadow: 0 1px var(--pfu-color-app-control-active-shadow);
-				text-shadow: none;
+				text-shadow: 0 0 0.2rem var(--pfu-color-misc-shadow-highlight);
 				transition: none;
+
 			}
 
 			&:not(.active, :active):hover {
@@ -1154,6 +1150,7 @@ a.inline-macro-execution {
 			&:hover {
 				background: none;
 				color: var(--pfu-color-app-control-focus-content);
+				text-shadow: 0 0 0.2rem var(--pfu-color-misc-shadow-highlight);
 			}
 		}
 	}
@@ -1262,12 +1259,37 @@ a.inline-macro-execution {
 	}
 }
 
-
 .backgroundstyle,
 .unique-dialog,
 #auto-target-dialog,
 #auto-spend-dialog,
-.active-effect-sheet {
+.active-effect-sheet,
+.projectfu {
+
+	&.theme-dark {
+		--color-text-primary: var(--pfu-color-app-body-content);
+		--color-text-secondary: var(--pfu-color-app-body-content-secondary);
+	}
+
+	& fieldset legend.resource-label-m,
+	fieldset legend.resource-text-m,
+	fieldset legend.resource-label-full,
+	.title-fieldset legend {
+		border: 1px solid var(--pfu-color-app-control-border);
+		color: var(--pfu-color-app-control-content);
+		background: var(--pfu-color-app-control-fill);
+
+		&.untoggled {
+			filter: grayscale(100%);
+		}
+
+		& .resource-inputs,
+		.resource-content .resource-inputs {
+			color: var(--pfu-color-app-control-content);
+			border: none;
+			background: none;
+		}
+	}
 
 	/* TODO: Move somewhere with more reusability. */
 	& .dialog-buttons,
@@ -1351,32 +1373,13 @@ a.inline-macro-execution {
 			& input:is(.fp-resource-inputs, .up-resource-inputs) {
 				background: none;
 				border: none;
+				box-shadow: none;
 				color: var(--pfu-color-app-section-content-secondary);
 			}
 		}
 
 		& .zenit-style input {
 			border: none;
-		}
-
-		& fieldset legend.resource-label-m,
-		fieldset legend.resource-text-m,
-		fieldset legend.resource-label-full,
-		.title-fieldset legend {
-			border: 1px solid var(--pfu-color-app-control-border);
-			color: var(--pfu-color-app-control-content);
-			background: var(--pfu-color-app-control-fill);
-
-			&.untoggled {
-				filter: grayscale(100%);
-			}
-
-			& .resource-inputs,
-			.resource-content .resource-inputs {
-				color: var(--pfu-color-app-control-content);
-				border: none;
-				background: none;
-			}
 		}
 
 		& .resource-content .resource-inputs,
@@ -1387,7 +1390,7 @@ a.inline-macro-execution {
 		.resource-content.levelup-container .combineBar {
 			border: none;
 			color: var(--pfu-color-app-control-content);
-			/* background: var(--pfu-color-app-control-fill); */
+			background: var(--pfu-color-app-control-fill);
 
 			& option {
 				background-color: var(--pfu-color-app-control-fill-1);
@@ -1430,6 +1433,7 @@ a.inline-macro-execution {
 
 			--color-primary: var(--pfu-color-app-section-content-secondary);
 			--color-secondary: var(--pfu-color-app-section-content-tertiary);
+			--color-text-dark: var(--pfu-color-app-section-content-secondary);
 
 
 			& input[type="radio"]:not(.progress *) {
@@ -1587,10 +1591,6 @@ a:not(.tab-style):hover {
 	text-shadow: var(--pfu-color-app-control-active-shadow);
 }
 
-.category-browser aside {
-		border-color: var(--pfu-color-control-highlight-border);
-}
-
 .settings-config-app {
 	--color-form-label: var(--pfu-color-app-section-content-primary);
 	--color-form-hint: var(--pfu-color-app-section-content-tertiary);
@@ -1620,15 +1620,18 @@ a:not(.tab-style):hover {
 .app.backgroundstyle
 {
 
-	backdrop-filter: var(--pfu-backdrop-filter);
+	&.backgroundstyle {
+		backdrop-filter: var(--pfu-backdrop-filter);
 
-	& .window-header {
-		color: var(--pfu-color-app-header-content);
-		background: var(--pfu-color-app-header-fill);
-		& .window-title {
+		& .window-header {
 			color: var(--pfu-color-app-header-content);
+			background: var(--pfu-color-app-header-fill);
+			& .window-title {
+				color: var(--pfu-color-app-header-content);
+			}
 		}
 	}
+
 
 	&:not(.minimized) {
 		&.backgroundstyle::after {
@@ -1677,7 +1680,7 @@ a:not(.tab-style):hover {
 				border-color: var(--pfu-color-control-border);
 
 				&.folder .folder-header {
-					color: var(--pfu-color-app-control-content);
+					color: var(--pfu-color-app-body-content);
 
 				}
 				
