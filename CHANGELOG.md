@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.0.6]
+- Another comprehensive style pass with a focus on support for light mode.
+
 ## [3.0.5]
 - Reverted styling of non-PFU window apps. While this looked great when it worked, there were many cases of modules with window apps using custom styling that made this look bad, or worse, illegible, and handling them one-by-one is not feasible. I'll continue to evaluate whether this might be possible in the future using an approach more supported by Foundry's native application styling.
 - Adding additional missing element styles, including clocks and progress tracks on sheets and the combat tracker sidebar.
