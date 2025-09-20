@@ -160,19 +160,32 @@
 	--control-border-color: var(--pfu-color-control-border);
 }
 
-.theme-dark {
-	--color-text-primary: var(--color-light-2);
-	--color-text-secondary: var(--color-light-3);
-}
-
-/* Foundry Overrides */
 body {
 	--color-scrollbar: var(--pfu-color-misc-scrollbar);
 	--color-scrollbar-track: var(--pfu-color-misc-scrollbar-track);
 	--color-scrollbar-border: var(--pfu-color-misc-scrollbar-border);
 }
+
 .combat-tracker {
 	--token-effect-filter: none;
+}
+
+body.theme-light {
+	--color-text-emphatic: var(--color-dark-1);
+	--color-text-primary: var(--color-dark-2);
+	--color-text-secondary: var(--color-dark-3);
+	--color-text-subtle: var(--color-dark-5);
+	--color-text-selection: var(--color-light-1);
+	--color-text-selection-bg: var(--color-dark-6);
+}
+
+body.theme-dark {
+	--color-text-emphatic: var(--color-light-1);
+	--color-text-primary: var(--color-light-2);
+	--color-text-secondary: var(--color-light-3);
+	--color-text-subtle: var(--color-light-5);
+	--color-text-selection: var(--color-light-1);
+	--color-text-selection-bg: var(--color-cool-3);
 }
 
 #combat-hud.pixel,
@@ -213,6 +226,13 @@ h4.divider::after {
 }
 
 :is(.application.projectfu, .app.projectfu, #interface) {
+
+	--color-text-emphatic: var(--pfu-color-app-body-content);
+	--color-text-primary: var(--pfu-color-app-body-content);
+	--color-text-secondary: var(--pfu-color-app-body-content-secondary);
+	--color-text-subtle: var(--pfu-color-app-body-content-secondary);
+	--color-tabs-border: var(--pfu-color-app-section-divider);
+	--checkbox-font-weight: bold;
 
 	input[type=checkbox] {
 		background: none;
@@ -372,10 +392,6 @@ h4.divider::after {
 .projectfu .sheet-header .profile-img {
 	background: var(--pfu-color-app-body-primary-fill);
 }
-.application .window-header {
-	background: var(--pfu-color-app-header-fill);
-}
-
 
 .chat-input:focus,
 .directory-header input:focus {
@@ -383,8 +399,7 @@ h4.divider::after {
 }
 
 .chat-input::placeholder,
-.directory-header input::placeholder,
-input[type=search]::placeholder {
+.directory-header input::placeholder {
 	color: var(--pfu-color-control-inactive-content);
 }
 
@@ -393,7 +408,7 @@ input[type=search]::placeholder {
 	background: var(--pfu-color-app-header-fill);
 }
 .playlists-sidebar .sound-timer {
-	color: var(--pfu-color-app-section-content-primary);
+	color: var(--pfu-color-app-body-content);
 }
 
 /* Theme Start */
@@ -589,13 +604,31 @@ prose-mirror {
 	pointer-events: none;
 }
 
-.themed:is(.theme-dark, .theme-light) #players {
+#hotbar #action-bar .slot .key {
+	border-radius: var(--pfu-border-radius-small) 0 var(--pfu-border-radius-small) 0;
+
+	/*
+	color: var(--pfu-color-app-section-content-primary);
+	background: var(--pfu-color-app-section-primary-fill);
+
+	&.full {
+		background: var(--pfu-color-app-section-primary-fill);
+	}
+	 */
+}
+
+.themed.theme-dark #players, .themed.theme-light #players {
 
 	--player-name-color: var(--pfu-color-control-content);
 	--text-color: var(--pfu-color-control-content);
+	--button-text-color: var(--pfu-color-control-content);
 	--color-rating-good: #58e558;
 	--color-rating-fair: #e3e365;
 	--color-rating-poor: #e85555;
+
+	button {
+		color: var(--pfu-color-control-content);
+	}
 
 	& #players-active,
 	#players-inactive {
@@ -806,7 +839,7 @@ a.inline-macro-execution {
 		filter: unset;
 		-webkit-filter: unset;
 		background-color: var(--pfu-color-app-control-content);
-		fill: unset;
+		fill: none;
 		background-blend-mode: unset;
 		mask-size: contain;
 		height: 1em;
@@ -1614,9 +1647,9 @@ a:not(.tab-style):hover {
 	}
 }	
 
-.application,
+.application:not(.themed.theme-light),
 .application.backgroundstyle,
-.app,
+.app:not(.themed.theme-light),
 .app.backgroundstyle
 {
 
