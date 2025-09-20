@@ -1037,6 +1037,8 @@ a.inline-macro-execution {
 	}
 
 	& .button-style,
+	& .resource-content button,
+	& .resource-content.desc button,
 	& .desc .form-group button,
 	& .cell-item-controls .cell-item-controls__control,
 	& .cell-effect-controls .cell-effect-controls__control {
