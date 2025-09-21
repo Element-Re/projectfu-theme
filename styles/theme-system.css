@@ -380,7 +380,7 @@ h4.divider::after {
 .traits.resource-content input {
 	background: var(--pfu-color-app-control-fill)
 }
-.resource-content {
+.projectfu .resource-content {
 	color: var(--pfu-color-app-section-content-secondary);
 }
 .resource-label-l,
@@ -1163,7 +1163,6 @@ a.inline-macro-execution {
 		border: 1px solid var(--pfu-color-app-control-border);
 		border-radius: 10px;
 
-
 		.resource-content > span {
 			color: var(--pfu-color-app-control-content);
 		}
@@ -1217,24 +1216,6 @@ a.inline-macro-execution {
 	.icon-toggle input:checked + .toggle-icon {
 		opacity: 1;
 	}
-
-	/*
-	.cell-text,
-	.cell-check,
-	.cell-damage,
-	.cell-equip-status
-	{
-		color: var(--pfu-color-app-section-content-secondary);
-	}
-
-	.fu-table .fu-table__row-caption {
-		color: var(--pfu-color-app-section-content-secondary);
-	}
-
-	.fu-table .fu-table__row-container {
-		color: var(--pfu-color-app-section-content-secondary);
-	}
-	*/
 
 	.fu-table .fu-table__row-container:hover {
 		border-color: var(--pfu-color-app-item-highlight-border);
@@ -1299,6 +1280,8 @@ a.inline-macro-execution {
 		color: var(--pfu-color-app-section-content-secondary);
 	}
 }
+
+
 
 .backgroundstyle,
 .unique-dialog,

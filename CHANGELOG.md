@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.0.8]
+- Fixes the fix that broke the thing that was being fixed
+
 ## [3.0.7] 
 - Resolves a few missed style issues with light mode support.
 
