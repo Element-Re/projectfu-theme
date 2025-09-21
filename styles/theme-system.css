@@ -463,12 +463,14 @@ h4.divider::after {
 	}
 } */
 
-prosemirror menu, .prosemirror menu {
+.application.projectfu .prosemirror menu, app.projectfu .prosemirror menu {
 	background: var(--pfu-color-app-control-fill);
 }
 
 #context-menu,
-#prosemirror-dropdown ul {
+#prosemirror-dropdown ul,
+.application.projectfu>menu.controls-dropdown,
+.app.projectfu>menu.controls-dropdown {
 	color: var(--pfu-color-control-content);
 	border: solid;
 	border-width: var(--pfu-border-width);
@@ -477,6 +479,18 @@ prosemirror menu, .prosemirror menu {
 	background: var(--pfu-color-control-fill);
 	backdrop-filter: blur(5px);
 	padding: 0;
+
+	&.controls-dropdown>.header-control {
+		&:first-child {
+			border-radius: var(--pfu-border-radius-medium) var(--pfu-border-radius-medium) 0 0;
+		}
+		&:last-child {
+			border-radius: 0 0 var(--pfu-border-radius-medium) var(--pfu-border-radius-medium);
+		}
+		&>button {
+			border-radius: inherit;
+		}
+	}
 
 	& li {
 
@@ -604,18 +618,6 @@ prose-mirror {
 	pointer-events: none;
 }
 
-#hotbar #action-bar .slot .key {
-	border-radius: var(--pfu-border-radius-small) 0 var(--pfu-border-radius-small) 0;
-
-	/*
-	color: var(--pfu-color-app-section-content-primary);
-	background: var(--pfu-color-app-section-primary-fill);
-
-	&.full {
-		background: var(--pfu-color-app-section-primary-fill);
-	}
-	 */
-}
 
 .themed.theme-dark #players, .themed.theme-light #players {
 
@@ -649,6 +651,13 @@ prose-mirror {
 }
 
 #hotbar {
+
+	--slot-color: var(--pfu-color-control-fill);
+
+	#action-bar .slot .key {
+		border-radius: var(--pfu-border-radius-small) 0 var(--pfu-border-radius-small) 0;
+	}
+
 	box-shadow: none;
 
 	& a:hover {
@@ -664,14 +673,12 @@ prose-mirror {
 
 	/* & .hotbar-controls, */
 	& .slot {
-		color: var(--pfu-color-control-content);
 		text-shadow: none;
-		border: solid;
-		border-width: var(--pfu-border-width);
-		border-color: var(--pfu-color-control-border);
+		border: var(--pfu-border-width) solid var(--pfu-color-control-border);
 		border-radius: var(--pfu-border-radius-small);
-		background: var(--pfu-color-control-fill);
 	}
+
+
 
 	& .slot:hover {
 		color: var(--pfu-color-control-highlight-content);
@@ -1230,7 +1237,6 @@ a.inline-macro-execution {
 	*/
 
 	.fu-table .fu-table__row-container:hover {
-		color: var(--pfu-color-app-section-content-secondary);
 		border-color: var(--pfu-color-app-item-highlight-border);
 		background: var(--pfu-color-app-item-highlight-fill);
 	}
@@ -1381,6 +1387,7 @@ a.inline-macro-execution {
 
 	& .window-content,
 	.dialog-content {
+
 		color: var(--pfu-color-app-body-content);
 		background: var(--pfu-app-bg-image), var(--pfu-color-app-body-primary-fill);
 		background-size: 100% auto;
@@ -1397,20 +1404,40 @@ a.inline-macro-execution {
 			text-decoration: unset;
 		}
 
-		& .resource-content,
-		.resource-content.desc,
-		table.fu {
+		h1, h2, h3, h4, h5, h6 {
+			font-family: var(--font-secondary);
+			font-weight: var(--font-weight-bold);
+			color: var(--color-border-primary);
+		}
 
-			color: var(--pfu-color-app-section-content-secondary);
-			--color-primary: var(--pfu-color-app-section-content-secondary);
-			--color-secondary: var(--pfu-color-app-section-content-secondary);
+		h1 {
+			font-size: var(--font-size-h1);
+		}
+		h2 {
+			font-size: var(--font-size-h2);
+		}
+		h3 {
+			font-size: var(--font-size-h3);
+		}
+		h4 {
+			font-size: var(--font-size-h4);
+		}
+		h5 {
+			font-size: var(--font-size-h5);
+		}
+		h6 {
+			font-size: var(--font-size-h6);
+		}
 
-			& input:is(.fp-resource-inputs, .up-resource-inputs) {
-				background: none;
-				border: none;
-				box-shadow: none;
-				color: var(--pfu-color-app-section-content-secondary);
-			}
+		ul {
+			list-style: diamonds;
+		}
+
+		& .resource-content input:is(.fp-resource-inputs, .up-resource-inputs) {
+			background: none;
+			border: none;
+			box-shadow: none;
+			color: var(--color-primary);
 		}
 
 		& .zenit-style input {
@@ -1468,7 +1495,12 @@ a.inline-macro-execution {
 
 			--color-primary: var(--pfu-color-app-section-content-secondary);
 			--color-secondary: var(--pfu-color-app-section-content-tertiary);
-			--color-text-dark: var(--pfu-color-app-section-content-secondary);
+			--color-text-dark: var(--pfu-color-app-section-content-primary);
+			--color-text-emphatic: var(--color-border-primary);
+			--color-text-primary: var(--pfu-color-app-section-content-primary);
+			--color-text-secondary: var(--pfu-color-app-section-content-secondary);
+			--color-text-subtle: var(--pfu-color-app-section-content-tertiary);
+			--color-tabs-border: var(--pfu-color-app-section-divider);
 
 
 			& input[type="radio"]:not(.progress *) {
@@ -1526,6 +1558,7 @@ a.inline-macro-execution {
 			& #status-section,
 			#attribute-section,
 			#roll-section {
+				color: var(--color-primary);
 				border: unset;
 				background: unset !important;
 			}
