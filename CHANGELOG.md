@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Some styles cannot be overridden without changes to the base system styles
 
 ## [3.0.7] 
-- Resolves a few missed issues with light mode support.
+- Resolves a few missed style issues with light mode support.
 
 ## [3.0.6]
 - Another comprehensive style pass with a focus on support for light mode.
