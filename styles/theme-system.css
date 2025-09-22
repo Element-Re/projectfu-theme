@@ -7,7 +7,6 @@
 }
 
 :root {
-
 	/* Controls */
 	--pfu-color-control-content: #ebf7afff;
 	--pfu-color-control-border: #148782ff;
@@ -120,11 +119,9 @@
 	--pfu-color-misc-scrollbar-border: #5d142bff;
 
 	/* Foundry Overrides */
-
 	--color-shadow-primary: var(--pfu-color-misc-shadow-primary);
 	--color-shadow-highlight: var(--pfu-color-misc-shadow-highlight);
 	--color-border-highlight: var(--pfu-color-misc-border-highlight);
-
 
 	/* Spacing and Sizing */
 	--pfu-border-radius-large: 20px;
@@ -145,7 +142,6 @@
 	--pfu-app-accent-position-left: -47px;
 
 	/* Assets */
-	--pfu-ui-accent-image: url("../assets/images/logo.png");
 	--pfu-app-accent-image: url("../assets/images/logo.png");
 	--pfu-app-section-bg-image: url("../assets/images/Bkg_pattern_highres");
 	--pfu-app-bg-image: url("../assets/images/Hojitas_highres.png");
