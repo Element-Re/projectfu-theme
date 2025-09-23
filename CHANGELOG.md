@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.0.9]
+- Fixes an issue with an incorrect value in default configs causing themes to attempt to load an invalid UI accent image.
+- Fixes an issue with window background blur in some window apps.
+
 ## [3.0.8]
 - Fixes the fix that broke the thing that was being fixed
 
