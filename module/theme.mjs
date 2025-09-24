@@ -209,8 +209,8 @@ export class Theme {
   'color-app-clock-border' = '#2b4a42ff';
 	'color-app-clock-fill-1' = '#2b4a42e0';
 	'color-app-clock-fill-2' = '#2b4a42e0';
-	'color-app-clock-bg-1' = '#ffffffff';
-	'color-app-clock-bg-2' = '#ffffffff';
+	'color-app-clock-bg-1' = '#ffffffb0';
+	'color-app-clock-bg-2' = '#ffffffb0';
   
   'color-app-detail-section-content-primary' = '#272a2aff';
   'color-app-detail-section-content-secondary' = '#2b4a42ff';
@@ -595,14 +595,6 @@ export const THEME_OPTIONS = deepFreeze({
   },
   'color-misc-border-highlight': {
     label: 'projectfu-theme.color-misc-border-highlight.label',
-    type: 'color'
-  },
-  'color-misc-scrollbar': {
-    label: 'projectfu-theme.color-misc-scrollbar.label',
-    type: 'color'
-  },
-  'color-misc-scrollbar-track': {
-    label: 'projectfu-theme.color-misc-scrollbar-track.label',
     type: 'color'
   },
   // TODO: This doesn't seem to do anything, but it's in the base foundry styles.

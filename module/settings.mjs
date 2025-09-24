@@ -83,8 +83,8 @@ const THEMES = deepFreeze({
     "color-app-clock-border": "#1E2559FF",
     "color-app-clock-fill-1": "#2D3885E0",
     "color-app-clock-fill-2": "#2D3885E0",
-    "color-app-clock-bg-1": "#FFFFFFFF",
-    "color-app-clock-bg-2": "#FFFFFFFF",
+    "color-app-clock-bg-1": "#FFFFFFB0",
+    "color-app-clock-bg-2": "#FFFFFFB0",
     "color-app-detail-section-content-primary": "#272A2AFF",
     "color-app-detail-section-content-secondary": "#1E2559FF",
     "color-app-detail-section-content-tertiary": "#4B4A44FF",
@@ -111,8 +111,6 @@ const THEMES = deepFreeze({
     "color-misc-shadow-primary": "#73BEFFFF",
     "color-misc-shadow-highlight": "#DEF9FFFF",
     "color-misc-border-highlight": "#F78946CC",
-    "color-misc-scrollbar": "#5D142BFF",
-    "color-misc-scrollbar-track": "#00000000",
     "advanced": ":root {\n  --pfu-ui-accent-width: 70px;\n  --pfu-ui-accent-height: auto;\n  --pfu-ui-accent-position-top: -111px;\n  --pfu-ui-accent-position-left: 72px;\n  --pfu-ui-accent-clip-path: unset;\n  --pfu-border-radius-large: 20px;\n  --pfu-border-radius-medium: 10px;\n  --pfu-border-radius-small: 5px;\n  --pfu-border-width: 0.1em;\n  --pfu-control-shadow: 0 0 10px var(--color-shadow-dark);\n}\n\n#ui-accent {\n  transform: rotate(90deg) scaleY(-1);\n}\n\n#chat-form #chat-message {\n  background: var(--pfu-color-app-section-primary-fill);\n}"
   })
 })
