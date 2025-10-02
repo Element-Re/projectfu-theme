@@ -213,7 +213,9 @@ h4.divider::after {
 	border-color: var(--pfu-color-app-control-highlight-fill);
 }
 
-:is(.application.projectfu, .app.projectfu, #interface) {
+[id="interface"],
+.application.projectfu,
+.app.projectfu {
 
 	--color-text-emphatic: var(--pfu-color-app-body-content);
 	--color-text-primary: var(--pfu-color-app-body-content);
@@ -981,7 +983,6 @@ a.inline-macro-execution {
 
 
 .projectfu,
-:is(#auto-target-dialog, #auto-spend-dialog) .projectfu,
 .chat-message {
 
 	& .active-effect-sheet label,
@@ -1015,31 +1016,30 @@ a.inline-macro-execution {
 		}
 	}
 
-	& .progress {
+	& .progress-container .progress {
 
-		& .pie {
+		& input[type="radio"].pie {
 			background: unset;
-		}
+			&:hover,
+			&:hover~.pie,
+			&:checked:has(~ .pie:hover),
+			&:checked ~ .pie:has(~ .pie:hover) {
+				background: var(--pfu-color-app-clock-fill);
+				/* opacity: 0.7; */
+			}
 
-		& .pie:hover,
-		& .pie:hover~.pie,
-		& .pie:checked:has(~ .pie:hover),
-		& .pie:checked ~ .pie:has(~ .pie:hover) {
-			background: var(--pfu-color-app-clock-fill);
-			/* opacity: 0.7; */
-		}
-
-		& .pie:checked,
-		& .pie:checked~.pie,
-		& .pie:checked:hover,
-		& .pie:checked:hover~.pie,
-		& .pie:checked~.pie:hover,
-		& .pie:checked~.pie:hover~.pie,
-		& .pie:hover~.pie:checked,
-		& .pie:hover~.pie:checked~.pie
-		{
-			background: var(--pfu-color-app-clock-fill);
-			/* opacity: 1; */
+			&:checked,
+			&:checked~.pie,
+			&:checked:hover,
+			&:checked:hover~.pie,
+			&:checked~.pie:hover,
+			&:checked~.pie:hover~.pie,
+			&:hover~.pie:checked,
+			&:hover~.pie:checked~.pie
+			{
+				background: var(--pfu-color-app-clock-fill);
+				/* opacity: 1; */
+			}
 		}
 
 		& .divider {
@@ -1320,12 +1320,6 @@ a.inline-macro-execution {
 			opacity: 0.8;
 		}
 	}
-
-	& #autoTargetForm,
-	& #autoSpendForm {
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
-	}
 }
 
 .application.journal-sheet:not([id$="-popout"]),
@@ -1338,10 +1332,11 @@ a.inline-macro-execution {
 
 
 
-.backgroundstyle,
+.application.backgroundstyle,
+.application.projectfu,
+.app.backgroundstyle,
+.app.projectfu,
 .unique-dialog,
-#auto-target-dialog,
-#auto-spend-dialog,
 .active-effect-sheet,
 .projectfu {
 
@@ -1631,16 +1626,16 @@ a.inline-macro-execution {
 				background: var(--pfu-color-app-name-section-fill);
 				margin-right: 1px;
 
-				& input {
+				& input[type="text"] {
 					color: var(--pfu-color-app-name-section-content);
 					background: none;
 				}
 
-				& .charname input {
+				& .charname input[type="text"] {
 					text-shadow: 2px 2px 1px var(--pfu-color-app-name-section-shadow);
 				}
 
-				& .pronouns input {
+				& .pronouns input[type="text"] {
 					text-shadow: 1px 1px 1px var(--pfu-color-app-name-section-shadow);
 				}
 			}
