@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.1.1]
+- Additional style tweaks for FU Roll Enhancements theming.
+
 ## [3.1.0]
 - Updates theming support for FU Roll Enhancements 2.1.0
 

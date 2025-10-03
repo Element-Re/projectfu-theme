@@ -103,14 +103,14 @@
         color: var(--pfu-color-app-control-content);
     }
 
-    & .window-content, #sidebar-content > section {
+    & .window-content {
+        background: var(--pfu-color-app-body-primary-fill);
+        color: var(--pfu-color-app-body-content);
+    }
+
+    &.roll-configuration .window-content {
         background: var(--pfu-app-bg-image), var(--pfu-color-app-body-primary-fill);
         background-size: 100% auto;
-        color: var(--pfu-color-app-body-content);
-
-        & .notes {
-            color: var(--pfu-color-app-body-content-secondary);
-        }
     }
 
     & footer.action-buttons button,
