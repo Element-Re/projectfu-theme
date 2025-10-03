@@ -149,9 +149,18 @@
 .themed:is(.theme-dark, .theme-light) .ui-control,
 .themed:is(.theme-dark, .theme-light) .placeable-hud,
 .themed:is(.theme-dark, .theme-light) #measurement .waypoint-label {
-	--control-bg-color: var(--pfu-color-control-fill);
+	--hud-icon-filter: none;
+	--control-icon-filter: none;
 	--control-icon-color: var(--pfu-color-control-content);
+	--control-hover-icon-color: var(--pfu-color-control-highlight-content);
+	--control-active-icon-color: var(--pfu-color-control-active-content);
+	--control-bg-color: var(--pfu-color-control-fill);
+	--control-active-bg-color: var(--pfu-color-control-active-fill);
+	--control-hover-bg-color: var(--pfu-color-control-highlight-fill);
 	--control-border-color: var(--pfu-color-control-border);
+	--control-hover-border-color: var(--pfu-color-control-highlight-border);
+	--control-active-border-color: var(--pfu-color-control-active-border);
+
 }
 
 .combat-tracker {
@@ -213,6 +222,7 @@ h4.divider::after {
 	border-color: var(--pfu-color-app-control-highlight-fill);
 }
 
+/* System */
 [id="interface"],
 .application.projectfu,
 .app.projectfu {
@@ -224,9 +234,13 @@ h4.divider::after {
 	--color-tabs-border: var(--pfu-color-app-section-divider);
 	--checkbox-font-weight: bold;
 
-	& input[type=checkbox] {
+	& input[type=checkbox],
+	& input[type=radio] {
 		background: none;
 		appearance: none;
+		&:disabled {
+			opacity: 0.6;
+		}
 	}
 
 	& input[type=checkbox]::before {
@@ -253,7 +267,10 @@ h4.divider::after {
 	& textarea {
 		background: var(--pfu-color-app-control-fill);
 		border-color: var(--pfu-color-app-control-border);
-		color: var(--pfu-color-app-control-content)
+		color: var(--pfu-color-app-control-content);
+		&:disabled {
+			opacity: 0.6;
+		}
 	}
 	& input[type="number"]:focus,
 	& input[type="search"]:focus,
