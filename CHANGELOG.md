@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.1.2]
+- Minor style pass:
+  - Fix for growth clocks appearing always filled
+  - Simplify context menu styles to reduce wonky highlighting and border curves
+  - Fix for blocky radio buttons
+  - Add missing style for section labels in some unique dialogs
+  - Add missing style for clock labels when output to chat
+
 ## [3.1.1]
 - Additional style tweaks for FU Roll Enhancements theming.
 
