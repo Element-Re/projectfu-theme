@@ -1027,6 +1027,10 @@ a.inline-macro-execution {
 		pointer-events: none;
 	}
 
+	& .unique-clock .rp-label {
+		color: var(--color-text-primary);
+	}
+
 	& .unique-clock,
 	& .growth-clock,
 	&.clock-s,
