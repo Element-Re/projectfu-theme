@@ -234,8 +234,8 @@ h4.divider::after {
 	--color-tabs-border: var(--pfu-color-app-section-divider);
 	--checkbox-font-weight: bold;
 
-	& input[type=checkbox],
-	& input[type=radio] {
+	& input[type="checkbox"],
+	& input[type="radio"] {
 		background: none;
 		appearance: none;
 		&:disabled {
@@ -243,7 +243,8 @@ h4.divider::after {
 		}
 	}
 
-	& input[type=checkbox]::before {
+	& input[type="checkbox"]::before,
+	& input[type="radio"]::before {
 		color: var(--pfu-color-app-control-fill-1);
 	}
 	& input[type="checkbox"]:checked::before,
@@ -588,6 +589,7 @@ h4.divider::after {
 		border-width: var(--pfu-border-width);
 		border-color: transparent;
 		border-radius: var(--pfu-border-radius-medium);
+		transition: none;
 		margin: 4px;
 
 		&:hover {
@@ -1383,6 +1385,7 @@ a.inline-macro-execution {
 	& fieldset legend.resource-label-m,
 	& fieldset legend.resource-text-m,
 	& fieldset legend.resource-label-full,
+	&.projectfu.unique-dialog .dialog-content fieldset legend,
 	& .title-fieldset legend {
 		border: 1px solid var(--pfu-color-app-control-border);
 		color: var(--pfu-color-app-control-content);
@@ -1517,8 +1520,8 @@ a.inline-macro-execution {
 		& .resource-content .resource-inputs,
 		& .resource-content.levelup-container.creature .resource-inputs,
 		& .bond-strength,
-		& .resource-content.traits input,
-		& fieldset:is(.form-fields, .resource-content) input,
+		& .resource-content.traits input:not([type="checkbox"], [type="radio"]),
+		& fieldset:is(.form-fields, .resource-content) input:not([type="checkbox"], [type="radio"]),
 		& .resource-content.levelup-container .combineBar {
 			border: none;
 			color: var(--pfu-color-app-control-content);
