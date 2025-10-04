@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.1.3]
+- Another minor style pass:
+  - Add missing style for tags in Item traits section. 
+
 ## [3.1.2]
 - Minor style pass:
   - Fix for growth clocks appearing always filled
