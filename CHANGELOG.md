@@ -8,7 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Some styles cannot be overridden without changes to the base system styles
 
 ## [3.1.4]
-- Minor style tweaks
+- Fix for unintentional select dropdown styling that made them illegible in dark mode
+- Additional minor style tweaks
 
 ## [3.1.3]
 - Another minor style pass:

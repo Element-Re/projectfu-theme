@@ -455,12 +455,6 @@ h4.divider::after {
 	}
 }
 
-.resource-inputs,
-.combineBar,
-.bond-strength,
-.traits.resource-content input {
-	background: var(--pfu-color-app-control-fill)
-}
 .projectfu .resource-content {
 	color: var(--pfu-color-app-section-content-secondary);
 }
@@ -1311,6 +1305,14 @@ a.inline-macro-execution {
 		}
 	}
 
+
+	& .resource-inputs:not(select),
+	& .combineBar,
+	& .bond-strength,
+	& .traits.resource-content input {
+		background: var(--pfu-color-app-control-fill)
+	}
+
 	/* TODO: Move somewhere with more reusability. */
 	& .dialog-buttons,
 	& .meta-currency-tracker>.resource-content,
@@ -1425,8 +1427,8 @@ a.inline-macro-execution {
 			border: none;
 		}
 
-		& .resource-content .resource-inputs,
-		& .resource-content.levelup-container.creature .resource-inputs,
+		& .resource-content .resource-inputs:not(select),
+		& .resource-content.levelup-container.creature .resource-inputs:not(select),
 		& .bond-strength,
 		& .resource-content.traits input:not([type="checkbox"], [type="radio"]),
 		& fieldset:is(.form-fields, .resource-content) input:not([type="checkbox"], [type="radio"]),
