@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
-## [3.1.6]
+## [3.1.7]
 - Fix for unintentional select dropdown styling that made them illegible in dark mode
 - Additional minor style tweaks
 

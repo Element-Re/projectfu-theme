@@ -1271,6 +1271,11 @@ a.inline-macro-execution {
 
 .projectfu .resource-content .resource-inputs {
 	color: var(--pfu-color-app-control-content);
+	background: var(--pfu-color-app-control-fill-1);
+	& option {
+		color: var(--pfu-color-app-control-content);
+		background: var(--pfu-color-app-control-fill-1);
+	}
 }
 
 .application.backgroundstyle,
