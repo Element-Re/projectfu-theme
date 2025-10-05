@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.1.4]
+- Minor style tweaks
+
 ## [3.1.3]
 - Another minor style pass:
   - Add missing style for tags in Item traits section. 
+  - Resolves some unintentional crosstalk between style selectors for various buttons and controls
 
 ## [3.1.2]
 - Minor style pass:
