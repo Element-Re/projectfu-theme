@@ -1269,7 +1269,9 @@ a.inline-macro-execution {
 	}
 }
 
-
+.projectfu .resource-content .resource-inputs {
+	color: var(--pfu-color-app-control-content);
+}
 
 .application.backgroundstyle,
 .application.projectfu,
