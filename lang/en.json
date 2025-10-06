@@ -66,6 +66,7 @@
   "projectfu-theme.color-app-detail-section-primary-fill-1.label": "App Detail Section Fill (Start)",
   "projectfu-theme.color-app-detail-section-primary-fill-2.label": "App Detail Section Fill (End)",
   "projectfu-theme.color-app-item-header-content.label": "App Item Header Content",
+  "projectfu-theme.color-app-item-header-content-focus.label": "App Item Header Content (Focus)",
   "projectfu-theme.color-app-item-header-fill-1.label": "App Item Header Fill (Start)",
   "projectfu-theme.color-app-item-header-fill-2.label": "App Item Header Fill (End)",
   "projectfu-theme.color-app-item-header-shadow.label": "App Item Header Shadow",

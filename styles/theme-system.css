@@ -69,6 +69,7 @@
 	--pfu-color-app-control-active-fill: linear-gradient(0deg, var(--pfu-color-app-control-active-fill-1) 0%, var(--pfu-color-app-control-active-fill-2) 100%);
 	--pfu-color-app-item-content: #2b4a42ff;
 	--pfu-color-app-item-header-content: #ebf7afff;
+	--pfu-color-app-item-header-content-focus: #ffffffff;
 	--pfu-color-app-item-header-fill-1: #2c584dff;
 	--pfu-color-app-item-header-fill-2: #a0cdbcff;
 	--pfu-color-app-item-header-fill: linear-gradient(to bottom, var(--pfu-color-app-item-header-fill-1), var(--pfu-color-app-item-header-fill-2));
@@ -1195,8 +1196,9 @@ a.inline-macro-execution {
 		text-shadow: 1px 1px var(--pfu-color-app-item-header-shadow);
 		box-shadow: 2px 4px var(--pfu-color-app-item-header-shadow);
 
-		&.total-level a:hover {
-			color: var(--pfu-color-app-control-content);
+		&.total-level a:hover,
+		& a:hover {
+			color: var(--pfu-color-app-item-header-content-focus);
 			text-shadow: inherit;
 			> *:hover {
 				color: inherit;
@@ -1230,7 +1232,7 @@ a.inline-macro-execution {
 		box-shadow: 1px 2px var(--pfu-color-app-item-header-shadow);
 
 		& a:hover {
-			color: var(--pfu-color-app-control-content);
+			color: var(--pfu-color-app-item-header-content-focus);
 			text-shadow: inherit;
 		}
 	}

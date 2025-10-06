@@ -198,6 +198,7 @@ export class Theme {
 	'color-app-image-fill-2' = '#3d665aff';
   
   'color-app-item-header-content' = '#ebf7afff';
+  'color-app-item-header-content-focus' = '#ffffffff';
   'color-app-item-header-fill-1' = '#2c584dff';
   'color-app-item-header-fill-2' = '#a0cdbcff';
   'color-app-item-header-shadow' = '#2b4a42ff';
@@ -456,6 +457,10 @@ export const THEME_OPTIONS = deepFreeze({
 
   'color-app-item-header-content': {
     label: 'projectfu-theme.color-app-item-header-content.label',
+    type: 'color'
+  },
+  'color-app-item-header-content-focus': {
+    label: 'projectfu-theme.color-app-item-header-content-focus.label',
     type: 'color'
   },
   'color-app-item-header-fill-1': {

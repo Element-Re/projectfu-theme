@@ -74,6 +74,7 @@ const THEMES = deepFreeze({
     "color-app-image-fill-1": "#303573FF",
     "color-app-image-fill-2": "#3A49A1FF",
     "color-app-item-header-content": "#F8F7FFFF",
+    "color-app-item-header-content-focus": "#D6F9FFFF",
     "color-app-item-header-fill-1": "#2D3885FF",
     "color-app-item-header-fill-2": "#A1DAFFFF",
     "color-app-item-header-shadow": "#2D3885FF",
