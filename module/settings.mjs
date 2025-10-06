@@ -109,7 +109,7 @@ const THEMES = deepFreeze({
     "app-section-bg-image": "",
     "sidebar-bg-image": "modules/projectfu-theme/assets/images/Page_deco_half.png",
     "color-misc-shadow-primary": "#73BEFFFF",
-    "color-misc-shadow-highlight": "#DEF9FFFF",
+    "color-misc-shadow-highlight": "#F78946FF",
     "color-misc-border-highlight": "#F78946CC",
     "advanced": ":root {\n  --pfu-ui-accent-width: 70px;\n  --pfu-ui-accent-height: auto;\n  --pfu-ui-accent-position-top: -111px;\n  --pfu-ui-accent-position-left: 72px;\n  --pfu-ui-accent-clip-path: unset;\n  --pfu-border-radius-large: 20px;\n  --pfu-border-radius-medium: 10px;\n  --pfu-border-radius-small: 5px;\n  --pfu-border-width: 0.1em;\n  --pfu-control-shadow: 0 0 10px var(--color-shadow-dark);\n}\n\n#ui-accent {\n  transform: rotate(90deg) scaleY(-1);\n}\n\n#chat-form #chat-message {\n  background: var(--pfu-color-app-section-primary-fill);\n}"
   })

@@ -241,8 +241,8 @@ export class Theme {
   
   /* Misc */
   'color-misc-shadow-primary' = '#77ebd7ff';
-  'color-misc-shadow-highlight' = '#d8e08fff';
-  'color-misc-border-highlight' = '#f78946cc';
+  'color-misc-shadow-highlight' = '#E03A3AFF';
+  'color-misc-border-highlight' = '#E03A3ACC';
   'color-misc-scrollbar' = '#5d142bff';
   'color-misc-scrollbar-track' = '#00000000';
   // TODO: This doesn't seem to do anything, but it's in the base foundry styles.

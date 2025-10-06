@@ -113,13 +113,8 @@
 
 	/* Misc */
 	--pfu-color-misc-shadow-primary: #77ebd7ff;
-	--pfu-color-misc-shadow-highlight: #d8e08fff;
-	--pfu-color-misc-border-highlight: #f78946cc;
-
-	/* Foundry Overrides */
-	--color-shadow-primary: var(--pfu-color-misc-shadow-primary);
-	--color-shadow-highlight: var(--pfu-color-misc-shadow-highlight);
-	--color-border-highlight: var(--pfu-color-misc-border-highlight);
+	--pfu-color-misc-shadow-highlight: #E03A3AFF;
+	--pfu-color-misc-border-highlight: #E03A3ACC;
 
 	/* Spacing and Sizing */
 	--pfu-border-radius-large: 20px;
@@ -232,6 +227,9 @@ h4.divider::after {
 	--color-text-secondary: var(--pfu-color-app-body-content-secondary);
 	--color-text-subtle: var(--pfu-color-app-body-content-secondary);
 	--color-tabs-border: var(--pfu-color-app-section-divider);
+	--color-shadow-primary: var(--pfu-color-misc-shadow-primary);
+	--color-shadow-highlight: var(--pfu-color-misc-shadow-highlight);
+	--color-border-highlight: var(--pfu-color-misc-border-highlight);
 	--checkbox-font-weight: bold;
 
 	& input[type="checkbox"],
@@ -858,6 +856,7 @@ a.inline-macro-execution {
 	--color-text-primary: var(--pfu-color-app-section-content-primary);
 	--color-primary: var(--pfu-color-app-section-content-secondary);
 	--color-secondary: var(--pfu-color-app-section-content-tertiary);
+	--color-shadow-primary: var(--pfu-color-misc-shadow-highlight);
 
 	color: var(--pfu-color-app-section-content-primary);
 	border: 2px solid var(--pfu-color-app-section-border);
@@ -1021,6 +1020,7 @@ a.inline-macro-execution {
 
 	& .button-style,
 	& .resource-content button,
+	& .desc button,
 	& .resource-content.desc button,
 	& .desc .form-group button,
 	& .cell-item-controls .cell-item-controls__control,
@@ -1064,12 +1064,11 @@ a.inline-macro-execution {
 				border: thin solid var(--pfu-color-app-control-active-border);
 				background: var(--pfu-color-app-control-active-fill) !important;
 				box-shadow: 0 1px var(--pfu-color-app-control-active-shadow);
-				text-shadow: 0 0 0.2rem var(--pfu-color-misc-shadow-highlight);
+				text-shadow: unset;
 				transition: none;
-
 			}
 
-			&:not(.active, :active):hover {
+			&:not(.active, :active, .cell-item-controls__control--active):hover {
 				text-shadow: none;
 				color: var(--pfu-color-app-control-highlight-content) !important;
 				border: thin solid var(--pfu-color-app-control-highlight-border);
@@ -1109,8 +1108,8 @@ a.inline-macro-execution {
 
 	& .rollable:hover,
 	& .rollable:focus {
-		color: var(--pfu-color-app-control-content);
-		text-shadow: 2px 2px 12px var(--pfu-color-app-control-fill-1);
+		color: inherit;
+		text-shadow: 0 0 8px var(--pfu-color-misc-shadow-highlight);
 	}
 
 	& .breakline-border {
@@ -1195,6 +1194,14 @@ a.inline-macro-execution {
 		background: var(--pfu-color-app-item-header-fill);
 		text-shadow: 1px 1px var(--pfu-color-app-item-header-shadow);
 		box-shadow: 2px 4px var(--pfu-color-app-item-header-shadow);
+
+		&.total-level a:hover {
+			color: var(--pfu-color-app-control-content);
+			text-shadow: inherit;
+			> *:hover {
+				color: inherit;
+			}
+		}
 	}
 
 	& .icon-toggle .toggle-icon {
@@ -1221,6 +1228,11 @@ a.inline-macro-execution {
 		background: var(--pfu-color-app-item-header-fill);
 		text-shadow: 1px 1px var(--pfu-color-app-item-header-shadow);
 		box-shadow: 1px 2px var(--pfu-color-app-item-header-shadow);
+
+		& a:hover {
+			color: var(--pfu-color-app-control-content);
+			text-shadow: inherit;
+		}
 	}
 
 	& .body-section .section-container .desc-header.resource-content .traitdesc {
@@ -1286,7 +1298,11 @@ a.inline-macro-execution {
 .active-effect-sheet,
 .projectfu {
 
-	&.theme-dark {
+
+	--color-primary: var(--pfu-color-app-body-content-secondary);
+
+	&.theme-dark,
+	&.theme-light {
 		--color-text-primary: var(--pfu-color-app-body-content);
 		--color-text-secondary: var(--pfu-color-app-body-content-secondary);
 	}
@@ -1493,6 +1509,7 @@ a.inline-macro-execution {
 			--color-text-dark: var(--pfu-color-app-section-content-primary);
 			--color-primary: var(--pfu-color-app-section-content-secondary);
 			--color-secondary: var(--pfu-color-app-section-content-tertiary);
+			--color-shadow-primary: var(--pfu-color-misc-shadow-highlight);
 			--color-border-primary: var(--pfu-color-app-section-content-secondary);
 			--color-border-secondary: var(--pfu-color-app-detail-section-shadow);
 			--color-transparent-gradient: var(--pfu-color-app-detail-section-primary-fill-to-right);

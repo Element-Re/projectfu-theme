@@ -5,7 +5,6 @@
     --control-icon-color: var(--pfu-color-control-content);
     --control-border-color: var(--pfu-color-control-border);
 
-
     & .clock-display {
         & .clock-entry {
             background: unset;
@@ -191,6 +190,7 @@
         --color-text-dark: var(--pfu-color-app-section-content-primary);
         --color-primary: var(--pfu-color-app-section-content-secondary);
         --color-secondary: var(--pfu-color-app-section-content-tertiary);
+        --color-shadow-primary: var(--pfu-color-misc-shadow-highlight);
         --color-border-primary: var(--pfu-color-app-section-content-secondary);
         --color-border-secondary: var(--pfu-color-app-detail-section-shadow);
         --color-transparent-gradient: var(--pfu-color-app-detail-section-primary-fill-to-right);
