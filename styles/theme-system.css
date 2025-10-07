@@ -1448,6 +1448,10 @@ a.inline-macro-execution {
 			list-style: diamonds;
 		}
 
+		input, select, textarea, code-mirror {
+			--input-box-shadow: none;
+		}
+
 		& .resource-content input:is(.fp-resource-inputs, .up-resource-inputs) {
 			background: none;
 			border: none;
