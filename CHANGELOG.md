@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.1.9]
+- Add missing theming to inline clock commands
+
 ## [3.1.8]
 - Fixes theming for some selects on actor sheets that were missed after cutting down on overly broad selectors
 - Improves usage of the Misc Shadow Highlight setting and sets new defaults for this setting in included theme presets that should hopefully aesthetically contrast with the elements they are used to highlight.
