@@ -1602,7 +1602,6 @@ a.inline-macro-execution {
 
 			& .profile-img,
 			& .item-profile-img {
-				flex: 0 0 64px;
 				border: 1px solid var(--pfu-color-app-section-border);
 				background: var(--pfu-color-app-image-fill);
 			}
