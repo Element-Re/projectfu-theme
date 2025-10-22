@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.1.10]
+- Removes obsolete flex styling fix on sheet header images
+
 ## [3.1.9]
 - Add missing theming to inline clock commands
 
