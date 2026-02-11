@@ -1299,6 +1299,9 @@ a.inline-macro-execution {
 .app.projectfu,
 .unique-dialog,
 .active-effect-sheet,
+.fu-application,
+.background,
+.fu-form,
 .projectfu {
 
 
@@ -1501,6 +1504,8 @@ a.inline-macro-execution {
 
 		& .section-container,
 		& .desc,
+		& .background,
+		& .fu-application__tabs nav,
 		& .header-fields:has(#status-section, #attribute-section, #roll-section),
 		& :is(.dialog-content, .inline-effect-config) fieldset,
 		& .projectfu>.items-list {
@@ -1779,7 +1784,8 @@ a.inline-macro-execution {
 }
 
 a[data-action="roll"],
-a[data-action="rollEffect"] {
+a[data-action="rollEffect"],
+.cell-item-name a[data-link] {
 	--color-primary: var(--pfu-color-app-image-fill-1);
 	--color-secondary: var(--pfu-color-app-image-fill-2);
 }
