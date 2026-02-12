@@ -231,6 +231,41 @@ h4.divider::after {
 	--color-shadow-primary: var(--pfu-color-misc-shadow-primary);
 	--color-shadow-highlight: var(--pfu-color-misc-shadow-highlight);
 	--color-border-highlight: var(--pfu-color-misc-border-highlight);
+
+	--color-background: var(--pfu-color-app-control-fill);
+
+	--table-row-color-odd: transparent;
+	--table-row-color-even: rgba(0, 0, 0, 0.1);
+
+	& .fu-icon__badge-overlay {
+		background: var(--color-background);
+		color: var(--pfu-color-app-control-content);
+	}
+
+	& table {
+
+		&.table-compact {
+
+			background: unset;
+
+		 	& thead {
+				border: unset;
+
+				& th {
+					border: unset;
+					background: unset;
+				}
+			}
+		}
+
+		& thead tr {
+			color: var(--pfu-color-app-control-content);
+			background: var(--pfu-color-app-control-fill);
+		}
+
+	}
+
+
 	--checkbox-font-weight: bold;
 
 	& input[type="checkbox"],
@@ -473,6 +508,18 @@ h4.divider::after {
 	/* color: var(--pfu-color-app-section-content-secondary); */
 	background: none;
 }
+.fu-icon__radio__label {
+	/* Remove brightness from icon filter -- looks better on most themes */
+	filter: grayscale(1) opacity(0.7);
+}
+
+.fu-dialog__output {
+	background: var(--pfu-color-app-control-fill);
+	color: var(--pfu-color-app-control-content);
+	border-radius: var(--pfu-border-radius-small);
+}
+
+
 .projectfu .sheet-header .profile-img {
 	background: var(--pfu-color-app-body-primary-fill);
 }

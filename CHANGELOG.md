@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.2.1]
+- Further theming of new UI elements from PFU v4.5.0
+
 ## [3.2.0]
 - Attempt to theme compendium browser (new to PFU v4.5.0)
 
