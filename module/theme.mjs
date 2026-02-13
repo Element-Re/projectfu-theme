@@ -162,8 +162,8 @@ export class Theme {
   /* Apps - Header */
   'color-app-header-content' = '#ebf7afff';
   'color-app-header-focus-content' = '#ffffffff';
-  'color-app-header-fill-1' = '#51c7ad4d';
-  'color-app-header-fill-2' = '#044a2c4d';
+  'color-app-header-fill-1' = '#23574bdd';
+  'color-app-header-fill-2' = '#011f13dd';
   
   
   /* Apps - Body */

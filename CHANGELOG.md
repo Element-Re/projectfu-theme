@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [3.2.2]
 - Themes Rule Element editing UI from PFU v4.5.0
+- Reduces transparency in default theme colors for app headers
 
 ## [3.2.1]
 - Further theming of new UI elements from PFU v4.5.0
