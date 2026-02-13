@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.2.3]
+- Fixes theme CSS overriding roll outcome in chat messages for attribute checks
+
 ## [3.2.2]
 - Themes Rule Element editing UI from PFU v4.5.0
 - Reduces transparency in default theme colors for app headers
