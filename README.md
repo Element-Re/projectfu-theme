@@ -1,3 +1,6 @@
+# DEPRECATED
+As of [Project FU v4.6.0](https://github.com/League-of-Fabulous-Developers/FoundryVTT-Fabula-Ultima/releases/tag/v4.6.0), this module's functionality has now been rolled into the system proper, and this repository will no longer receive updates.
+
 # Project FU Theme
 With permission from and credit to Joline / Liquitty on the Project FU Discord, Project FU Theme is a module providing a new overhauled theme for Foundry intended for the Project FU System.
 

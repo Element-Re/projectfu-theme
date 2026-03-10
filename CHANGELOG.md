@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Known Issues
 - Some styles cannot be overridden without changes to the base system styles
 
+## [3.4]
+- Adds PFU system dependency and max version (4.5.12)
+
 ## [3.2.3]
 - Fixes theme CSS overriding roll outcome in chat messages for attribute checks
 

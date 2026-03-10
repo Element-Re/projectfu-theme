@@ -7,6 +7,17 @@
     "verified": "13"
   },
   "relationships": {
+	  	"systems": [
+			{
+				"id": "projectfu",
+				"type": "system",
+				"compatibility": {
+					"minimum": "4.0",
+					"verified": "4.0",
+					"maximum": "4.5.12"
+				}
+			}
+		],
 		"requires": [
 			{
 				"id": "color-picker",
